@@ -7,7 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Install…
-        run: sudo apt-get install cmatrix
+      - name: Install apt dependencies
+        run: sudo apt-get install biber latexmk lualatex
+      - name: Install pip3 dependencies
+        run: pip3 install matplotlib numpy scipy
       - name: make_all
         run: ./make_all.sh
