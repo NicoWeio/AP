@@ -1,4 +1,4 @@
-#!/bin/bash -l
+#!/bin/bash
 echo "Hello World!"
 SUBDIRS="D206_Wärmepumpe_withTemplate"
 set -e
