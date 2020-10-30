@@ -18,8 +18,9 @@ RUN apt-get update && apt-get install -y \
      uncertainties
 
 # https://stackoverflow.com/questions/43356982/docker-python-set-utf-8-locale
-# ENV PYTHONIOENCODING=utf-8
+ENV PYTHONIOENCODING=utf-8
 ENV LANG=de_DE.UTF-8
+ENV LC_ALL=en_US.UTF-8
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
