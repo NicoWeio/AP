@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     python3-setuptools \
     texlive \
+    texlive-latex-extra \
     texlive-luatex \
     texlive-science \
  && rm -rf /var/lib/apt/lists/*
