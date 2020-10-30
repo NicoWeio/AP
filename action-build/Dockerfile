@@ -18,7 +18,10 @@ RUN apt-get update && apt-get install -y \
      uncertainties
 
 # !?
-RUN locale-gen de_DE de_DE.UTF-8 && update-locale LANG=de_DE && dpkg-reconfigure locales
+RUN apt-get install -y locales \
+ && locale-gen de_DE de_DE.UTF-8 \
+ && update-locale LANG=de_DE \
+ && dpkg-reconfigure locales
 
 # https://stackoverflow.com/questions/43356982/docker-python-set-utf-8-locale
 ENV PYTHONIOENCODING=utf-8
