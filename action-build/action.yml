@@ -1,0 +1,17 @@
+name: "Hello Actions"
+description: "Build that thing…"
+author: "kontakt@nicolaiweitkemper.de"
+
+inputs:
+  MY_NAME:
+    description: "Who to greet"
+    required: false
+    default: "World"
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+
+branding:
+  icon: "mic"
+  color: "purple"

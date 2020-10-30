@@ -7,9 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Install apt dependencies
-        run: sudo apt-get install biber latexmk make python3-setuptools texlive texlive-luatex
-      - name: Install pip3 dependencies
-        run: pip3 install matplotlib numpy scipy uncertainties
-      - name: make_all
-        run: ./make_all.sh
+      - uses: ./action-build
