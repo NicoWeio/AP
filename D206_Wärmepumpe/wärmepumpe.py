@@ -18,15 +18,14 @@ T1 += 273.15
 T2 += 273.15
 
 plt.errorbar(t, T1,  fmt='x', label='T1')
-#plt.errorbar(t, p1, yerr = p1 * sigma_p1, fmt='o', label='p1')
+#plt.errorbar(t, p1, yerr = p1 * 0.68, fmt='o', label='p1')
 
 plt.errorbar(t, T2,  fmt='x', label='T2')
-#plt.errorbar(t, p2, yerr = p2 * sigma_p2, fmt='o', label='p2')
-#plt.errorbar(t, N + sigma_N, yerr = sigma_N, label='N')
+#plt.errorbar(t, p2, yerr = p2 * 0.68, fmt='o', label='p2')
 
 plt.xlabel(r'$t/s$')
 plt.xlim(0, 36)
-#plt.ylim(0, 55)
+
 
 plt.legend()
 
