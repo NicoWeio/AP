@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     python3-setuptools \
     texlive \
+    texlive-fonts-extra \
     texlive-latex-extra \
     texlive-lang-german \
     texlive-luatex \
