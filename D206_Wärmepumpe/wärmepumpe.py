@@ -23,6 +23,8 @@ plt.errorbar(t, T1,  fmt='x', label='T1')
 plt.errorbar(t, T2,  fmt='x', label='T2')
 #plt.errorbar(t, p2, yerr = p2 * 0.68, fmt='o', label='p2')
 
+#plt.errorbar(t, N, fmt='x', label='N')
+
 plt.xlabel(r'$t/s$')
 plt.xlim(0, 36)
 
