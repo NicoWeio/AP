@@ -29,7 +29,7 @@ RUN pip3 install \
 RUN pip3 install uncertainties jupyter_contrib_nbextensions https://github.com/maxnoe/texlive-batch-installation/archive/v0.2.1.tar.gz
 
 # install texlive minimal with what we need
-RUN | python3 -m install_texlive -p $HOME/texlive -t 2020 --collections='-acfghuDFG' \
+RUN python3 -m install_texlive -p $HOME/texlive -t 2020 --collections='-acfghuDFG' \
 	-i 'koma-script,babel,babel-french,csquotes,placeins,enumitem,biber,biblatex,siunitx,beamer,xpatch,blindtext,standalone,circuitikz,tikz-feynman,xstring,fontawesome5,mleftright,mhchem,tabulary,tabu,varwidth,lstaddons,tcolorbox,mwe,fira,firamath,firamath-otf,xits,threeparttable,environ,trimspaces,pgfopts,ncctools'
 RUN export PATH=$HOME/texlive/2020/bin/x86_64-linux:$PATH
 RUN tlmgr install --with-doc tex-overview
