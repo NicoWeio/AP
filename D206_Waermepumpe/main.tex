@@ -1,0 +1,80 @@
+\input{header.tex}
+
+\subject{D206}
+\title{Die Wärmepumpe}
+\author{Nicolai Weitkemper \and Katharina Popp}
+\date{
+    Durchführung: 28.10.2020
+    \hspace{3em}
+    Abgabe: 04.11.2020
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+
+\section{Theorie} \label{sec:Theorie}
+
+    Die Wärmepumpe wird dazu verwendet, die Richtung des Wärmeflusses umzukehren.
+    Der "natürliche" Wärmefluss findet in einem abgeschlossenen System von einem heißeren Körper
+    zu einem kälteren Körper statt.
+
+    Um die Richtung des Wärmeflusses umzukehren, muss mechanische Arbeit aufgewendet werden.
+    Nach dem ersten Hauptsatz der Thermodynamik muss dabei die abgegebene Temperatur $Q_1$ vom heißeren Körper
+    gleich der aufgenommenen Wärme $Q_2$ des kälteren Körpers und der benötigten Arbeit A sein.
+    Es gilt:
+    \begin{equation}
+        Q_1 = Q_2 + A .
+    \end{equation}
+    Mit der Beziehung zwischen Wärme und Temperatur im realistischen, irreversiblen Fall
+    \begin{equation}
+        \frac{Q_1}{T_1} - \frac{Q_2}{T_2} > 0
+    \end{equation}
+    ergibt sich außerdem:
+    \begin{equation}
+        Q_1 = A + \frac{T_1}{T_2} Q_2
+    \end{equation}
+    Das Verhältnis zwischen der abgegeben Wärme $Q_1$ und der benötigten mechanischen Arbeit A wird durch die Güteziffer $\nu$
+    beschrieben.
+    \begin{equation}
+        \nu = \frac{Q_1}{A}
+    \end{equation}
+    Die mechanische Arbeit kann auch durch ein Zeitintervall und die Leistungsaufnahme N des Kompressors ausgedrückt werden:
+    \begin{equation}
+        \nu = \frac{\Delta Q_1}{\Delta t N}
+    \end{equation}
+
+    Der grundsätzliche Aufbau der Wärmepumpe besteht aus zwei Reservoiren, die unterschiedlich warm sind und einem Kompressor,
+    der das Wärmetransportmedium erhitzt.
+    Um die Wärme zwischen den Reservoiren 1 und 2 zu transportieren, wird ein Gas verwendet, welches beim Wechseln in den gasförmigen
+    Aggregatzustand Wärme aufnimmt und sie wieder abgibt, sobald es wieder flüssig wird.
+    Ein Kompressor K stellt einen Mediumkreislauf in der Wärmepumpe her.
+    Zwischen den Reservoiren herrscht ein hoher Druckunterschied, welcher durch ein Drosselventil D erzeugt wird.
+    Bei einem Druck $p_b$ oder $p_1$ und einer Temperatur $T_1$ aus dem ersten Reservoir ist das Gas flüssig und bei einem Druck $p_a$ oder $p_2$
+    und einer Temperatur $T_2$ aus dem zweiten Reservoir ist das Gas gasförmig.
+    Das Gas wird zu Beginn des Kreislaufs im Kompressor K stark erhitzt und durchläuft anschließend das erste Reservoir.
+    Hier wird dem Gas Wärme entzogen und es wird flüssig. Somit ist das erste Reservoir das Wärmenehmende.
+    Danach läuft das Gas das Drosselventil D, wobei ein Reiniger R das flüssige Medium von Blasenresten trennt.
+    Die Durchlässigkeit wird hier durch den Temperaturunterschied zwischen $T_1$ und $T_2$ gesteuert.
+    Im zweiten Reservoir nimmt das Gas wieder Wärme auf und wird gasförmig. Somit ist das zweite Reservoir das Wärmeabgebende.
+    Das Gas gelangt zurück in den Kompressor und wird wieder erhitzt.
+
+    %TODO Massendurchsatz hinzufügen
+    %TODO Kompressorleistung hinzufügen
+
+\section{Durchführung} \label{sec:Durchführung}
+    Zu Beginn des Experiments werden die Reservoire aus Kapitel \ref{sec:Theorie} einer abgefüllten Wassermenge befüllt.
+    Anschließend werden im Abstand $\Delta t$ von 1min die Temperaturen $T_1$ und $T_2$ sowie die Drücke $p_a$ und $p_b$ gemessen.
+    Auf den abgelesen Wert des Drucks muss zusätzlich ein Wert von 1bar addiert werden.
+    Um die Zeitintervalle möglichst genau einzuhalten, sollten die Werte in einer festen Reihenfolge abgelesen werden.
+    Bei einer Temeperatur von 50°C soll die Messung abgebrochen werden.
+
+\section{Auswertung} \label{sec:Auswertung}
+    Bei der Messung haben sich folgende Messdaten ergeben:
+
+    % \input{table1.tex}
+
+\end{document}
