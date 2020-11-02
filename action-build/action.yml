@@ -1,12 +1,6 @@
-name: "Hello Actions"
-description: "Build that thing…"
+name: "Protokoll-Build"
+description: "Run make, python and latexmk"
 author: "kontakt@nicolaiweitkemper.de"
-
-inputs:
-  MY_NAME:
-    description: "Who to greet"
-    required: false
-    default: "World"
 
 runs:
   using: "docker"

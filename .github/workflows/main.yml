@@ -1,9 +1,9 @@
-name: Test workflow
+name: Continuous Integration
 on: push
 
 jobs:
   build:
-    name: Hello world action
+    name: Generate PDFs
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
