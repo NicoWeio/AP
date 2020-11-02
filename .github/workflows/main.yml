@@ -8,3 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: ./action-build
+      - uses: actions/upload-artifact@v2
+        with:
+            name: pdfs
+            path: ./*/build/main.pdf
