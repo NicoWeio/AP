@@ -1,9 +1,9 @@
-import matplotlib.pyplot as plt 
-import numpy as np 
+import matplotlib.pyplot as plt
+import numpy as np
 
 t, T1, p1, T2, p2, N = np.genfromtxt('Daten.dat', unpack=True)
 
-# plt.plot(t, T1, p1, T2, p2, N) 
+# plt.plot(t, T1, p1, T2, p2, N)
 
 #t = np.linspace(0,3)
 
@@ -32,6 +32,6 @@ plt.xlim(0, 36)
 plt.legend()
 
 plt.tight_layout()
-plt.savefig('wärmepumpe_plot.pdf')
+plt.savefig('build/wärmepumpe_plot.pdf')
 
-plt.show()
+# plt.show()
