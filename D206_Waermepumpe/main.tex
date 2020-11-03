@@ -43,10 +43,55 @@
     \begin{equation}
         \nu = \frac{Q_1}{A}
     \end{equation}
+
+\subsubsection{Bestimmung der realen Güteziffer}
+
     Die mechanische Arbeit kann auch durch ein Zeitintervall und die Leistungsaufnahme N des Kompressors ausgedrückt werden:
     \begin{equation}
         \nu = \frac{\Delta Q_1}{\Delta t N}
     \end{equation}
+    $\frac{\Delta Q_1}{\Delta t}$ beschreibt hier die pro Zeiteinheit gewonnene Wärmemenge. Es gilt:
+    \begin{equation}
+        \frac{\Delta Q_1}{\Delta t} = (m_1 c_\text{w} + m_\text{k} c_\text{k}) \frac{\Delta T_1}{\Delta t}
+    \end{equation}
+
+\subsubsection{Bestimmung des Massenzusatzes}
+
+    Die aus dem Reservoir 2 entnommene Wärmemenge wird durch
+    \begin{equation}
+        \frac{\Delta Q_2}{\Delta t} =(m_2 c_\text{w} + m_\text{k} c_\text{k}) \frac{\Delta T_2}{\Delta t}
+    \end{equation}
+    beschrieben.
+    Wenn die Verdampfungswärme L bekannt ist, lässt sich der Massenzusatz aus
+    \begin{equation}
+        \frac{Q_2}{\Delta t} = L \frac{\Delta m}{\Delta t}
+    \end{equation}
+    bestimmen.
+
+\subsubsection{Bestimmung der mechanischen Kompressorleistung $N_\text{mech}$}
+
+    Die Arbeit $A_\text{m}$, die benötigt wird, um das Gasvolumen $V_\text{a}$ auf den Wert $V_\text{b}$ zu verringern, wird durch
+    \begin{equation}
+        A_\text{m} = - \displaystyle\int_{V_\text{a}}^{V_\text{b}} p dV
+    \end{equation}
+    bestimmt.
+    Zudem ergibt sich die Poisson´sche Gleichung als Zusammenhang zwischen Druck und Voumen
+    \begin{equation}
+        p_\text{a} V_\text{a}^\text{\kappa} = p_\text{b} V_\text{b}^\text{\kappa} = p V^\text{\kappa} .
+    \end{equation}
+    Für $A_\text{m}$ ergibt sich damit
+    \begin{equation}
+       A_\text{m} = - p_\text{a} V_\text{a}^\text{\kappa} \displaystyle\int_{V_\text{a}}^{V_\text{b}} V^{-\kappa} dV
+                  = \frac{1}{\kappa - 1} p_\text{a} V_\text{a}^\text{\kappa} (V_\text{b}^{-\kappa+1} - V_\text{a}^{-\kappa+1})
+                  = \frac{1}{\kappa - 1} (p_\text{b} \sqrt[\kappa]{\frac{p_\text{a}}{p_\text{b}}} - p_\text{a}) V_\text{a} .
+    \end{equation}
+    Außerdem gilt für die mechanische Kompressorleistung mit der Beziehung $V_\text{a} = \frac{1}{\rho} m$
+    \begin{equation}
+        N_\text{mech} = \frac{\Delta A_\text{m}}{\Delta t} 
+                      = \frac{1}{\kappa-1} (p_\text{b} \sqrt[\kappa]{\frac{p_\text{a}}{p_\text{b}}} - p_\text{a}) \frac{1}{\rho} \frac{\Delta m}{\Delta t} .
+    \end{equation}
+    $\rho$ bezeichnet hier die Dichte des Gases im gasförmigen Zustand.
+
 
 \subsection{Aufbau einer Wärmepumpe}
 
