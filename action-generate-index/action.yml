@@ -1,0 +1,17 @@
+name: "Files-on-Pages"
+description: "Publish files on GitHub Pages"
+author: "kontakt@nicolaiweitkemper.de"
+
+inputs:
+  ROOT_DIR:
+    description: "Directory to index and bundle for deployment"
+    required: true
+    default: "TODO"
+
+runs: 
+  using: "docker"
+  image: "Dockerfile"
+
+branding:
+  icon: "upload"
+  color: "blue"

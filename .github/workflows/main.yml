@@ -12,3 +12,16 @@ jobs:
         with:
             name: pdfs
             path: ./*/build/main.pdf
+      - name: Extract PDFs for bundling
+        run: mkdir gh-pages-bundle && rsync -a --prune-empty-dirs --include '*/' --include '*.pdf' --exclude '*' ./ gh-pages-bundle/
+      - name: Generate index
+        uses: ./action-generate-index
+        with:
+            ROOT_DIR: gh-pages-bundle
+      - name: Deploy to GitHub Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            BRANCH: gh-pages 
+            FOLDER: build
+            CLEAN: true
