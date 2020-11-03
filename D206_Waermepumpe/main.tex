@@ -17,13 +17,15 @@
 
 \section{Theorie} \label{sec:Theorie}
 
+\subsection{Grundlegendes Prinzip der Wärmepumpe}
+
     Die Wärmepumpe wird dazu verwendet, die Richtung des Wärmeflusses umzukehren.
     Der \enquote{natürliche} Wärmefluss findet in einem abgeschlossenen System von einem heißeren Körper
     zu einem kälteren Körper statt.
 
-    Um die Richtung des Wärmeflusses umzukehren, muss (mechanische) Arbeit aufgewendet werden.
-    Nach dem ersten Hauptsatz der Thermodynamik muss dabei die abgegebene Temperatur $Q_1$ vom heißeren Körper
-    gleich der aufgenommenen Wärme $Q_2$ des kälteren Körpers und der benötigten Arbeit A sein.
+    Um die Richtung des Wärmeflusses umzukehren, muss (hier: mechanische) Arbeit aufgewendet werden.
+    Nach dem ersten Hauptsatz der Thermodynamik ist dabei die abgegebene Temperatur $Q_1$ vom heißeren Körper
+    gleich der aufgenommenen Wärme $Q_2$ des kälteren Körpers und der benötigten Arbeit A.
     Es gilt also:
     \begin{equation}
         Q_1 = Q_2 + A .
@@ -46,17 +48,21 @@
         \nu = \frac{\Delta Q_1}{\Delta t N}
     \end{equation}
 
+\subsection{Aufbau einer Wärmepumpe}
+
+% TODO Grafik
+
     Der grundsätzliche Aufbau der Wärmepumpe besteht aus zwei unterschiedlich warmen Reservoiren und einem Kompressor,
     der das Wärmetransportmedium erhitzt.
     Um die Wärme zwischen den Reservoiren 1 und 2 zu transportieren, wird ein Gas verwendet, welches beim Wechseln in den gasförmigen
     Aggregatzustand Wärme aufnimmt und sie wieder abgibt, sobald es wieder flüssig wird.
-    Ein Kompressor K stellt einen Mediumkreislauf in der Wärmepumpe her.
-    Zwischen den Reservoiren herrscht ein hoher Druckunterschied, welcher durch ein Drosselventil D erzeugt wird.
+    Ein Kompressor $K$ stellt einen Mediumkreislauf in der Wärmepumpe her.
+    Zwischen den Reservoiren herrscht ein hoher Druckunterschied, welcher durch ein Drosselventil $D$ erzeugt wird.
     Bei einem Druck [TODO] $p_b$ oder $p_1$ und einer Temperatur $T_1$ aus dem ersten Reservoir ist das Gas flüssig und bei einem Druck [TODO] $p_a$ oder $p_2$
     und einer Temperatur $T_2$ aus dem zweiten Reservoir ist das Gas gasförmig.
-    Das Gas wird zu Beginn des Kreislaufs im Kompressor K stark erhitzt und durchläuft anschließend das erste Reservoir.
+    Das Gas wird zu Beginn des Kreislaufs im Kompressor $K$ stark erhitzt und durchläuft anschließend das erste Reservoir.
     Hier wird dem Gas Wärme entzogen und es wird flüssig. Somit ist das erste Reservoir das Wärmenehmende.
-    Danach läuft das Gas das Drosselventil D, wobei ein Reiniger R das flüssige Medium von Blasenresten trennt.
+    Danach läuft das Gas das Drosselventil $D$, wobei ein Reiniger $R$ das flüssige Medium von Blasenresten trennt.
     Die Durchlässigkeit wird hier durch den Temperaturunterschied zwischen $T_1$ und $T_2$ gesteuert.
     Im zweiten Reservoir nimmt das Gas wieder Wärme auf und wird gasförmig. Somit ist das zweite Reservoir das Wärmeabgebende.
     Das Gas gelangt zurück in den Kompressor und wird wieder erhitzt.
@@ -65,7 +71,7 @@
     %TODO Kompressorleistung hinzufügen
 
 \section{Durchführung} \label{sec:Durchführung}
-    Zu Beginn des Experiments werden die Reservoire aus Kapitel \ref{sec:Theorie} [TODO] einer abgefüllten[!?] Wassermenge befüllt.
+    Zu Beginn des Experiments werden die Reservoire aus Kapitel \ref{sec:Theorie} mit einer abgemessenen Wassermenge befüllt.
     Anschließend werden im Abstand $\Delta t$ von $\SI{1}{\minute}$ die Temperaturen $T_1$ und $T_2$ sowie die Drücke $p_a$ und $p_b$ gemessen.
     Auf den abgelesen Wert des Drucks muss zusätzlich ein Wert von 1bar addiert werden.
     Um die Zeitintervalle möglichst genau einzuhalten, sollten die Werte in einer festen Reihenfolge abgelesen werden.
@@ -73,8 +79,49 @@
 
 \section{Auswertung} \label{sec:Auswertung}
     Bei der Messung haben sich folgende Messdaten ergeben:
+    \input{table1.tex}
 
-    % \input{table1.tex}
-    [TODO]
+\subsection{Diagramm der gemessenen Temperaturverläufe}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.8]{build/wärmepumpe_plot.pdf}
+  \caption{Temperaturverläufe}
+  \label{fig:plot}
+\end{figure}
+
+\subsection{Foo}
+b) Man versuche mit Hilfe einer nicht-linearen Ausgleichsrechnung die gemessenen
+Temperaturverläufe durch einfache Gleichungen zu approximieren. Folgende Nähe-
+rungslösungen sind denkbar […]
+
+\subsection{Foo}
+c) Aus 5b berechne man für 4 verschiedene Temperaturen die Differentialquotienten
+dT 1 /dt und dT 2 /dt.
+
+\subsection{Foo}
+d) Für die 4 Temperaturen aus 5c bestimme man die Güteziffer der benutzten Wärme-
+pumpe und vergleiche die erhaltenen Werte mit den Güteziffern einer idealen Wär-
+mepumpe. Man verwende dazu die Ergebnisse aus 5c. Die Wärmekapazität der
+Kupferschlange und des Eimers in den Reservoiren können an den Apparaturen ab-
+gelesen werden.
+
+\subsection{Foo}
+e) Man errechne für die 4 Temperaturen aus 5c den Massendurchsatz des hier benutz-
+ten Transportgases Dichlordifluormethan (Cl 2 F 2 C). Die Verdampfungswärme L die-
+ses Stoffes kann man aus seiner Dampfdruck-Kurve gewinnen. (Näheres hierzu fin-
+det man in V203.) Wertepaare (p,T) zur Darstellung dieser Kurve können an den
+Manometern der Apparatur abgelesen werden. Mit den dort abgelesenen (p, T)-
+Werten führe man eine Ausgleichsrechnung zur Bestimmung von L durch.
+
+\subsection{Foo}
+f) Man errechne die mechanische Leistung des Kompressors, die dieser abgibt, wenn
+er zwischen den Drücken p a und p b arbeitet, für die 4 Temperaturen aus 5c. Daten
+für Cl 2 F 2 C: ρ 0 = 5,51 g/l bei T = 0°C und p = 1 Bar, κ = 1,14
+
+\section{Diskussion? [TODO]}
+
+g) Man gebe Gründe für die relativ schlechte Güteziffer (im Vergleich zur idealen Wär-
+mepumpe) bei dem hier verwendeten Gerät an.
 
 \end{document}
