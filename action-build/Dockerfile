@@ -17,6 +17,4 @@ RUN pip3 install \
 
 ENV LANG=C.UTF-8
 
-ADD entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT /usr/bin/make

@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: ./action-build
+      - uses: docker://nicoweio/my-texlive
       - uses: actions/upload-artifact@v2
         with:
             name: pdfs
