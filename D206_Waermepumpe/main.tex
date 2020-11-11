@@ -62,14 +62,14 @@
       \nu_\text{real} = \frac{1}{N} (m_1 c_\text{w} + m_\text{k} c_\text{k}) \frac{\Delta T_1}{\Delta t} \; .
     \end{equation}
 
-\subsubsection{Bestimmung des Massenzusatzes}
+\subsubsection{Bestimmung des Massendurchsatzes}
 
     Die aus dem Reservoir 2 entnommene Wärmemenge wird durch
     \begin{equation}
         \frac{\Delta Q_2}{\Delta t} =(m_2 c_\text{w} + m_\text{k} c_\text{k}) \frac{\Delta T_2}{\Delta t}
     \end{equation}
     beschrieben.
-    Wenn die Verdampfungswärme L bekannt ist, lässt sich der Massenzusatz aus
+    Wenn die Verdampfungswärme L bekannt ist, lässt sich der Massendurchsatz aus
     \begin{equation}
         \frac{Q_2}{\Delta t} = L \frac{\Delta m}{\Delta t}
     \end{equation}
@@ -121,9 +121,6 @@
     Die Durchlässigkeit wird hier durch den Temperaturunterschied zwischen $T_1$ und $T_2$ gesteuert.
     Im zweiten Reservoir nimmt das Gas wieder Wärme auf und wird gasförmig. Somit ist das zweite Reservoir das Wärmeabgebende.
     Das Gas gelangt zurück in den Kompressor und wird wieder erhitzt.
-
-    %TODO Massendurchsatz hinzufügen
-    %TODO Kompressorleistung hinzufügen
 
 \section{Durchführung} \label{sec:Durchführung}
     Zu Beginn des Experiments werden die Reservoire aus Kapitel \ref{sec:Theorie} mit einer abgemessenen Wassermenge (hier: $\SI{4}{\kilogram}$) befüllt.
@@ -177,7 +174,7 @@ $T_2$ &
 
 \subsection{Berechnung von Differentialquotienten} % c)
 Mithilfe der Approximation aus \ref{sec:approx} werden nun für vier verschiedene Temperaturen konkrete  Differentialquotienten $\frac{\mathrm{d}T_1}{\mathrm{d}t}$ und $\frac{\mathrm{d}T_2}{\mathrm{d}t}$ berechnet.
-Die Ableitung unseres Polynoms lautet
+Die Ableitung des Polynoms lautet
 \[
 \frac{\mathrm{d}T}{\mathrm{d}t} = 2At + B \; .
 \]
@@ -200,11 +197,17 @@ $t \,/\, \si{\minute}$ &
 $\frac{\mathrm{d}T_1}{\mathrm{d}t} \,/\, \si{\celsius\per\minute}$ &
 $\frac{\mathrm{d}T_2}{\mathrm{d}t} \,/\, \si{\celsius\per\minute}$ \\
 \midrule
-% TODO
-\num{0.017570905270595488} ± \num{9.767716952862124e-05 } & \num{-0.010406482887133086} ± \num{0.0006221809284564727} \\
-\num{0.014861973428536911} ± \num{0.00011516567617654728} & \num{-0.009604248764465492} ± \num{0.0007335786619906686} \\
-\num{0.012153041586478333} ± \num{0.00013952409172850847} & \num{-0.0088020146417979  } ± \num{0.0008887361228076202} \\
-\num{0.009444109744419754} ± \num{0.0001677866116754096 } & \num{-0.007999780519130306} ± \num{0.0010687618236540188} \\
+7  & \num{0.017571}  ± \num{0.000098}  & \num{-0.010406}  ± \num{0.000622} \\
+14 & \num{0.014862}  ± \num{0.000115}  & \num{-0.0096042} ± \num{0.0007336} \\
+21 & \num{0.012153}  ± \num{0.000140}  & \num{-0.0088020} ± \num{0.0008887} \\
+28 & \num{0.0094441} ± \num{0.0001678} & \num{-0.0079998} ± \num{0.0010688} \\
+
+% 7  & \num{1.757e-02} ± \num{0.010e-02} & \num{-1.041e-02} ± \num{0.062e-02} \\
+% 14 & \num{1.486e-02} ± \num{0.012e-02} & \num{-9.604e-03} ± \num{0.734e-03} \\
+% 21 & \num{1.215e-02} ± \num{0.014e-02} & \num{-8.802e-03} ± \num{0.889e-03} \\
+% 28 & \num{9.444e-03} ± \num{0.168e-03} & \num{-8.000e-03} ± \num{1.069e-03} \\
+
+
 \bottomrule
 \end{tabular}
 \end{table}
@@ -261,12 +264,38 @@ $\nu_\text{real}$ \\
 \end{table}
 
 \subsection{Bestimmung des Massendurchsatzes} % e)
-e) Man errechne für die 4 Temperaturen aus 5c den Massendurchsatz des hier benutz-
-ten Transportgases Dichlordifluormethan (Cl 2 F 2 C). Die Verdampfungswärme L die-
-ses Stoffes kann man aus seiner Dampfdruck-Kurve gewinnen. (Näheres hierzu fin-
-det man in V203.) Wertepaare (p,T) zur Darstellung dieser Kurve können an den
-Manometern der Apparatur abgelesen werden. Mit den dort abgelesenen (p, T)-
-Werten führe man eine Ausgleichsrechnung zur Bestimmung von L durch.
+% e) Man errechne für die 4 Temperaturen aus 5c den Massendurchsatz des hier benutzten Transportgases Dichlordifluormethan (Cl 2 F 2 C). Die Verdampfungswärme L dieses Stoffes kann man aus seiner Dampfdruck-Kurve gewinnen. (Näheres hierzu findet man in V203.) Wertepaare (p,T) zur Darstellung dieser Kurve können an den Manometern der Apparatur abgelesen werden. Mit den dort abgelesenen (p, T)-Werten führe man eine Ausgleichsrechnung zur Bestimmung von L durch.
+
+% TODO: Verschieben zur Theorie → 1.1.2
+
+universelle Gaskonstante $R$, TODO
+
+\begin{align*}
+  \frac{1}{p} \mathrm{d}p &= \frac{L}{R \cdot T^2} \mathrm{d} T \\
+  \mathrm{ln}(p) &= \frac{L}{R} \cdot \frac{1}{T} + c \\
+  \mathrm{ln}(p) &= \frac{L}{R \cdot T} + c \\
+  \mathrm{ln}(p) \cdot (R \cdot T) &= L + c \\
+\end{align*}
+
+\begin{table}
+\centering
+\caption{Massendurchsatz zu verschiedenen Zeitpunkten}
+% \sisetup{table-format=2.1}
+\begin{tabular}{c c c c c c}
+\toprule
+$t \,/\, \si{\minute}$ &
+$\nu_\text{ideal}$ &
+$\nu_\text{real}$ \\
+% TODO: Abweichung in % dazu?
+\midrule
+7  | deriv: (-1.041+/-0.062)e-02 & -1.54+/-0.09
+14 | deriv: (-9.604+/-0.734)e-03 & -1.42+/-0.11
+21 | deriv: (-8.802+/-0.889)e-03 & -1.30+/-0.13
+28 | deriv: (-8.000+/-1.069)e-03 & -1.18+/-0.16
+\bottomrule
+\end{tabular}
+\end{table}
+
 
 \subsection{Bestimmung der Kompressorleistung} % f)
 Die mechanische Leistung des Kompressors, die dieser abgibt, wenn
@@ -280,6 +309,7 @@ $ρ_0 = \SI{5.51} g/l$ bei $T = \SI{0}{\celsius}$ und $p = \SI{1}{\bar}$, $κ = 
 
 
 \section{Diskussion}
+% TODO Verdampfungswärme Vgl. m. Literaturwert
 Auffällig bei der Auswertung war die große Abweichung der realen Güteziffer vom Idealwert. Mögliche Gründe dafür sind vor allem folgende:
 \begin{description}
   \item[nicht-ideale Isolierung]

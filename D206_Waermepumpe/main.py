@@ -98,29 +98,20 @@ plt.savefig('build/wärmepumpe_plot.pdf')
 ## Aufgabe 5c:
 print("\n## Aufgabe 5c:\n")
 
-DERIV_INDICES = [7,14,21,28]
+DERIV_INDICES = [7,14,21,28] # 7-14-21-28 → equal spacing between 0-35
 # DERIV_INDICES = [8,16,24,32] # → Tahirbanane
 
 def fit_fn_derivate_error(x, paramErrors):
     A_err, B_err, C_err = paramErrors
     return np.sqrt((2*x*A_err)**2 + (B_err)**2)
 
-# coolParams_T1 = [ufloat(p[0], p[1]) for p in zip(fit_params_T1, fit_errors_T1)]
-# print(coolParams_T1)
-
-# 7-14-21-28 → equal spacing between 0-35
-# derivs_T1 =        [fit_fn_derivate(x, fit_params_T1)        for x in [t[7], t[14], t[21], t[28]]]
-# derivs_T1_errors = [fit_fn_derivate_error(x, fit_errors_T1)  for x in [t[7], t[14], t[21], t[28]]]
-# derivs_T2 =        [fit_fn_derivate(x, fit_params_T2)        for x in [t[7], t[14], t[21], t[28]]]
-# derivs_T2_errors = [fit_fn_derivate_error(x, fit_errors_T2)  for x in [t[7], t[14], t[21], t[28]]]
-# print("derivs T1", derivs_T1, derivs_T1_errors)
-# print("derivs T2", derivs_T2, derivs_T2_errors)
 derivs_T1 = [fit_fn_derivate(t[i], fit_params_T1) for i in DERIV_INDICES]
 derivs_T2 = [fit_fn_derivate(t[i], fit_params_T2) for i in DERIV_INDICES]
-print("derivs T1", derivs_T1)
-print("derivs T2", derivs_T2)
 
-# sys.exit()
+print("Derivs: t | dT1/dt | dT2/dt")
+for deriv_T1, deriv_T2, i in zip(derivs_T1, derivs_T2, DERIV_INDICES):
+    print(f"{i}: {deriv_T1:.3e} {deriv_T2:.3e}")
+
 
 ## Aufgabe 5d:
 print("\n## Aufgabe 5d:\n")
@@ -131,12 +122,12 @@ for i in DERIV_INDICES:
 # ✓ Werte (für andere t!) stimmen überein mit Tahirbanane, unser Fehler ist aber größer
 
 C_Kupferspirale = 750 #J/K
-# m1cw = 13293 # → Mampfzwerg
 
 # Wärmekapazität fürs Wasser in Reservoir 1
-m_Wasser = 4 #kg
-c_Wasser = 4.1851 * 1000 #J/(kg·K)
-C_Wasser = m_Wasser * c_Wasser
+V_Wasser = 4 # L
+c_Wasser = 4.1851 * 1000 # J/(kg·K)
+ρ_Wasser = 0.998207
+C_Wasser = (ρ_Wasser * V_Wasser) * c_Wasser
 # Wärmekapazität des Eimers war nicht explizit angegeben
 C_ges = C_Kupferspirale + C_Wasser
 print(f"{C_Wasser=}, {C_ges=}")
@@ -155,7 +146,6 @@ def Lregress(x,y):
     return slope, intercept
 def LregressFun(params, x):
     slope, intercept = params
-    # print(slope, intercept)
     return slope*x + intercept
 
 # plt.figure(5)
@@ -172,9 +162,9 @@ T2_kehrwert_nominal = unp.nominal_values(1 / T2)
 ln_p2 = np.log(p2)
 
 regressParams = Lregress(T2_kehrwert_nominal, ln_p2)
+#TODO Fehler!
 print("slope, intercept =", regressParams)
 # ✓ Identisch zu Tahirbanane's Werten
-
 
 plt.figure(2)
 plt.plot(T2_kehrwert_nominal, ln_p2, 'x', label="Messdaten")
@@ -184,20 +174,48 @@ plt.xlabel(r"$\frac{1}{T_2}$ in $\frac{1}{K}$") #TODO
 plt.legend()
 # plt.show()
 
-massendurchsatz = -0.00152 # → Tahirbanane
-# Ich will ihn aber positiv für 5f…
-# massendurchsatz = 0.00152 # → Tahirbanane
+a = regressParams[0]
+R = 8.31446261815324 # J/mol*K
+L_reg = -a*R
+molar_mass = 120.913 # g/mol
+L = L_reg / molar_mass
 
+print(f"{a=}, {R=}, {L_reg=}, {L=}, ")
+
+def massendurchsatz(i):
+    return (C_ges * fit_fn_derivate(t[i], fit_params_T2)) / L
+
+# for i in range(0,35):
+for i in DERIV_INDICES:
+    print(f"Massendurchsatz für Minute {i}: {massendurchsatz(i):.3f} [g/s] | deriv: {fit_fn_derivate(t[i], fit_params_T2):.3f}")
+
+# L_reg → ähnlich Mampfzwerg
+# L → ähnlich Mampfzwerg
+# massendurchsatz(0-10) → ähnlich Mampfzwerg, aber mit - statt +
+
+# sys.exit()
 
 ## Aufgabe 5f:
 print("\n## Aufgabe 5f:\n")
 
-# pa, pb = p1, p2
-# hier hatte ich die beiden vertauscht… :/
-pa = p2
-pb = p1
-k = 1.14 # gegeben
-rho = 23.63 # → Mampfzwerg
+ρ_0 = 5.52 # g/L
+T_0 = 273.15 # K
+p = 1 # bar
+κ = 1.14
 
-N_mech = (1 / (k - 1)) * (pb * np.power(pa/pb, 1/k) - pa) * (1/rho) * massendurchsatz
-print("N_mech", N_mech)
+for i in DERIV_INDICES:
+    rho = 23.63 # → Mampfzwerg #TODO
+    pb = p1 #!
+    pa = p2 #!
+    N_mech = (1 / (κ - 1)) * (pb[i] * np.power(pa[i]/pb[i], 1/κ) - pa[i]) * (1/rho) * massendurchsatz(i)
+    print("N_mech", N_mech)
+
+# # pa, pb = p1, p2
+# # hier hatte ich die beiden vertauscht… :/
+# pa = p2
+# pb = p1
+# k = 1.14 # gegeben
+# rho = 23.63 # → Mampfzwerg
+#
+# N_mech = (1 / (k - 1)) * (pb * np.power(pa/pb, 1/k) - pa) * (1/rho) * massendurchsatz
+# print("N_mech", N_mech)
