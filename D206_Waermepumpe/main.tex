@@ -5,7 +5,7 @@
 \date{
     Durchführung: 28.10.2020
     \hspace{3em}
-    Abgabe: 04.11.2020
+    Abgabe: 11.11.2020
 }
 
 \begin{document}
@@ -25,7 +25,7 @@
 
     Um die Richtung des Wärmeflusses umzukehren, muss (hier: mechanische) Arbeit aufgewendet werden.
     Nach dem ersten Hauptsatz der Thermodynamik ist dabei die abgegebene Temperatur $Q_1$ vom heißeren Körper
-    gleich der aufgenommenen Wärme $Q_2$ des kälteren Körpers und der benötigten Arbeit A.
+    gleich der aufgenommenen Wärme $Q_2$ des kälteren Körpers und der benötigten Arbeit $A$.
     Es gilt also:
     \begin{equation}
         Q_1 = Q_2 + A .
@@ -38,21 +38,28 @@
     \begin{equation}
         Q_1 = A + \frac{T_1}{T_2} Q_2
     \end{equation}
-    Das Verhältnis zwischen der abgegeben Wärme $Q_1$ und der benötigten mechanischen Arbeit A wird durch die Güteziffer $\nu$
+
+    Das Verhältnis zwischen der abgegebenen Wärme $Q_1$ und der benötigten mechanischen Arbeit $A$ wird durch die Güteziffer $\nu$
     beschrieben.
     \begin{equation}
         \nu = \frac{Q_1}{A}
     \end{equation}
 
 \subsubsection{Bestimmung der realen Güteziffer}
+% \label{sec:reale_gueteziffer}
 
-    Die mechanische Arbeit kann auch durch ein Zeitintervall und die Leistungsaufnahme N des Kompressors ausgedrückt werden:
+    Die mechanische Arbeit kann auch durch ein Zeitintervall und die Leistungsaufnahme $N$ des Kompressors ausgedrückt werden:
     \begin{equation}
-        \nu = \frac{\Delta Q_1}{\Delta t N}
+        \nu_\text{real} = \frac{\Delta Q_1}{\Delta t N}
     \end{equation}
-    $\frac{\Delta Q_1}{\Delta t}$ beschreibt hier die pro Zeiteinheit gewonnene Wärmemenge. Es gilt:
+    $\frac{\Delta Q_1}{\Delta t}$ beschreibt hier die pro Zeiteinheit gewonnene Wärmemenge. Es gilt
     \begin{equation}
         \frac{\Delta Q_1}{\Delta t} = (m_1 c_\text{w} + m_\text{k} c_\text{k}) \frac{\Delta T_1}{\Delta t}
+    \end{equation}
+    und somit auch
+    \begin{equation}
+      \label{eqn:reale_gueteziffer}
+      \nu_\text{real} = \frac{1}{N} (m_1 c_\text{w} + m_\text{k} c_\text{k}) \frac{\Delta T_1}{\Delta t} \; .
     \end{equation}
 
 \subsubsection{Bestimmung des Massenzusatzes}
@@ -75,7 +82,7 @@
         A_\text{m} = - \displaystyle\int_{V_\text{a}}^{V_\text{b}} p dV
     \end{equation}
     bestimmt.
-    Zudem ergibt sich die Poisson´sche Gleichung als Zusammenhang zwischen Druck und Voumen
+    Zudem ergibt sich die Poisson'sche Gleichung als Zusammenhang zwischen Druck und Volumen
     \begin{equation}
         p_\text{a} V_\text{a}^\text{\kappa} = p_\text{b} V_\text{b}^\text{\kappa} = p V^\text{\kappa} .
     \end{equation}
@@ -87,27 +94,30 @@
     \end{equation}
     Außerdem gilt für die mechanische Kompressorleistung mit der Beziehung $V_\text{a} = \frac{1}{\rho} m$
     \begin{equation}
-        N_\text{mech} = \frac{\Delta A_\text{m}}{\Delta t} 
-                      = \frac{1}{\kappa-1} (p_\text{b} \sqrt[\kappa]{\frac{p_\text{a}}{p_\text{b}}} - p_\text{a}) \frac{1}{\rho} \frac{\Delta m}{\Delta t} .
+      \label{eqn:N_mech}
+        N_\text{mech} = \frac{\Delta A_\text{m}}{\Delta t}
+                      = \frac{1}{\kappa-1} \left(p_\text{b} \sqrt[\kappa]{\frac{p_\text{a}}{p_\text{b}}} - p_\text{a}\right) \frac{1}{\rho} \frac{\Delta m}{\Delta t} .
     \end{equation}
-    $\rho$ bezeichnet hier die Dichte des Gases im gasförmigen Zustand.
+    Hierbei bezeichnet $\rho$ die Dichte des Gases im gasförmigen Zustand.
 
 
 \subsection{Aufbau einer Wärmepumpe}
 
 % TODO Grafik
 
-    Der grundsätzliche Aufbau der Wärmepumpe besteht aus zwei unterschiedlich warmen Reservoiren und einem Kompressor,
-    der das Wärmetransportmedium erhitzt.
-    Um die Wärme zwischen den Reservoiren 1 und 2 zu transportieren, wird ein Gas verwendet, welches beim Wechseln in den gasförmigen
+    Der grundsätzliche Aufbau der Wärmepumpe besteht aus zwei unterschiedlich warmen Reservoiren und einem Kompressor $K$,
+    der das Wärmetransportmedium durch die Kompression erhitzt.
+    Um die Wärme zwischen den Reservoiren 1 und 2 zu transportieren, wird ein Gas verwendet, welches beim Wechsel in den gasförmigen
     Aggregatzustand Wärme aufnimmt und sie wieder abgibt, sobald es wieder flüssig wird.
-    Ein Kompressor $K$ stellt einen Mediumkreislauf in der Wärmepumpe her.
+
+    Der Kompressor stellt einen Mediumkreislauf in der Wärmepumpe her.
     Zwischen den Reservoiren herrscht ein hoher Druckunterschied, welcher durch ein Drosselventil $D$ erzeugt wird.
-    Bei einem Druck [TODO] $p_b$ oder $p_1$ und einer Temperatur $T_1$ aus dem ersten Reservoir ist das Gas flüssig und bei einem Druck [TODO] $p_a$ oder $p_2$
-    und einer Temperatur $T_2$ aus dem zweiten Reservoir ist das Gas gasförmig.
+    Bei einem Druck $p_1$ und einer Temperatur $T_1$ aus dem ersten Reservoir ist das Gas flüssig,
+    bei einem Druck $p_2$ und einer Temperatur $T_2$ aus dem zweiten Reservoir ist das Gas gasförmig.
+
     Das Gas wird zu Beginn des Kreislaufs im Kompressor $K$ stark erhitzt und durchläuft anschließend das erste Reservoir.
     Hier wird dem Gas Wärme entzogen und es wird flüssig. Somit ist das erste Reservoir das Wärmenehmende.
-    Danach läuft das Gas das Drosselventil $D$, wobei ein Reiniger $R$ das flüssige Medium von Blasenresten trennt.
+    Danach läuft das Gas das Drosselventil $D$, wobei ein Reiniger $R$ das flüssige Medium von Blasenresten trennt, um den Kompressor nicht zu beschädigen.
     Die Durchlässigkeit wird hier durch den Temperaturunterschied zwischen $T_1$ und $T_2$ gesteuert.
     Im zweiten Reservoir nimmt das Gas wieder Wärme auf und wird gasförmig. Somit ist das zweite Reservoir das Wärmeabgebende.
     Das Gas gelangt zurück in den Kompressor und wird wieder erhitzt.
@@ -116,17 +126,19 @@
     %TODO Kompressorleistung hinzufügen
 
 \section{Durchführung} \label{sec:Durchführung}
-    Zu Beginn des Experiments werden die Reservoire aus Kapitel \ref{sec:Theorie} mit einer abgemessenen Wassermenge befüllt.
-    Anschließend werden im Abstand $\Delta t$ von $\SI{1}{\minute}$ die Temperaturen $T_1$ und $T_2$ sowie die Drücke $p_a$ und $p_b$ gemessen.
-    Auf den abgelesen Wert des Drucks muss zusätzlich ein Wert von 1bar addiert werden.
-    Um die Zeitintervalle möglichst genau einzuhalten, sollten die Werte in einer festen Reihenfolge abgelesen werden.
-    Bei einer Temeperatur von $\SI{50}{\celsius}$ soll die Messung abgebrochen werden.
+    Zu Beginn des Experiments werden die Reservoire aus Kapitel \ref{sec:Theorie} mit einer abgemessenen Wassermenge (hier: $\SI{4}{\kilogram}$) befüllt.
+    Anschließend werden im Abstand von $\Delta t = \SI{1}{\minute}$ die Temperaturen $T_1$ und $T_2$, die Drücke $p_1$ und $p_2$, und die Leistungsaufnahme des Kompressors $N$ gemessen.
+    Auf den abgelesen Wert des Drucks muss zusätzlich ein Wert von $\SI{1}{\bar}$ addiert werden.
+    % Um die Zeitintervalle möglichst genau einzuhalten, sollten die Werte in einer festen Reihenfolge abgelesen werden.
+    Bei einer Temperatur von $\SI{50}{\celsius}$ soll die Messung abgebrochen werden.
 
 \section{Auswertung} \label{sec:Auswertung}
-    Bei der Messung haben sich folgende Messdaten ergeben:
-    \input{table1.tex}
+Die zur Verfügung gestellten Messdaten sind im Folgenden tabellarisch aufgelistet:
+\input{table1.tex}
 
-\subsection{Diagramm der gemessenen Temperaturverläufe}
+\newpage
+\subsection{Diagramm der gemessenen Temperaturverläufe} % a)
+Im Diagramm sind die Approximationen aus \ref{sec:approx} bereits enthalten.
 
 \begin{figure}
   \centering
@@ -135,23 +147,120 @@
   \label{fig:plot}
 \end{figure}
 
-\subsection{Foo}
-b) Man versuche mit Hilfe einer nicht-linearen Ausgleichsrechnung die gemessenen
-Temperaturverläufe durch einfache Gleichungen zu approximieren. Folgende Nähe-
-rungslösungen sind denkbar […]
+\subsection{Approximation der Temperaturverläufe} \label{sec:approx} % b)
+Zur Approximation des Temperaturverläufe bietet sich ein Polynom zweiten Grades an:
+\[
+T(t) = At^2 + Bt + C \; .
+\]
+Als Fit-Parameter wurden berechnet:
 
-\subsection{Foo}
-c) Aus 5b berechne man für 4 verschiedene Temperaturen die Differentialquotienten
-dT 1 /dt und dT 2 /dt.
+\begin{table}
+\centering
+\caption{Fit-Parameter}
+\label{tab:fit_params}
+% \sisetup{table-format=2.1}
+\begin{tabular}{c c c c}
+\toprule
+ & A & B & C \\
+\midrule
+$T_1$ &
+\num{-3.2249e-06} ± \num{4.1934e-08} &
+\num{0.02028} ± \num{9.1105e-05} &
+\num{294.97} ± \num{0.041345}\\
+$T_2$ &
+\num{9.5504e-07} ± \num{2.6711e-07} &
+\num{-0.011209} ± \num{0.00058032} &
+\num{295.87} ± \num{0.26336}\\
+\bottomrule
+\end{tabular}
+\end{table}
 
-\subsection{Foo}
-d) Für die 4 Temperaturen aus 5c bestimme man die Güteziffer der benutzten Wärme-
-pumpe und vergleiche die erhaltenen Werte mit den Güteziffern einer idealen Wär-
-mepumpe. Man verwende dazu die Ergebnisse aus 5c. Die Wärmekapazität der
-Kupferschlange und des Eimers in den Reservoiren können an den Apparaturen ab-
-gelesen werden.
+\subsection{Berechnung von Differentialquotienten} % c)
+Mithilfe der Approximation aus \ref{sec:approx} werden nun für vier verschiedene Temperaturen konkrete  Differentialquotienten $\frac{\mathrm{d}T_1}{\mathrm{d}t}$ und $\frac{\mathrm{d}T_2}{\mathrm{d}t}$ berechnet.
+Die Ableitung unseres Polynoms lautet
+\[
+\frac{\mathrm{d}T}{\mathrm{d}t} = 2At + B \; .
+\]
+\\
+Fehllerrechnung:
+\begin{align*}
+  \Delta \frac{\mathrm{d}T}{\mathrm{d}t}
+  &= \sqrt{\left(\frac{\partial \frac{\mathrm{d}T}{\mathrm{d}t}}{\partial A} \cdot \Delta A\right)^2 + \left(\frac{\partial \frac{\mathrm{d}T}{\mathrm{d}t}}{\partial B} \cdot \Delta B\right)^2} \\
+  &= \sqrt{(2t \cdot \Delta A)^2 + (\Delta B)^2}
+\end{align*}
 
-\subsection{Foo}
+\begin{table}
+\centering
+\caption{Ableitungen der Approximationsfunktion}
+\label{tab:derivatives}
+\sisetup{table-format=2.1}
+\begin{tabular}{c c c c c c}
+\toprule
+$t \,/\, \si{\minute}$ &
+$\frac{\mathrm{d}T_1}{\mathrm{d}t} \,/\, \si{\celsius\per\minute}$ &
+$\frac{\mathrm{d}T_2}{\mathrm{d}t} \,/\, \si{\celsius\per\minute}$ \\
+\midrule
+% TODO
+\num{0.017570905270595488} ± \num{9.767716952862124e-05 } & \num{-0.010406482887133086} ± \num{0.0006221809284564727} \\
+\num{0.014861973428536911} ± \num{0.00011516567617654728} & \num{-0.009604248764465492} ± \num{0.0007335786619906686} \\
+\num{0.012153041586478333} ± \num{0.00013952409172850847} & \num{-0.0088020146417979  } ± \num{0.0008887361228076202} \\
+\num{0.009444109744419754} ± \num{0.0001677866116754096 } & \num{-0.007999780519130306} ± \num{0.0010687618236540188} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\subsection{Bestimmung der Güteziffern} % d)
+\label{sec:auswertung_gueteziffern}
+% In "Daten und Hinweise" ist lediglich die Rede vom *Fassungsvermögen*!
+% „Fassungsvermögen der Wassereimer: m = 4kg“
+% Als Füllmenge nehmen wir daher 4L an, wie es in "Daten.dat" steht
+
+% „Wärmekapazität der Kupferschlangen“ meint *Wärmekapazität jeder Kupferschlange*, oder?
+Jeder Wassereimer war mit $\SI{4}{\liter}$ Wasser befüllt, bei einem Fassungsvermögen von $\SI{4}{\kilogram}$.
+Die Wärmekapazität der \enquote{Kupferschlangen} war gegeben als $m_k c_k = 750 \si{\joule\per\kelvin}$. Laut Versuchsanleitung soll $m_k c_k$ auch die Wärmekapazität der Eimer enthalten, dazu liegen uns jedoch keine weiteren Daten vor.
+Die Wärmekapazität des Wassers in Reservoir 1 lässt sich mit
+\begin{align*}
+  \rho_\text{Wasser} &= \SI{0.998207}{\kilogram\per\liter}
+  \tag*{(Wasserdichte bei 20°C \cite{wasserdichte})} \\
+  \\
+  c_\text{Wasser} &= \SI{4.1851}{\joule\per\gram\and\kelvin}
+  \tag*{(spezifische Wärmekapazität von Wasser bei 20°C \cite{wasserwaermekapazitaet})} \\
+  \\
+  C_{\text{Wasser}, 1} &= m_1 \cdot c_\text{Wasser} \\
+  &= (\rho_\text{Wasser} \cdot V_\text{Wasser}) \cdot c_\text{Wasser} \\
+  &= \left(\SI{0.998207}{\kilogram\per\liter} \cdot \SI{4}{\liter}\right) \cdot \SI{4.181}{\joule\per\gram\and\kelvin} \\
+  &= \SI{16736.0}{\joule\per\kelvin} \\
+\end{align*}
+bestimmen, sodass aus einfacher Summation die gesamte Wärmekapazität
+\[
+C_\text{ges} = 750 \si{\joule\per\kelvin} + \SI{16736.0}{\joule\per\kelvin} = \SI{17486.0}{\joule\per\kelvin}
+\]
+folgt.
+
+\ \\
+Unter Zuhilfenahme von Gleichung \ref{eqn:reale_gueteziffer} und der Differentialquotienten aus Tabelle \ref{tab:derivatives} kann nun die reale Güteziffer für verschiedene $t$ berechnet werden.
+
+\begin{table}
+\centering
+\caption{Vergleich der idealen und realen Güteziffern}
+% \sisetup{table-format=2.1}
+\begin{tabular}{c c c c c c}
+\toprule
+$t \,/\, \si{\minute}$ &
+$\nu_\text{ideal}$ &
+$\nu_\text{real}$ \\
+% TODO: Abweichung in % dazu?
+\midrule
+7  & 27.04 ± 0.34  & 2.560 ± 0.014 \\
+14 & 13.41 ± 0.08  & 2.166 ± 0.017 \\
+21 & 9.76  ± 0.04  & 1.771 ± 0.020 \\
+28 & 8.139 ± 0.028 & 1.354 ± 0.024 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Bestimmung des Massendurchsatzes} % e)
 e) Man errechne für die 4 Temperaturen aus 5c den Massendurchsatz des hier benutz-
 ten Transportgases Dichlordifluormethan (Cl 2 F 2 C). Die Verdampfungswärme L die-
 ses Stoffes kann man aus seiner Dampfdruck-Kurve gewinnen. (Näheres hierzu fin-
@@ -159,14 +268,45 @@ det man in V203.) Wertepaare (p,T) zur Darstellung dieser Kurve können an den
 Manometern der Apparatur abgelesen werden. Mit den dort abgelesenen (p, T)-
 Werten führe man eine Ausgleichsrechnung zur Bestimmung von L durch.
 
-\subsection{Foo}
-f) Man errechne die mechanische Leistung des Kompressors, die dieser abgibt, wenn
-er zwischen den Drücken p a und p b arbeitet, für die 4 Temperaturen aus 5c. Daten
-für Cl 2 F 2 C: ρ 0 = 5,51 g/l bei T = 0°C und p = 1 Bar, κ = 1,14
+\subsection{Bestimmung der Kompressorleistung} % f)
+Die mechanische Leistung des Kompressors, die dieser abgibt, wenn
+er zwischen den Drücken $p_1$ und $p_2$ arbeitet,
+wird mithilfe von Gleichung \ref{eqn:N_mech}, der gegebenen Daten, und der Differentialquotienten aus Tabelle \ref{tab:derivatives} berechnet.
+\ \\
+Daten für $\mathrm{Cl}_2 \mathrm{F}_2 \mathrm{C}$: \\
+% \[
+$ρ_0 = \SI{5.51} g/l$ bei $T = \SI{0}{\celsius}$ und $p = \SI{1}{\bar}$, $κ = 1.14$
+% \]
 
-\section{Diskussion? [TODO]}
 
-g) Man gebe Gründe für die relativ schlechte Güteziffer (im Vergleich zur idealen Wär-
-mepumpe) bei dem hier verwendeten Gerät an.
+\section{Diskussion}
+Auffällig bei der Auswertung war die große Abweichung der realen Güteziffer vom Idealwert. Mögliche Gründe dafür sind vor allem folgende:
+\begin{description}
+  \item[nicht-ideale Isolierung]
+  Obwohl Reservoire und Leitungen eine Isolierung aufweisen,
+  lassen sich Wärmeverluste beziehungsweise Wärmeaufnahme in Reservoir 2 nicht vollständig vermeiden.
+
+  \item[keine vollständig adiabatische Kompression]
+  % → Mampfzwerg
+  Zur Bestimmung der mechanischen Kompressorleistung $N_\text{mech}$ wurde näherungsweise angenommen,
+  dass die Kompression adiabatisch erfolgt.
+
+  \item[Ungenauigkeiten beim Ablesen]
+  Da die Druckmessung mit analogen Manometern erfolgte,
+  könnte an dieser Stelle eine Messunsicherheit aufgetreten sein.
+  Zudem sind jede Minute fünf Messwerte aufzunehmen.
+  Da dies manuell und nacheinander geschieht,
+  entsteht auch dabei ein subjektiver Fehler.
+  Es muss betont werden,
+  dass wir den Versuch nicht selbst durchgeführt haben und daher in diesen Punkten nur mutmaßen können.
+
+  \item[Wahl der vier Zeitindizes] Zur Bestimmung der vier Differentialquotienten, die im weiteren Verlauf genutzt wurden, sollten vier Zeitindizes $t_1, \ldots, t_4$ gewählt werden. Wir haben uns für die äquidistanten Zeiten \textbf{7, 14, 21, 28} (von 35 Minuten) entschieden. Eine andere Wahl hätte die Werte für die ideale und reale Güteziffer verändert.
+
+  \item[Fehler der Ausgleichsfunktion]
+  % → vsulaiman
+  Da wir die Differentialquotienten der Temperaturverläufe mit einer Ausgleichsfunktion berechnet haben, spielt auch deren Fit eine Rolle. Allerdings war die Ungenauigkeit der Fit-Parameter so gering, dass daraus keine größeren Abweichungen resultieren sollten.
+\end{description}
+
+\printbibliography
 
 \end{document}

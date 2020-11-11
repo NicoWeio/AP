@@ -28,6 +28,7 @@ T2 = unp.uarray(T2, np.full(len(T2), 0.1))
 t_linspace = np.linspace(t[0], t[-1])
 
 ## Aufgabe 5b: Approximation der Temperaturverläufe
+print("## Aufgabe 5b: Approximation der Temperaturverläufe\n")
 
 # T(t) = A*x**2 + B*x + C → brauchbar :)
 # T(t) = A / (1 + B*t) → doof
@@ -42,13 +43,19 @@ def fit_fn(x, params):
 # --- Für Aufgabe 5c:
 def fit_fn_derivate(x, params):
     A, B, C = params
-    return 2*A*x + B
+    return ufloat(
+        2*A.n*x + B.n,
+        np.sqrt((2*x*A.s)**2 + (B.s)**2)
+    )
+# def fit_fn_derivate_error(x, paramErrors):
+#     A_err, B_err, C_err = paramErrors
+#     return np.sqrt((2*x*A_err)**2 + (B_err)**2)
 # ---
 
 def polyfit(T):
     params, covariance_matrix = np.polyfit(t, T, deg=2, cov=True)
     errors = np.sqrt(np.diag(covariance_matrix))
-    return params, errors
+    return [ufloat(*x) for x in zip(params, errors)]
 
 # def fit_fn_2(t, A, B):
 #     alpha = 1
@@ -62,36 +69,37 @@ def polyfit(T):
 #     popt, pcov = sp_optimize.curve_fit(fit_fn_3, t, T)
 #     return popt
 
-fit_params_T1, fit_errors_T1 = polyfit(unp.nominal_values(T1))
-fit_params_T2, fit_errors_T2 = polyfit(unp.nominal_values(T2))
+fit_params_T1 = polyfit(unp.nominal_values(T1))
+fit_params_T2 = polyfit(unp.nominal_values(T2))
 
 print("T1:")
-for param, error, i in zip(fit_params_T1, fit_errors_T1, ["A","B","C"]):
-    print(f"{i} = {param:.5} ± {error:.5}")
+for param, i in zip(fit_params_T1, ["A","B","C"]):
+    print(f"{i} = {param.n:.5} ± {param.s:.5}")
 print("T2:")
-for param, error, i in zip(fit_params_T2, fit_errors_T2, ["A","B","C"]):
-    print(f"{i} = {param:.5} ± {error:.5}")
+for param, i in zip(fit_params_T2, ["A","B","C"]):
+    print(f"{i} = {param.n:.5} ± {param.s:.5}")
 
 
-plt.plot(t_linspace, fit_fn(t_linspace, fit_params_T1), label=r"Approximation $T_1$")
+plt.plot(t_linspace, unp.nominal_values(fit_fn(t_linspace, fit_params_T1)), label=r"Approximation $T_1$")
 plt.errorbar(t, unp.nominal_values(T1), fmt='x', yerr=unp.std_devs(T1), label=r'$T_1$')
 
-plt.plot(t_linspace, fit_fn(t_linspace, fit_params_T2), label=r"Approximation $T_2$")
+plt.plot(t_linspace, unp.nominal_values(fit_fn(t_linspace, fit_params_T2)), label=r"Approximation $T_2$")
 plt.errorbar(t, unp.nominal_values(T2), fmt='x', yerr=unp.std_devs(T2), label=r'$T_2$')
 
 plt.figure(1)
-plt.xlabel(r'$t \; / \; s$')
+plt.xlabel(r'$t \; / \; \mathrm{min}$')
 plt.xlim(t.min(), t.max())
 plt.ylabel(r'$T \; / \; K$')
 plt.legend()
 plt.tight_layout()
-# plt.savefig('build/wärmepumpe_plot.pdf')
+plt.savefig('build/wärmepumpe_plot.pdf')
 
 
 ## Aufgabe 5c:
+print("\n## Aufgabe 5c:\n")
 
-# DERIV_INDICES = [7,14,21,28]
-DERIV_INDICES = [8,16,24,32] # → Tahirbanane
+DERIV_INDICES = [7,14,21,28]
+# DERIV_INDICES = [8,16,24,32] # → Tahirbanane
 
 def fit_fn_derivate_error(x, paramErrors):
     A_err, B_err, C_err = paramErrors
@@ -105,37 +113,49 @@ def fit_fn_derivate_error(x, paramErrors):
 # derivs_T1_errors = [fit_fn_derivate_error(x, fit_errors_T1)  for x in [t[7], t[14], t[21], t[28]]]
 # derivs_T2 =        [fit_fn_derivate(x, fit_params_T2)        for x in [t[7], t[14], t[21], t[28]]]
 # derivs_T2_errors = [fit_fn_derivate_error(x, fit_errors_T2)  for x in [t[7], t[14], t[21], t[28]]]
-# print("5c) derivs T1", derivs_T1, derivs_T1_errors)
-# print("5c) derivs T2", derivs_T2, derivs_T2_errors)
-derivs_T1 = [ufloat(fit_fn_derivate(t[i], fit_params_T1), fit_fn_derivate_error(t[i], fit_errors_T1)) for i in DERIV_INDICES]
-derivs_T2 = [ufloat(fit_fn_derivate(t[i], fit_params_T2), fit_fn_derivate_error(t[i], fit_errors_T2)) for i in DERIV_INDICES]
-print("5c) derivs T1", derivs_T1)
-print("5c) derivs T2", derivs_T2)
+# print("derivs T1", derivs_T1, derivs_T1_errors)
+# print("derivs T2", derivs_T2, derivs_T2_errors)
+derivs_T1 = [fit_fn_derivate(t[i], fit_params_T1) for i in DERIV_INDICES]
+derivs_T2 = [fit_fn_derivate(t[i], fit_params_T2) for i in DERIV_INDICES]
+print("derivs T1", derivs_T1)
+print("derivs T2", derivs_T2)
 
 # sys.exit()
 
 ## Aufgabe 5d:
+print("\n## Aufgabe 5d:\n")
 
 for i in DERIV_INDICES:
     gueteziffer_ideal = T1[i] / (T1[i] - T2[i])
-    print(f"Güteziffer für Minute {i} / t={t[i]:.0f}: {gueteziffer_ideal}")
+    print(f"Ideale Güteziffer für Minute {i} / t={t[i]:.0f}: {gueteziffer_ideal}")
 # ✓ Werte (für andere t!) stimmen überein mit Tahirbanane, unser Fehler ist aber größer
 
-mkck = 750 #J/K
-m1cw = 13293 # → Mampfzwerg
+C_Kupferspirale = 750 #J/K
+# m1cw = 13293 # → Mampfzwerg
 
-gueteziffern_real = ((m1cw + mkck) * fit_fn_derivate(t, fit_params_T1)) / N
-print("gueteziffern_real", gueteziffern_real)
-# ~ grobe Übereinstimmung mit Mampfzwerg, Tahirbanane
+# Wärmekapazität fürs Wasser in Reservoir 1
+m_Wasser = 4 #kg
+c_Wasser = 4.1851 * 1000 #J/(kg·K)
+C_Wasser = m_Wasser * c_Wasser
+# Wärmekapazität des Eimers war nicht explizit angegeben
+C_ges = C_Kupferspirale + C_Wasser
+print(f"{C_Wasser=}, {C_ges=}")
+
+for i in DERIV_INDICES:
+    myDeriv = fit_fn_derivate(t[i], fit_params_T1)
+    gueteziffer_real = (C_ges * myDeriv) / N[i]
+    print(f"Reale Güteziffer für Minute {i} / t={t[i]:.0f}: {gueteziffer_real}")
+# ✓ Übereinstimmung von Wert/Unsicherheit mit Tahirbanane (für andere t!)
 
 ## Aufgabe 5e:
+print("\n## Aufgabe 5e:\n")
 
 def Lregress(x,y):
     slope, intercept, r_value, p_value, std_err = sp_stats.linregress(x,y)
     return slope, intercept
 def LregressFun(params, x):
     slope, intercept = params
-    print(slope, intercept)
+    # print(slope, intercept)
     return slope*x + intercept
 
 # plt.figure(5)
@@ -148,16 +168,17 @@ def LregressFun(params, x):
 # plt.legend()
 # plt.show()
 # –––––
-T2_kehrwert = 1 / T2
+T2_kehrwert_nominal = unp.nominal_values(1 / T2)
 ln_p2 = np.log(p2)
 
-regressParams = Lregress(T2_kehrwert, ln_p2)
-print("slope, intercept", regressParams)
+regressParams = Lregress(T2_kehrwert_nominal, ln_p2)
+print("slope, intercept =", regressParams)
+# ✓ Identisch zu Tahirbanane's Werten
 
 
 plt.figure(2)
-plt.plot(T2_kehrwert, ln_p2, 'x', label="Werte")
-plt.plot(T2_kehrwert, LregressFun(regressParams, T2_kehrwert), label="Regression")
+plt.plot(T2_kehrwert_nominal, ln_p2, 'x', label="Messdaten")
+plt.plot(T2_kehrwert_nominal, LregressFun(regressParams, T2_kehrwert_nominal), label="Ausgleichsgerade")
 plt.xlabel(r"$\frac{1}{T_2}$ in $\frac{1}{K}$") #TODO
 # plt.ylabel(r"$\mathrm{ln}(p_2)$") #TODO
 plt.legend()
@@ -167,11 +188,14 @@ massendurchsatz = -0.00152 # → Tahirbanane
 # Ich will ihn aber positiv für 5f…
 # massendurchsatz = 0.00152 # → Tahirbanane
 
+
 ## Aufgabe 5f:
+print("\n## Aufgabe 5f:\n")
 
 # pa, pb = p1, p2
-pa = p1
-pb = p2
+# hier hatte ich die beiden vertauscht… :/
+pa = p2
+pb = p1
 k = 1.14 # gegeben
 rho = 23.63 # → Mampfzwerg
 

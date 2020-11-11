@@ -5,7 +5,7 @@ build/wärmepumpe_plot.pdf: main.py | build
 
 build/main.pdf: build/wärmepumpe_plot.pdf
 
-build/main.pdf: main.tex | build
+build/main.pdf: main.tex lit.bib | build
 	  TEXINPUTS=build: \
 	  BIBINPUTS=build: \
 	  max_print_line=1048576 \
