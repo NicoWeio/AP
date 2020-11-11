@@ -7,6 +7,8 @@ import scipy.stats as sp_stats
 #TODO
 import sys
 
+import generate_table
+
 t, T1, p1, T2, p2, N = np.genfromtxt('Daten.dat', unpack=True)
 
 # Minuten → Sekunden
@@ -78,6 +80,10 @@ for param, i in zip(fit_params_T1, ["A","B","C"]):
 print("T2:")
 for param, i in zip(fit_params_T2, ["A","B","C"]):
     print(f"{i} = {param.n:.5} ± {param.s:.5}")
+
+generate_table.generateTable('table_polyfit', [[T_index, A,B,C] for T_index, A,B,C in [list(["$T_1$"] + fit_params_T1), list(["$T_2$"] + fit_params_T2)]], scientific=True)
+
+# generate_table.generateTable('table_polyfit_T1', [[i, param] for param, i in zip(fit_params_T1, ["A","B","C"])])
 
 
 plt.plot(t_linspace, unp.nominal_values(fit_fn(t_linspace, fit_params_T1)), label=r"Approximation $T_1$")
@@ -189,6 +195,8 @@ def massendurchsatz(i):
 for i in DERIV_INDICES:
     print(f"Massendurchsatz für Minute {i}: {massendurchsatz(i):.3f} [g/s] | deriv: {fit_fn_derivate(t[i], fit_params_T2):.3f}")
 
+generate_table.generateTable('table_massendurchsatz', [[t[i], fit_fn_derivate(int(t[i]), fit_params_T2)*(10**3), massendurchsatz(i)] for i in DERIV_INDICES], scientific=False)
+
 # L_reg → ähnlich Mampfzwerg
 # L → ähnlich Mampfzwerg
 # massendurchsatz(0-10) → ähnlich Mampfzwerg, aber mit - statt +
@@ -203,12 +211,16 @@ T_0 = 273.15 # K
 p = 1 # bar
 κ = 1.14
 
+N_mech_table = list()
 for i in DERIV_INDICES:
     rho = 23.63 # → Mampfzwerg #TODO
     pb = p1 #!
     pa = p2 #!
     N_mech = (1 / (κ - 1)) * (pb[i] * np.power(pa[i]/pb[i], 1/κ) - pa[i]) * (1/rho) * massendurchsatz(i)
     print("N_mech", N_mech)
+    N_mech_table.append([t[i], N_mech])
+
+generate_table.generateTable('table_kompressorleistung', N_mech_table, scientific=False)
 
 # # pa, pb = p1, p2
 # # hier hatte ich die beiden vertauscht… :/
