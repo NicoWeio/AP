@@ -2,10 +2,10 @@
 
 \subsection{Grundprinzip der elektrischen Brückenschaltungen}
 
-   Elektrische Brückenschaltungen werden dazu verwendet unbekannte Größen, wie zum Bespiel Widerstände, Induktivitäten und
+   Elektrische Brückenschaltungen werden dazu verwendet, um unbekannte Größen, wie zum Bespiel Widerstände, Induktivitäten und
    Kapazitäten zu bestimmen.
-   Dazu wird die Potentialdifferenz $U_\text{Br}$ zwischen zwie Punkten an der Schaltung gemessen.
-   Mithilfe der Kirchhoff´schen Regeln lässt sich diese Brückenspannung $U_\text{Br}$ berechnen.
+   Dazu wird die Potentialdifferenz $U_\text{Br}$ zwischen zwei Punkten an der Schaltung gemessen.
+   Mithilfe der Kirchhoff'schen Regeln lässt sich diese Brückenspannung $U_\text{Br}$ berechnen.
    \begin{enumerate}
        \item Die Knotenregel besagt, dass alle Ströme, die in einen Knoten hineinfließen, in der Summe gleich Null sein müssen.
        \begin{equation}
@@ -16,7 +16,11 @@
            \sum_k U_k = 0
        \end{equation}
    \end{enumerate}
+
+   % TODO: Grafik zur allgemeinen Brückenschaltung
+
    Daraus folgt für die Brückenspannung:
+
    \begin{equation}
        U_\text{Br} = \frac{R_2R_3 - R_1R_4}{(R_3 + R_4)(R_1 + R_2)} U_\text{S}
    \end{equation}
@@ -27,27 +31,28 @@
    \end{equation}
    verschwindet die Brückenspannung und man spricht von einer abgeglichenen Brücke.
    In den Brückenschaltungen sind Bauelemente enthalten, die als Abgleichelemente dienen.
-   Dies sind Potentiometer, mit denen sich die ohmschen Widerstände in den Schaltuxngen varrieren lassen, um
+   Dies sind Potentiometer, mit denen sich die ohmschen Widerstände in den Schaltungen variieren lassen, um
    die Brückenspannung auf Null zu regeln.
    Da die Speisespannung proportional zur Brückenspannung ist, sollte die Speisespannung möglichst hoch eingestellt werden,
    damit eine höhere Abgleichempfindlichkeit erzielt wird.
    Ziel ist es also, um eine unbekannte Größe zu bestimmen, die gegebenen Bauteile so einzustellen, dass
-   die Brückenspannung gleich Null wird. Dann kann man aus den Beziehungen der Größen das unbekannte Bauteil berechnen. %schöner formulieren!
+   die Brückenspannung gleich Null wird. Dann kann man aus den Beziehungen der bekannten Größen die Größen für das unbekannte Bauteil berechnen.
 
 \subsection{Bestimmung der unbekannten Größen}
 
     \subsubsection{Messung von ohmschen Widerständen}
 
-        Um unbekannte Widerstände zu bestimmen, wird die Wheatstone´sche Brückenschaltung verwendet.
+        Um unbekannte Widerstände zu bestimmen, wird die Wheatstone'sche Brückenschaltung verwendet.
         Diese besteht nur aus ohmschen Widerständen und kann mit Gleich- und Wechselstrom betrieben werden.
         Der unbekannte Widerstand kann mithilfe der Gleichung \eqref{eqn: Widerstände} berechnet werden.
         Es gilt
         \begin{equation}
-            R_x = R_2 \frac{R_3}{R_4} . \label{eqn: Rx}
+            R_x = R_2 \frac{R_3}{R_4} \; . \label{eqn: Rx}
         \end{equation}
-        Die schon bekannten Widerstände $R_2$, $R_3$ und $R_4$ können durch einen Potentiometer so eingestellt werden,
+        % TODO: EINER der Widerstände kann eingestellt werden. → Welcher?
+        Die schon bekannten Widerstände $R_2$, $R_3$ und $R_4$ können durch ein Potentiometer so eingestellt werden,
         dass die Brückenspannung $U_\text{Br}$ gleich Null wird.
-        Mit den so eingestellten Widerständen kann das unbekannte Bauteil berechnet werden.
+        Mit den so eingestellten Widerständen können die Größen für das unbekannte Bauteil berechnet werden.
 
     \subsubsection{Komplexe Widerstände}
 
@@ -56,11 +61,13 @@
         Komplexe Widerstände setzen sich aus einem Wirkwiderstand $X$ und einem Blindwiderstand $Y$ zusammen.
         Die allgemeine Darstellung lautet
         \begin{equation}
-            \symbf{R} = X + jY
+            \symbf{R} = X + jY \; .
         \end{equation}
-        Für ohmsche Widerstände R, Kapazitäten C und Induktivitäten L werden durch
+        % TODO: …
+        Für ohmsche Widerstände $R$, Kapazitäten $C$ und Induktivitäten $L$ werden durch
         \begin{align}
-            \symbf{R}_R = R, & \symbf{R}_C = - \frac{j}{\omega C}, & \symbf{R}_L = j \omega L %wird nicht wie gewünscht ausgegeben
+            %wird nicht wie gewünscht ausgegeben
+            \symbf{R}_R = R, & \symbf{R}_C = - \frac{j}{\omega C}, & \symbf{R}_L = j \omega L
         \end{align}
         dargestellt.
 
@@ -71,7 +78,7 @@
         Dieser ohmsche Widerstand wird mit Gleichung \eqref{eqn: Rx} berechnet.
         Für die Kapazität des Kondensators gilt
         \begin{equation}
-            C_x = C_2 \frac{R_4}{R_3} .
+            C_x = C_2 \frac{R_4}{R_3} \; .
         \end{equation}
         Die Kapazität $C_2$ ist hierbei schon bekannt und ist mit einem Potentiometer, welches den bekannten Widerstand $R_2$ regelt,
         in Reihe geschaltet.
@@ -86,11 +93,12 @@
         \begin{equation}
             L_x = L_2 \frac{R_3}{R_4}
         \end{equation}
+        berechnet.
         Die Induktivität $L_2$ ist hier ebenfalls schon bekannt, und mit dem Potentiometer für $R_2$ in Reihe geschaltet.
 
     \subsubsection{Maxwell-Brücke}
 
-        Eine weitere Möglichkeit, um Induktivitäten zu bestimmen, ist die Maxwell´sche Brückenschaltung.
+        Eine weitere Möglichkeit, um Induktivitäten zu bestimmen, ist die Maxwell'sche Brückenschaltung.
         Die Elemente zum Abgleichen der Brücke sind hier $R_2$, $R_3$, $R_4$ und $C_4$, wobei $R_3$ und $R_4$ durch ein
         Potentiometer geregelt werden. Die Kapazität $C_4$ ersetzt die Induktivität $L_2$, da dies
         einfacher zu realisieren ist.
@@ -103,7 +111,7 @@
 
 \subsection{Frequenzabhängige Brückenschaltungen}
 
-    Alle komplexen Widerstände sind von einer Frequenz $\omega$ der Speisespannung $U_\text{S}$ abhängig.
+    Alle komplexen Widerstände sind von der Frequenz $\omega$ der Speisespannung $U_\text{S}$ abhängig.
     Ist diese Frequenz zu hoch eingestellt, wird der Anteil der Streukapazitäten, die in den Bauteilen
     entstehen, zu groß, und ein Abgleichen ist nicht mehr möglich.
     Wenn die Frequenz zu niedrig ist, kommt es zu Problemen bei der technischen Handhabung,
@@ -118,7 +126,7 @@
         Die Brückenspannung $U_\text{Br}$ soll in Abhängigkeit der Frequenz $\omega$ bestimmt werden.
         Es gilt:
         \begin{equation}
-            \lvert \frac{U_\text{Br}}{U_\text{S}} \rvert = \frac{1}{9} \frac{(\Omega^2 - 1)^2}{(1 - \Omega^2)^2 + 9\Omega^2},
+            \left\lvert \frac{U_\text{Br}}{U_\text{S}} \right\rvert = \frac{1}{9} \frac{(\Omega^2 - 1)^2}{(1 - \Omega^2)^2 + 9\Omega^2},
         \end{equation}
         %Betragsstriche an Größe des Quotienten anpassen.
         wobei
@@ -127,15 +135,16 @@
         \end{equation}
         ist, mit
         \begin{equation}
-            \omega_0 = \frac{1}{RC}. \label{eqn: omeganull}
+            \omega_0 = \frac{1}{RC} \; . \label{eqn: omeganull}
         \end{equation}
+
         Die Wien-Robinson-Brücke filtert aus dem kontinuierlichen Frequenzspektrum die Frequenz $\omega_0$ heraus
         und schwächt die Frequenzen in der Nähe von $\omega_0$.
-        Mit dieser Eigenschaft soll der Klirrfaktor gemessen werden, welcher dazu dient die Qualität des
+        Mit dieser Eigenschaft soll der Klirrfaktor gemessen werden, welcher dazu dient, die Qualität des
         Sinusgenerators zu prüfen.
         Wenn der Klirrfaktor hinreichend klein ist, ist auch der Anteil der Oberwellen, welche bei einem
         realen Sinusgenerator entstehen, gering.
-        Der Generator wird auf die Frequenz $\omega_0$ geregelt und übrig bleiben nur die von $\omega_0$
+        Der Generator wird auf die Frequenz $\omega_0$ geregelt, und übrig bleiben nur die von $\omega_0$
         verschiedenen Frequenzen.
 
     \subsubsection{Die TT-Brücke}
