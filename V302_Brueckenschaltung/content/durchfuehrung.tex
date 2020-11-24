@@ -10,19 +10,66 @@
 
 \subsection{Wheatstone'sche Brückenschaltung}
 
-  % TODO: Direkt auf die Abbildung verlinken
-    Zunächst wird die Wheatstone'sche Brückenschaltung anhand der Abbildung in Kapitel \ref{sec:Theorie} gebaut.
-    Es wird eine konstante Speisespannung von $U_\text{S} = $ eingestellt, sowie eine Frequenz von $f = \SI{1000}{\hertz}$.
+    Zunächst wird die Wheatstone'sche Brückenschaltung anhand der Abbildung in Kapitel \ref{sec:Wheatstone} gebaut.
+    Es wird eine konstante Frequenz von $f = \SI{1000}{\hertz}$ eingestellt.
+
     Die Brücke wird mit Wechselstrom betrieben.
-    Anschließend wird mithilfe des Potentiometers, welcher einen Gesamtwiderstand von $\SI{1}{\kilo\ohm}$ besitzt,
+    Anschließend wird mithilfe des Potentiometers, welches einen Gesamtwiderstand von $\SI{1}{\kilo\ohm}$ besitzt,
     die Brückenschaltung abgeglichen, indem
     die Widerstände $R_3$ und $R_4$ variiert werden und $U_\text{Br}$ auf Null geregelt wird.
     Nachdem die Messwerte für $R_2$, $R_3$ und $R_4$ abgelesen wurden, wird mithilfe von Gleichung \eqref{eqn: Rx}
-    der unbekannte Widerstand $R_x$ berechnet.
-    Die Messung wird unter der Variation von $R_2$ wiederholt.
-
+    der unbekannte Widerstand $R_x$ mit dem Wert 13 berechnet.
+    Der Widerstand $R_4$ wird durch $\SI{1000}{\kilo\ohm}-R_3$ berechnet, da zwischen den Eingängen des
+    Potentiometers ein Unterschied von $\SI{1000}{\kilo\ohm}$ besteht.
+    Die Messung wird wiederholt unter der Variation von $R_2$.
+    Wir haben die Messung mit einem anderen Potentiometer noch ein weiteres Mal durchgeführt.
 
 \subsection{Kapazitätsmessbrücke}
+
+    Die Schaltung der Kapazitätsmessbrücke wird nach der Abbildung in Kapitel \ref{sec:Kapazität} aufgebaut.
+    Die Brücke wird mit Wechselspannung betrieben.
+    Die ohmschen Widerstände $R_2$ und $R_3/R_4$ werden bei dieser Schaltung durch Potentiometer eingestellt.
+    Um beide Widerstände möglichst gleichmäßig einzustellen, sollten die Potentiometer abwechselnd geregelt werden
+    für das Abgleichen der Brücke.
+    Wenn die Brückenspannung gleich Null ist, können die Werte der Widerstände abgelesen werden und Wert 9,
+    welcher den unbekannten Verlustwiderstand und die unbekannte Kapazität beschreibt, kann mit den Gleichungen 
+    \eqref{eqn: Rx} und \eqref{eqn: Cx} identifiziert werden.
+    Anschließend wiederholen wir die Messung unter Variation von $C_2$ 
+
 \subsection{Induktivitätsmessbrücke}
+
+    Die Schaltung der Induktivitätsmessbrücke wird nach dem Schaltplan in Kapitel \ref{sec:Induktivität} 
+    geschaltet.
+    In dieser Schaltung werden die Widerstände $R_2$, $R_3/R_4$ durch die Potentiometer bestimmt, die wieder 
+    alternierend zum Abgleichen eingestellt werden.
+    Der zu bestimmende Wert ist hier 17. 
+    Mit den Gleichungen \eqnref{eqn: Rx} und \eqref{eqn: Lx} kann der Verlustwiderstand und die Induktivität
+    berechnet werden.
+    Wir wiederholen die Messung unter Variation von $L_2$.
+
 \subsection{Maxwell-Brücke}
+
+    Der Wert 17 soll hier noch einmal mithilfe einer Maxwell-Brücke bestimmt werden.
+    Wir bauen die Schaltung anhand von Abbildung \ref{sec:Maxwell} auf.
+    Der Widerstand $R_2$ ist konstant, während $R_3$ und $R_4$ dieses Mal von zwei getrennten
+    Potentiometern bestimmt werden.
+    Im Gegensatz zur Kapazitätsmessbrücke variieren wir die Kapazität $C_2$ und haben keine weitere 
+    Induktivität in der Schaltung.
+    Die unbekannte Induktivität wird mit Gleichung \eqref{sec:LxMax} bestimmt und der unbekannte
+    Verlustwiderstand mit Gleichung \eqref{eqn: Rx}.
+
 \subsection{Wien-Robinson-Brücke}
+
+    Zunächst wird die Schaltung nach der Abbildung in Kapitel \ref{sec:WR} aufgebaut.
+    Wir benutzen drei konstante Widerstände, wobei $2R'$ der doppelte Wert von $R'$ sein sollte.
+    Zusätzlich werden zwei gleiche Kapazitäten benötigt, wobei in unserem Fall nur zwei ähnliche Kapazitäten zur
+    Verfügung standen.
+    Im ersten Teil der Messung wird eine konstante Speisespannung von $U_\text{S} = \SI{20}{\kilo\ohm}$ eingestellt.
+    Ziel ist es, in einem Frequenzspektrum von $\SI{20}{\hertz}$ bis $\SI{30000}{\hertz}$ ein 
+    Minimum der Brückenspannung $U_\text{Br}$ zu finden.
+    Dazu beginnen wir bei $\SI{20}{\hertz}$ und verdoppeln den Wert, um einen groben Überblick
+    über den Verlauf von $U_\text{Br}$ zu bekommen. 
+    Im Bereich des Minimums werden in kleineren Abständen der Frequenzen nochmal mehr Messwerte aufgenommen.
+    Anschließend wird der grobe Verlauf weiter bis zur oberen Grenze des Spektrums von $\SI{30000}{\hertz}$ gemessen.
+    Im zweiten Teil des Messung wird die Speisespannung $U_\text{S}$ auf dem Oszilloskop dargestellt 
+    und der Verlauf dieser Spannung in Abhängigkeit der Frequenz bestimmt.

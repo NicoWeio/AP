@@ -40,7 +40,7 @@
 
 \subsection{Bestimmung der unbekannten Größen}
 
-    \subsubsection{Messung von ohmschen Widerständen}
+    \subsubsection{Messung von ohmschen Widerständen} \label{sec:Wheatstone}
 
         Um unbekannte Widerstände zu bestimmen, wird die Wheatstone'sche Brückenschaltung verwendet.
         Diese besteht nur aus ohmschen Widerständen und kann mit Gleich- und Wechselstrom betrieben werden.
@@ -71,19 +71,19 @@
         \end{align}
         dargestellt.
 
-    \subsubsection{Messung von Kapazitäten}
+    \subsubsection{Messung von Kapazitäten} \label{sec:Kapazität}
 
         Da bei einem realen Kondensator immer ein Teil der elektrischen Energie in Wärmeenergie umgewandelt
         wird und so verloren geht, wird mit dem Kondensator ein ohmscher Widerstand in Reihe geschaltet.
         Dieser ohmsche Widerstand wird mit Gleichung \eqref{eqn: Rx} berechnet.
         Für die Kapazität des Kondensators gilt
         \begin{equation}
-            C_x = C_2 \frac{R_4}{R_3} \; .
+            C_x = C_2 \frac{R_4}{R_3} \; . \label{eqn: Cx}
         \end{equation}
         Die Kapazität $C_2$ ist hierbei schon bekannt und ist mit einem Potentiometer, welches den bekannten Widerstand $R_2$ regelt,
         in Reihe geschaltet.
 
-    \subsubsection{Messung von Induktivitäten}
+    \subsubsection{Messung von Induktivitäten} \label{sec:Induktivität}
 
         Auch bei einer realen Induktivität wird ein Teil der enthaltenen magnetischen Feldenergie in Wärmeenergie umgewandelt
         und geht verloren. Aus diesem Grund wird auch hier ein ohmscher Widerstand mit der Induktivität, zum Beispiel einer Spule,
@@ -91,12 +91,12 @@
         Der ohmsche Widerstand kann wieder mit Gleichung \eqref{eqn: Rx} bestimmt werden.
         Die Induktivität wird durch
         \begin{equation}
-            L_x = L_2 \frac{R_3}{R_4}
+            L_x = L_2 \frac{R_3}{R_4} \label{eqn: Lx}
         \end{equation}
         berechnet.
         Die Induktivität $L_2$ ist hier ebenfalls schon bekannt, und mit dem Potentiometer für $R_2$ in Reihe geschaltet.
 
-    \subsubsection{Maxwell-Brücke}
+    \subsubsection{Maxwell-Brücke} \label{sec:Maxwell}
 
         Eine weitere Möglichkeit, um Induktivitäten zu bestimmen, ist die Maxwell'sche Brückenschaltung.
         Die Elemente zum Abgleichen der Brücke sind hier $R_2$, $R_3$, $R_4$ und $C_4$, wobei $R_3$ und $R_4$ durch ein
@@ -105,7 +105,7 @@
         Der Widerstand, der mit der Induktivität in Reihe geschaltet ist, lässt sich durch Gleichung \eqref{eqn: Rx} bestimmen,
         die Induktivität wird mit
         \begin{equation}
-            L_x = R_2 R_3 C_4
+            L_x = R_2 R_3 C_4 \label{sec:LxMax}
         \end{equation}
         berechnet.
 
@@ -120,7 +120,7 @@
     Die Frequenzen sind optimal, wenn sich die Blind- und Wirkwiderstände einer Schaltung
     in einer Größenordnung befinden.
 
-    \subsubsection{Die Wien-Robinson-Brücke}
+    \subsubsection{Die Wien-Robinson-Brücke} \label{sec:WR}
 
         In der Schaltung der Wien-Robinson-Brücke sind keine Abgleichelemente enthalten.
         Die Brückenspannung $U_\text{Br}$ soll in Abhängigkeit der Frequenz $\omega$ bestimmt werden.
