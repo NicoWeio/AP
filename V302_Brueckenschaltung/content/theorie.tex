@@ -27,7 +27,7 @@
    Hierbei ist $U_\text{S}$ die Speisespannung des Stromkreises.
    Für das Verhältnis
    \begin{equation}
-       R_1R_4 = R_2R_3 \label{eqn: Widerstände}
+       R_1R_4 = R_2R_3 \label{eqn:Widerstände}
    \end{equation}
    verschwindet die Brückenspannung und man spricht von einer abgeglichenen Brücke.
    In den Brückenschaltungen sind Bauelemente enthalten, die als Abgleichelemente dienen.
@@ -44,13 +44,13 @@
 
         Um unbekannte Widerstände zu bestimmen, wird die Wheatstone'sche Brückenschaltung verwendet.
         Diese besteht nur aus ohmschen Widerständen und kann mit Gleich- und Wechselstrom betrieben werden.
-        Der unbekannte Widerstand kann mithilfe der Gleichung \eqref{eqn: Widerstände} berechnet werden.
+        Der unbekannte Widerstand kann mithilfe der Gleichung \eqref{eqn:Widerstände} berechnet werden.
         Es gilt
         \begin{equation}
-            R_x = R_2 \frac{R_3}{R_4} \; . \label{eqn: Rx}
+            R_x = R_2 \frac{R_3}{R_4} \; . \label{eqn:Rx}
         \end{equation}
-        Die schon bekannten Widerstände sind $R_2$, $R_3$ und $R_4$.
-        $R_3/R_4$ kann durch ein Potentiometer so eingestellt werden,
+        Die schon bekannten Widerstände sind $R_2$, $R_3$ und $R_4$. \,
+        $\frac{R_3}{R_4}$ kann durch ein Potentiometer so eingestellt werden,
         dass die Brückenspannung $U_\text{Br}$ gleich Null wird.
         Mit den so eingestellten Widerständen können die Größen für das unbekannte Bauteil berechnet werden.
 
@@ -66,8 +66,7 @@
         % TODO: …
         Für ohmsche Widerstände $R$, Kapazitäten $C$ und Induktivitäten $L$ werden durch
         \begin{align}
-            %wird nicht wie gewünscht ausgegeben
-            \symbf{R}_R = R, & \symbf{R}_C = - \frac{j}{\omega C}, & \symbf{R}_L = j \omega L
+            \symbf{R}_R = R \,, && \symbf{R}_C = - \frac{j}{\omega C} \,, && \symbf{R}_L = j \omega L
         \end{align}
         dargestellt.
 
@@ -75,10 +74,10 @@
 
         Da bei einem realen Kondensator immer ein Teil der elektrischen Energie in Wärmeenergie umgewandelt
         wird und so verloren geht, wird mit dem Kondensator ein ohmscher Widerstand in Reihe geschaltet.
-        Dieser ohmsche Widerstand wird mit Gleichung \eqref{eqn: Rx} berechnet.
+        Dieser ohmsche Widerstand wird mit Gleichung \eqref{eqn:Rx} berechnet.
         Für die Kapazität des Kondensators gilt
         \begin{equation}
-            C_x = C_2 \frac{R_4}{R_3} \; . \label{eqn: Cx}
+            C_x = C_2 \frac{R_4}{R_3} \; . \label{eqn:Cx}
         \end{equation}
         Die Kapazität $C_2$ ist hierbei schon bekannt und ist mit einem Potentiometer, welches den bekannten Widerstand $R_2$ regelt,
         in Reihe geschaltet.
@@ -88,10 +87,10 @@
         Auch bei einer realen Induktivität wird ein Teil der enthaltenen magnetischen Feldenergie in Wärmeenergie umgewandelt
         und geht verloren. Aus diesem Grund wird auch hier ein ohmscher Widerstand mit der Induktivität, zum Beispiel einer Spule,
         in Reihe geschaltet.
-        Der ohmsche Widerstand kann wieder mit Gleichung \eqref{eqn: Rx} bestimmt werden.
+        Der ohmsche Widerstand kann wieder mit Gleichung \eqref{eqn:Rx} bestimmt werden.
         Die Induktivität wird durch
         \begin{equation}
-            L_x = L_2 \frac{R_3}{R_4} \label{eqn: Lx}
+            L_x = L_2 \frac{R_3}{R_4} \label{eqn:Lx}
         \end{equation}
         berechnet.
         Die Induktivität $L_2$ ist hier ebenfalls schon bekannt, und mit dem Potentiometer für $R_2$ in Reihe geschaltet.
@@ -102,7 +101,7 @@
         Die Elemente zum Abgleichen der Brücke sind hier $R_2$, $R_3$, $R_4$ und $C_4$, wobei $R_3$ und $R_4$ durch ein
         Potentiometer geregelt werden. Die Kapazität $C_4$ ersetzt die Induktivität $L_2$, da dies
         einfacher zu realisieren ist.
-        Der Widerstand, der mit der Induktivität in Reihe geschaltet ist, lässt sich durch Gleichung \eqref{eqn: Rx} bestimmen,
+        Der Widerstand, der mit der Induktivität in Reihe geschaltet ist, lässt sich durch Gleichung \eqref{eqn:Rx} bestimmen,
         die Induktivität wird mit
         \begin{equation}
             L_x = R_2 R_3 C_4 \label{sec:LxMax}
@@ -130,11 +129,11 @@
         \end{equation}
         wobei
         \begin{equation}
-            \Omega = \frac{\omega}{\omega_0} \label{eqn: GroßOmega}
+            \Omega = \frac{\omega}{\omega_0} \label{eqn:GroßOmega}
         \end{equation}
         ist, mit
         \begin{equation}
-            \omega_0 = \frac{1}{RC} \; . \label{eqn: omeganull}
+            \omega_0 = \frac{1}{RC} \; . \label{eqn:omeganull}
         \end{equation}
 
         Die Wien-Robinson-Brücke filtert aus dem kontinuierlichen Frequenzspektrum die Frequenz $\omega_0$ heraus
@@ -152,7 +151,7 @@
         Der Unterschied liegt darin, dass die Spannungen $U_\text{S}$ und $U_\text{Br}$ gegen Masse
         angeschlossen werden können.
         Für das Spannungsverhältnis ergibt sich mit den Bezeichnungen
-        aus den Gleichungen \eqref{eqn: GroßOmega} und \eqref{eqn: omeganull}:
+        aus den Gleichungen \eqref{eqn:GroßOmega} und \eqref{eqn:omeganull}:
         \begin{equation}
             \left\lvert \frac{U_\text{Br}}{U_\text{S}} \right\rvert = \frac{(\Omega^2 - 1)^2}{(1 - \Omega^2)^2 + 16\Omega^2}.
         \end{equation}
