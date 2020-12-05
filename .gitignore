@@ -3,3 +3,4 @@ build/
 *.bcf
 *.log
 *.toc
+*.run.xml
