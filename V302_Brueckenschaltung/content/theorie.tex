@@ -17,7 +17,9 @@
        \end{equation}
    \end{enumerate}
 
-   % TODO: Grafik zur allgemeinen Brückenschaltung
+   % IMPROVE: Grafik zur allgemeinen Brückenschaltung
+   % \includegraphics[scale=0.8]{content/img/allg-bruecke.svgz}
+   % \input{content/tikz/bruecke-maxwell.tex}
 
    Daraus folgt für die allgemeine Brückenspannung:
 
@@ -42,6 +44,8 @@
 
     \subsubsection{Messung von ohmschen Widerständen} \label{sec:Wheatstone}
 
+        \input{content/tikz/wheatstonebruecke.tex}
+
         Um unbekannte Widerstände zu bestimmen, wird die Wheatstone'sche Brückenschaltung verwendet.
         Diese besteht nur aus ohmschen Widerständen und kann mit Gleich- und Wechselstrom betrieben werden.
         Der unbekannte Widerstand kann mithilfe der Gleichung \eqref{eqn:Widerstände} berechnet werden.
@@ -63,7 +67,6 @@
         \begin{equation}
             \symbf{R} = X + jY \; .
         \end{equation}
-        % TODO: …
         Für ohmsche Widerstände $R$, Kapazitäten $C$ und Induktivitäten $L$ werden durch
         \begin{align}
             \symbf{R}_R = R \,, && \symbf{R}_C = - \frac{j}{\omega C} \,, && \symbf{R}_L = j \omega L
@@ -71,6 +74,8 @@
         dargestellt.
 
     \subsubsection{Messung von Kapazitäten} \label{sec:Kapazität}
+
+        % \input{content/tikz/kapazitaetsmessbruecke.tex}
 
         Da bei einem realen Kondensator immer ein Teil der elektrischen Energie in Wärmeenergie umgewandelt
         wird und so verloren geht, wird mit dem Kondensator ein ohmscher Widerstand in Reihe geschaltet.
@@ -84,6 +89,9 @@
 
     \subsubsection{Messung von Induktivitäten} \label{sec:Induktivität}
 
+        % IMPROVE: Datei identisch zur Maxwell-Brücke…
+        % \input{content/tikz/induktivitaetsmessbruecke.tex}
+
         Auch bei einer realen Induktivität wird ein Teil der enthaltenen magnetischen Feldenergie in Wärmeenergie umgewandelt
         und geht verloren. Aus diesem Grund wird auch hier ein ohmscher Widerstand mit der Induktivität, zum Beispiel einer Spule,
         in Reihe geschaltet.
@@ -96,6 +104,8 @@
         Die Induktivität $L_2$ ist hier ebenfalls schon bekannt, und mit dem Potentiometer für $R_2$ in Reihe geschaltet.
 
     \subsubsection{Maxwell-Brücke} \label{sec:Maxwell}
+
+        \input{content/tikz/maxwellbruecke.tex}
 
         Eine weitere Möglichkeit, um Induktivitäten zu bestimmen, ist die Maxwell'sche Brückenschaltung.
         Die Elemente zum Abgleichen der Brücke sind hier $R_2$, $R_3$, $R_4$ und $C_4$, wobei $R_3$ und $R_4$ durch ein
@@ -125,7 +135,10 @@
         Die Brückenspannung $U_\text{Br}$ soll in Abhängigkeit der Frequenz $\omega$ bestimmt werden.
         Es gilt:
         \begin{equation}
-            \left\lvert \frac{U_\text{Br}}{U_\text{S}} \right\rvert = \frac{1}{9} \frac{(\Omega^2 - 1)^2}{(1 - \Omega^2)^2 + 9\Omega^2},
+        \label{eqn:WienRobinsonBrNachS}
+            \left\lvert \frac{U_\text{Br}}{U_\text{S}} \right\rvert^2
+            = \frac{1}{9} \frac{(\Omega^2 - 1)^2}{(1 - \Omega^2)^2 + 9\Omega^2}
+            \; ,
         \end{equation}
         wobei
         \begin{equation}

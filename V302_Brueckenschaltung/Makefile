@@ -1,5 +1,10 @@
 all: build/main.pdf
 
+build/plot1.pdf: main.py | build
+	TEXINPUTS=$$(pwd): python3 main.py
+
+build/main.pdf: build/plot1.pdf
+
 build/main.pdf: main.tex lit.bib | build
 	  TEXINPUTS=build: \
 	  BIBINPUTS=build: \
