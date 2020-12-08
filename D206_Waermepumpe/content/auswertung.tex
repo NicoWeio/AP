@@ -4,12 +4,13 @@ Die zur Verfügung gestellten Messdaten sind im Folgenden tabellarisch aufgelist
 
 \newpage
 \subsection{Diagramm der gemessenen Temperaturverläufe} % a)
-Im Diagramm sind die Approximationen aus \ref{sec:approx} bereits enthalten.
+Im Diagramm sind die Approximationen aus Gleichung in Kapitel \ref{sec:approx} bereits enthalten.
+Der Graph zeigt die Verläufe der Temperaturen $T_1$ und $T_2$ bei zunehmender Zeit an.
 
 \begin{figure}
   \centering
   \includegraphics[scale=0.8]{build/wärmepumpe_plot.pdf}
-  \caption{Temperaturverläufe}
+  \caption{Temperaturverläufe in Abhängigkeit der Zeit}
   \label{fig:plot}
 \end{figure}
 
@@ -43,17 +44,17 @@ Als Fit-Parameter wurden berechnet:
 \end{table}
 
 \subsection{Berechnung von Differentialquotienten} % c)
-Mithilfe der Approximation aus \ref{sec:approx} werden nun für vier verschiedene Temperaturen konkrete  Differentialquotienten $\frac{\mathrm{d}T_1}{\mathrm{d}t}$ und $\frac{\mathrm{d}T_2}{\mathrm{d}t}$ berechnet.
+Mithilfe der Approximation aus der Gleichung in Kapitel \ref{sec:approx} werden nun für vier verschiedene Temperaturen konkrete  Differentialquotienten $\frac{\mathrm{d}T_1}{\mathrm{d}t}$ und $\frac{\mathrm{d}T_2}{\mathrm{d}t}$ berechnet.
 Die Ableitung des Polynoms lautet
 \[
 \frac{\mathrm{d}T}{\mathrm{d}t} = 2At + B \; .
 \]
 \\
-Fehllerrechnung:
+Fehlerrechnung:
 \begin{align*}
   \Delta \frac{\mathrm{d}T}{\mathrm{d}t}
   &= \sqrt{\left(\frac{\partial \frac{\mathrm{d}T}{\mathrm{d}t}}{\partial A} \cdot \Delta A\right)^2 + \left(\frac{\partial \frac{\mathrm{d}T}{\mathrm{d}t}}{\partial B} \cdot \Delta B\right)^2} \\
-  &= \sqrt{(2t \cdot \Delta A)^2 + (\Delta B)^2}
+  &= \sqrt{(2t \cdot \Delta A)^2 + (\Delta B)^2} .
 \end{align*}
 
 \begin{table}
@@ -91,7 +92,7 @@ $\frac{\mathrm{d}T_2}{\mathrm{d}t} \,/\, \si{\celsius\per\minute}$ \\
 
 % „Wärmekapazität der Kupferschlangen“ meint *Wärmekapazität jeder Kupferschlange*, oder?
 Jeder Wassereimer war mit $\SI{4}{\liter}$ Wasser befüllt, bei einem Fassungsvermögen von $\SI{4}{\kilo\gram}$.
-Die Wärmekapazität der \enquote{Kupferschlangen} war gegeben als $m_k c_k = 750 \si{\joule\per\kelvin}$. Laut Versuchsanleitung soll $m_k c_k$ auch die Wärmekapazität der Eimer enthalten, dazu liegen uns jedoch keine weiteren Daten vor.
+Die Wärmekapazität der \enquote{Kupferschlangen} war gegeben als $m_k c_k = 750 \si{\joule\per\kelvin}$. Laut Versuchsanleitung soll $m_k c_k$ auch die Wärmekapazität der Eimer enthalten, dazu liegen jedoch keine weiteren Daten vor.
 Die Wärmekapazität des Wassers in Reservoir 1 lässt sich mit
 \begin{align*}
   \rho_\text{Wasser} &= \SI{0.998207}{\kilo\gram\per\liter}

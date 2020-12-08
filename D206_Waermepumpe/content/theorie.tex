@@ -23,9 +23,9 @@
     \end{equation}
 
     Das Verhältnis zwischen der abgegebenen Wärme $Q_1$ und der benötigten mechanischen Arbeit $A$ wird durch die Güteziffer $\nu$
-    beschrieben.
+    beschrieben
     \begin{equation}
-        \nu = \frac{Q_1}{A}
+        \nu = \frac{Q_1}{A}.
     \end{equation}
 
 \subsubsection{Bestimmung der realen Güteziffer}
@@ -33,28 +33,28 @@
 
     Die mechanische Arbeit kann auch durch ein Zeitintervall und die Leistungsaufnahme $N$ des Kompressors ausgedrückt werden:
     \begin{equation}
-        \nu_\text{real} = \frac{\Delta Q_1}{\Delta t N}
+        \nu_\text{real} = \frac{\symup{\Delta} Q_1}{\symup{\Delta} t N}
     \end{equation}
-    $\frac{\Delta Q_1}{\Delta t}$ beschreibt hier die pro Zeiteinheit gewonnene Wärmemenge. Es gilt
+    Der Quotient $\frac{\symup{\Delta} Q_1}{\symup{\Delta} t}$ beschreibt hier die pro Zeiteinheit gewonnene Wärmemenge. Es gilt
     \begin{equation}
-        \frac{\Delta Q_1}{\Delta t} = (m_1 c_\text{w} + m_\text{k} c_\text{k}) \frac{\Delta T_1}{\Delta t}
+        \frac{\symup{\Delta} Q_1}{\symup{\Delta} t} = (m_1 c_\text{w} + m_\text{k} c_\text{k}) \frac{\symup{\Delta} T_1}{\symup{\Delta} t}
     \end{equation}
     und somit auch
     \begin{equation}
       \label{eqn:reale_gueteziffer}
-      \nu_\text{real} = \frac{1}{N} (m_1 c_\text{w} + m_\text{k} c_\text{k}) \frac{\Delta T_1}{\Delta t} \; .
+      \nu_\text{real} = \frac{1}{N} (m_1 c_\text{w} + m_\text{k} c_\text{k}) \frac{\symup{\Delta} T_1}{\symup{\Delta} t} \; .
     \end{equation}
 
 \subsubsection{Bestimmung des Massendurchsatzes}
 
     Die aus dem Reservoir 2 entnommene Wärmemenge wird durch
     \begin{equation}
-        \frac{\Delta Q_2}{\Delta t} =(m_2 c_\text{w} + m_\text{k} c_\text{k}) \frac{\Delta T_2}{\Delta t}
+        \frac{\symup{\Delta} Q_2}{\symup{\Delta} t} =(m_2 c_\text{w} + m_\text{k} c_\text{k}) \frac{\symup{\Delta} T_2}{\symup{\Delta} t}
     \end{equation}
     beschrieben.
     Wenn die Verdampfungswärme L bekannt ist, lässt sich der Massendurchsatz aus
     \begin{equation}
-        \frac{Q_2}{\Delta t} = L \frac{\Delta m}{\Delta t}
+        \frac{Q_2}{\symup{\Delta} t} = L \frac{\symup{\Delta} m}{\symup{\Delta} t}
     \end{equation}
     bestimmen.
 
@@ -82,6 +82,7 @@
                       = \frac{1}{\kappa-1} \left(p_\text{b} \sqrt[\kappa]{\frac{p_\text{a}}{p_\text{b}}} - p_\text{a}\right) \frac{1}{\rho} \frac{\Delta m}{\Delta t} .
     \end{equation}
     Hierbei bezeichnet $\rho$ die Dichte des Gases im gasförmigen Zustand.
+    Die Variable $\kappa$ bezeichnet das Verhältnis der Molwärmen und ist dabei immer größer Null.
 
 
 \subsection{Aufbau einer Wärmepumpe}
@@ -100,7 +101,8 @@
 
     Das Gas wird zu Beginn des Kreislaufs im Kompressor $K$ stark erhitzt und durchläuft anschließend das erste Reservoir.
     Hier wird dem Gas Wärme entzogen und es wird flüssig. Somit ist das erste Reservoir das Wärmenehmende.
-    Danach läuft das Gas das Drosselventil $D$, wobei ein Reiniger $R$ das flüssige Medium von Blasenresten trennt, um den Kompressor nicht zu beschädigen.
+    Danach durchläuft das Gas das Drosselventil $D$, wobei ein Reiniger $R$ das flüssige Medium von Blasenresten trennt, um den Kompressor nicht zu beschädigen.
     Die Durchlässigkeit wird hier durch den Temperaturunterschied zwischen $T_1$ und $T_2$ gesteuert.
     Im zweiten Reservoir nimmt das Gas wieder Wärme auf und wird gasförmig. Somit ist das zweite Reservoir das Wärmeabgebende.
     Das Gas gelangt zurück in den Kompressor und wird wieder erhitzt.
+
