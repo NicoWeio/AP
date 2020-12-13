@@ -1,17 +1,37 @@
 \section{Diskussion}
 
 Im Folgenden sollen die Ergebnisse der Messung diskutiert werden.
-Ein möglicher Grund für Unregelmäßigkeiten kann das ungenaue Ablesen der Messuhren sein.
-Der genaue Messwert ließ sich auf den verwendeten Uhren teilweise nur durch Umdenken in der Skalierung 
-ablesen, sodass die abgelesenen Werte noch einmal umgerechnet werden mussten, um in der richtigen 
-Größenordnung zu liegen. Die Messung müsste mit einer anderen Messuhr wiederholt werden, um diese 
-Messunsicherheiten zu minimieren.
-Teilweise war auf der Unterschied des Auslenkung zwischen zwei Messpunkten sehr gering, beziehungsweise 
-kaum wirklich zu erkennen, was zu einer konstanten Verteilung der Messwerte führt, die eventuell von
-Literaturwerten abweichen können.
-Bei der Messung des beidseitig eingespannten Stabes können Abweichungen entstanden sein, da 
-die Kraft nicht bei jeder Messung an derselben Stelle angegriffen hat, aufgrund des Wechsels von Nullmessung
-und Messung mit Gewicht. Die Schwierigkeit bestand auch darin, das Gewicht genau in die Mitte des Stabes 
-zu hängen, da die Enden aufgrund der Messapparatur nicht zu sehen waren.
-Auch bei der Messung des einseitig eingespannten Stabes können an dieser Stelle Abweichungen entstanden sein.
 
+\subsection{Vergleich mit Literaturwerten}
+
+Der bei der Messung eines \hyperref[sec:auswertung_einseitig_rechteckig]{einseitig eingespannten rechteckigen Stabes} berechnete Elastizitätsmodul ist mit $\SI{46.5 \pm 1.7}{\giga\pascal}$ eher klein und ließe sich nur durch Metalle wie Magnesium oder Zinn (\cite{e_moduln_tabelle}) erklären. Gleichzeitig zeugen die geringe Messunsicherheit und die Regressionsgerade davon, dass die Werte in sich konsistent sind. Es könnte sich jedoch um einen systematischen Fehler handeln.
+
+Der Elastizitätsmodul des \hyperref[sec:auswertung_einseitig_rund]{einseitig eingespannten runden Stabes} passt dagegen mit $\SI{101.3 \pm 2.2}{\giga\pascal}$ gut zu Literaturwerten für Gusseisen, Messing oder Kupfer (\cite{e_moduln_tabelle}). Hier fällt die Messunsicherheit relativ betrachtet noch geringer aus.
+
+Nicht mit Literaturwerten oder den Ergebnissen für einseitige Einspannung vereinbar ist hingegen der für \hyperref[sec:auswertung_beidseitig_rund]{beidseitige Einspannung} bestimmte Elastizitätsmodul des runden Stabes von $\SI{26000 \pm 10000}{\giga\pascal}$, welcher mehrere Größenordnungen über dem zuvor bestimmten Wert liegt. Es ist nicht klar, ob dies den sehr kleinen Durchbiegungen geschuldet ist, die zu niedriger Präzision führen, oder ein Fehler in der Auswertung der Daten unterlaufen ist. Auffällig war jedoch, dass die Streuung der Messwerte in den Abbildungen \ref{fig:regression3} und \ref{fig:regression4} so hoch war, dass kein guter Fit bestimmt werden konnte. Würden beispielsweise die Werte in der linken Hälfte der Plots verworfen, ergäbe sich jeweils eine steilere Regressionsgerade und somit ein kleinerer und letztlich realistischerer Elastizitätsmodul.
+
+\subsection{Mögliche Gründe für Abweichungen}
+
+Ein wesentlicher Grund für Unregelmäßigkeiten sind vermutlich Ungenauigkeiten der Messuhren beziehungsweise der gesamten Konstruktion.
+Die Befestigung der Messuhren an der Schiene, auf der sie entlang geschoben wurden,
+erlaubte beispielsweise eine Neigung und daraus resultierend eine Abweichung von mehreren Millimetern.
+Es wurde versucht, diese stets zu eliminieren, jedoch lässt sich schwer abschätzen, ob dies geglückt ist.
+
+Insbesondere bei der Messung des Stabes mit kreisförmigem Querschnitt war eine Biegung senkrecht zur Messrichtung erkennbar, welche dazu führte, dass die Rolle der Messuhr nicht immer den höchsten Punkt des Stabes traf. Dies könnte zu gravierenden Messfehlern geführt haben, da diese in etwa die gleiche Größenordnung wie die erzielten Durchbiegungen hatten.
+
+Das Ablesen der Messuhren wurde dadurch erschwert, dass die Skalen teils Werte unter Null anzeigten,
+und dass der kleine Millimeter-Zeiger eine Verschiebung aufwies.
+
+Vor allem bei der beidseitigen Einspannungen war zudem der Unterschied der Durchbiegung mit und ohne Gewicht zwischen zwei Messpunkten sehr gering,
+beziehungsweise kaum auf der Messuhr zu erkennen,
+obwohl das größte zur Verfügung stehende Gewicht von etwas $\SI{1}{\kilo\gram}$ gewählt wurde,
+was zu fälschlicherweise konstanten Abschnitten in der Messreihe führte.
+
+Ebenfalls bei der Messung des beidseitig eingespannten Stabes können dadurch Abweichungen entstanden sein,
+dass die Kraft nicht bei jeder Messung an derselben Stelle angegriffen hat,
+aufgrund des häufigen Wechsels zwischen Nullmessung und Messung mit Gewicht.
+Die Schwierigkeit bestand auch darin, das Gewicht genau in die Mitte des Stabes zu hängen,
+da dessen Auflagepunkte beziehungsweise Enden aufgrund der Messapparatur nicht zu sehen waren.
+Auch bei der Messung des einseitig eingespannten Stabes können aus diesem Grund Abweichungen entstanden sein.
+
+Aus diesen Gründen müsste die Messung gegebenenfalls mit anderen Geräten wiederholt werden. 

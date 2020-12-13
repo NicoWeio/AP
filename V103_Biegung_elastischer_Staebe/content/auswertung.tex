@@ -1,0 +1,45 @@
+\section{Auswertung} \label{sec:auswertung}
+
+\subsection{Bestimmung der Abmessungen der Stäbe} \label{sec:abmessungen}
+
+Durch fünfmaliges Messen werden Länge und Durchmesser beziehungsweise Kantenlängen der Stäbe bestimmt.
+
+% Laenge der Staebe/cm		[Durchmesser]/mm	Seitenlängen/mm
+% Rund	Eckig
+
+\begin{table}
+\centering
+\caption{Wiederholte Messung der Abmessungen der Stäbe}
+% \label{tab:todo}
+% \sisetup{table-format=2.1}
+\begin{tabular}{c c c c c}
+\toprule
+$L_\text{rund}  \,/\, \si{\centi\meter}$ &
+$L_\text{eckig} \,/\, \si{\centi\meter}$ &
+$d_\text{rund}  \,/\, \si{\milli\meter}$ &
+$a_\text{eckig} \,/\, \si{\milli\meter}$ &
+$b_\text{eckig} \,/\, \si{\milli\meter}$ \\
+\midrule
+\num{60.05} &	\num{60.30} &	\num{10.00} &	\num{12.00} &	\num{10.00} \\
+\num{61.00} &	\num{60.30} &	\num{9.95}  &	\num{12.00} &	\num{9.95}  \\
+\num{60.00} &	\num{60.30} &	\num{10.00} &	\num{11.95} &	\num{9.90}  \\
+\num{60.00} &	\num{60.30} &	\num{10.00} &	\num{12.00} &	\num{9.95}  \\
+\num{60.00} &	\num{60.34} &	\num{10.00} &	\num{12.00} &	\num{10.00} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Die gemittelten Werte sind dann
+\begin{align*}
+L_\text{rund}  &= \SI{60.2 \pm 0.4}{\centi\meter}     \\
+L_\text{eckig} &= \SI{60.308 \pm 0.016}{\centi\meter} \\
+r_\text{rund}  &= \SI{9.990 \pm 0.020}{\milli\meter}  \\
+a_\text{eckig} &= \SI{11.990 \pm 0.020}{\milli\meter} \\
+b_\text{eckig} &= \SI{9.96 \pm 0.04}{\milli\meter}    \; .
+\end{align*}
+
+% –––––
+
+\input{content/auswertung_einseitig_eckig.tex}
+\input{content/auswertung_einseitig_rund.tex}
+\input{content/auswertung_beidseitig_rund.tex}

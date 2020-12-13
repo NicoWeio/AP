@@ -10,15 +10,15 @@
     \begin{equation}
         \sigma = E \cdot \frac{\symup{\Delta}L}{L} .
     \end{equation}
-    Das Elastizitätsmodul $E$ stellt eine wichtige Materialkonstante eines Stoffes dar und 
+    Der Elastizitätsmodul $E$ stellt eine wichtige Materialkonstante eines Stoffes dar und
     ist hier ein Proportionalitätsfaktor.
-    Diese Größe kann mithilfe der Biegung eines Körpers bestimmt werden, 
+    Diese Größe kann mithilfe der Biegung eines Körpers bestimmt werden,
     wobei die Durchbiegung durch eine Funktion $D(x)$ beschrieben wird.
-    $D(x)$ setzt sich aus der Auslenkung $D_0(x)$ bei einer sogenannten Nullmessung, 
+    $D(x)$ setzt sich aus der Auslenkung $D_0(x)$ bei einer sogenannten Nullmessung,
     einer Messung ohne angehängtes Gewicht, und einer Auslenkung $D_\text{M}(x)$  bei einer
     Messung mit angehängtem Gewicht zusammen.
     Es gilt
-    \begin{equation}
+    \begin{equation} \label{eqn:realeDurchbiegung}
         D(x) = D_\text{M}(x) - D_0(x) .
     \end{equation}
 
@@ -30,54 +30,83 @@
     Die Funktion $D(x)$ kann durch ein Drehmoment $M_\text{F}$ berechnet werden, welches die anliegende Kraft F erzeugt.
     Das Drehmoment bewirkt eine Änderung des Querschnitts des Stabes. Die oberen Schichten werden gedehnt und die unteren
     gestaucht. Dazwischen liegt die neutrale Faser, eine Fläche, die ihre ursprüngliche Länge beibehält.
-    Im Inneren treten Normalspannungen auf, die ein inneres Drehmoment $M_{\symup{\sigma}}$ erzeugen. 
-    Der Stab wird soweit gebogen, bis das äußere und innere Drehmoment gleich sind: 
+    Im Inneren treten Normalspannungen auf, die ein inneres Drehmoment $M_{\symup{\sigma}}$ erzeugen.
+    Der Stab wird soweit gebogen, bis das äußere und innere Drehmoment gleich sind:
     \begin{equation}
         M_{\symup{\sigma}} = M_\text{F}
     \end{equation}
-    mit 
+    mit
     \begin{equation}
-        M_{\symup{\sigma}} = \int_Q y\sigma(y) dq 
+        M_{\symup{\sigma}} = \int_Q y\sigma(y) \symup{d}q
     \end{equation}
     und
     \begin{equation}
         M_\text{F} = F (L-x) .
     \end{equation}
-    Die Variable $x$ stellt eine beliebige Stelle auf dem Stab dar, $Q$ ist der Querschnitt des Stabes und $y$ beschreibt den 
-    Abstand zwischen Flächenelement dq und der neutralen Faser.
-    Für $D(x)$ ergibt sich 
+    Die Variable $x$ stellt eine beliebige Stelle auf dem Stab dar, $Q$ ist der Querschnitt des Stabes und $y$ beschreibt den
+    Abstand zwischen Flächenelement $\symup{d}q$ und der neutralen Faser.
+    Für $D(x)$ ergibt sich
     \begin{equation}
-        D(x) = \frac{F}{2EI} \left(Lx^2 - \frac{x^3}{3}\right) \label{eqn:einsD}
+        D(x) = \frac{F}{2E\mathbf{I}} \left(Lx^2 - \frac{x^3}{3}\right) \label{eqn:einsD}
     \end{equation}
-    für $0 \leq x \leq L$. Die Variable $I$ stellt das Flächenträgheitsmoment dar.
+    für $0 \leq x \leq L$. Die Variable $\mathbf{I}$ stellt das Flächenträgheitsmoment dar.
     Dieses wird durch
     \begin{equation}
-        I = \int_Q y^2 dq(y)
-    \end{equation} 
+        \mathbf{I} = \int_Q y^2 \symup{d}q(y)
+    \end{equation}
     beschrieben.
+
+    Speziell ist für Stäbe mit rechteckigem Querschnitt
+    \begin{equation} \label{eqn:I_rechteckig}
+      \mathbf{I}_r
+      %FALSCH = \int_{-\frac{a}{2}}^{\frac{a}{2}} \int_{-\frac{b}{2}}^{\frac{b}{2}} y^2 \; \symup{d}y \symup{d}z
+      = \frac{1}{12} a^3b
+      \; ,
+    \end{equation}
+    wobei $a$ die horizontale und $b$ die vertikale Kantenlänge ist,
+    und für Stäbe mit kreisförmigem Querschnitt mit Durchmesser $d$ beziegungsweise Radius $R=\frac{d}{2}$
+    \cite{I_rund}
+    \begin{equation} \label{eqn:I_rund}
+      \mathbf{I}_k
+      %laut WolframAlpha falsch… = \int_0^{2\pi} \int_{0}^{\frac{d}{2}} (r \sin{\varphi})^2 \; \symup{d}r \symup{d}\varphi
+      = \frac{\pi}{64} d^4
+      = \frac{\pi}{4} R^4
+      \; .
+    \end{equation}
+    % I_\square / I_\circ
+
+    % Aus der Auswertung…
+    % \begin{equation*}
+    %   \mathbf{I}
+    %   % = \int_{-\frac{a}{2}}^{\frac{a}{2}}{\int_{-\frac{b}{2}}^{\frac{b}{2}}} y^2 \; \symup{d}y \, \symup{d}z }}
+    %   = \frac{a \cdot b^3}{12}
+    %   = \SI{987.225 \pm 11.247}{\milli\meter\tothe{4}}
+    % \end{equation*}
 
 \subsection{Durchbiegung eines homogenen Stabes bei beidseitiger Einspannung} \label{sec:beidseitig}
 
-    Die zweite Möglichkeit besteht darin, den Stab an beiden Enden einzuspannen und die Kraft in der 
+    Die zweite Möglichkeit besteht darin, den Stab an beiden Enden einzuspannen und die Kraft in der
     Mitte des Stabes angreifen zu lassen.
-    Für das äußere Drehmoment $M_\text{F}$ ergibt sich 
+    Für das äußere Drehmoment $M_\text{F}$ ergibt sich
     \begin{equation}
-        M_\text{F} = - \frac{F}{2} x 
+        M_\text{F} = - \frac{F}{2} x
     \end{equation}
     für $0 \leq x \leq \frac{L}{2}$ und
     \begin{equation}
         M_\text{F} = \frac{F}{2} (L-x)
     \end{equation}
     für $\frac{L}{2} \leq x \leq L$.
-    Für $D(x)$ ergibt sich 
+    Für $D(x)$ ergibt sich
     \begin{equation}
-        D(x) = \frac{F}{48EI} (3L^2 x - 4x^3) \label{eqn:beidD1}
+        D(x) = \frac{F}{48E\mathbf{I}} (3L^2 x - 4x^3) \label{eqn:beidD1}
     \end{equation}
-    für $0 \leq x \leq \frac{L}{2}$ und 
+    für $0 \leq x \leq \frac{L}{2}$ und
     \begin{equation}
-        D(x) = \frac{F}{48EI} (4x^3 - 12Lx^2 + 9L^2 x - L^3) \label{eqn:beidD2}
+        D(x) = \frac{F}{48E\mathbf{I}} (4x^3 - 12Lx^2 + 9L^2 x - L^3) \label{eqn:beidD2}
     \end{equation}
     für $\frac{L}{2} \leq x \leq L$. \\ \\ \\
 
-Das Elastizitätsmodul kann durch Umformen der Gleichungen \eqref{eqn:einsD} , \eqref{eqn:beidD1} oder \eqref{eqn:beidD2}
+Der Elastizitätsmodul kann durch Umformen der Gleichungen \eqref{eqn:einsD}, \eqref{eqn:beidD1} oder \eqref{eqn:beidD2}
 für den jeweiligen Fall berechnet werden.
+
+Die zuvor genannte Formel für das Flächenträgheitsmoment $\mathbf{I}$ ist auch hier gültig.
