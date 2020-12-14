@@ -1,0 +1,40 @@
+\section{Theorie} \label{sec:theorie}
+
+    Der Wärmetransport in einem Körper kann durch Wärmestrahlung, Wärmeleitung oder Konvektion
+    stattfinden.
+    Im Folgenden sollen die theoretischen Grundlagen der Wärmeleitung erklärt werden. \\
+    Die Wärmemenge $\symup{d}Q$, die in einer bestimmten Zeit $\symup{d}t$ durch einen Stab mit der
+    Querschnittsfläche $A$ und der Dichte $\rho$ fließt, wird mithilfe der Gleichung
+    \begin{equation}
+        \symup{d}Q =  A j_\text{w} \symup{d}t
+    \end{equation}
+    beschrieben. 
+    Die Dichte $j_\text{w}$ des Wärmestromes, der beim Wärmetransport entsteht, ist durch 
+    \begin{equation}
+        j_\text{w} = - \kappa \frac{\partial T}{\partial x}
+    \end{equation}
+    gegeben.
+    Das Vorzeichen entsteht durch die Richtung des Wärmeflusses. Die Wärme fließt
+    vom wärmeren Teil des Stabes zum kälteren Teil.\\
+    Für den Prozess der Wärmeleitung ergibt sich die Wärmeleitungsgleichung
+    \begin{equation}
+        \frac{\partial T}{\partial t} = \frac{\kappa}{\rho c} \frac{\partial^2 T}{\partial x^2} .
+    \end{equation}
+    Der Vorfaktor $\frac{\kappa}{\rho c}$ kann durch $\sigma_\text{T}$ ausgedrückt werden
+    und bezeichnet die Temperaturleitfähigkeit. 
+    Der Faktor $\kappa$ gibt die spezifische Wärmeleitfähigkeit eines Stoffes an. \\
+    Wenn ein Stab periodisch erwärmt und gekühlt wird, entsteht eine Wärmewelle mit der Periode $T$.
+    Die Welle kann durch 
+    \begin{equation}
+        T(x,t) = T_\text{max} \cdot \symup{e}^{(- \sqrt{\frac{\omega \rho c}{2\kappa}}x)} \cdot \cos(\omega t - \sqrt{\frac{\omega \rho c}{2 \kappa}}x)
+    \end{equation}
+    beschrieben werden mit der Phasengeschwindigkeit
+    \begin{equation}
+        v = \frac{\omega}{k} = \sqrt{\frac{2 \kappa \omega}{\rho c}} .
+    \end{equation}
+    Für die Leitfähigkeit des Stabes ergibt sich
+    \begin{equation}
+        \kappa = \frac{\rho c (\symup{\Delta}x)^2}{2 \symup{\Delta}t ln(\frac{A_\text{nah}}{A_\text{fern}})} 
+    \end{equation}
+    mit dem Abstand $\symup{\Delta}x$ zwischen zwei Messpunkten und den Amplituden $A$. 
+    Der Phasenunterschied der Wärmewelle zwischen den Messpunkten wird durch $\symup{\Delta} t$ beschrieben.
