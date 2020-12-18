@@ -1,11 +1,29 @@
 \section{Auswertung} \label{sec:Auswertung}
 Die zur Verfügung gestellten Messdaten sind im Folgenden tabellarisch aufgelistet:
-\input{table1.tex}
+
+\begin{table}[H]
+\centering
+\caption{Aufgenommene Messdaten.}
+\label{tab:Messdaten}
+\sisetup{table-format=2.1}
+\begin{tabular}{c c c c c c}
+\toprule
+$t \,/\, \si{\minute}$ &
+$T_1 \,/\, \si{\celsius}$ &
+$p_1 \,/\, \si{\bar}$ &
+$T_2 \,/\, \si{\celsius}$ &
+$p_2 \,/\, \si{\bar}$ &
+$N \,/\, \si{\watt}$ \\
+\midrule
+\input{build/table_messdaten.tex}
+\bottomrule
+\end{tabular}
+\end{table}
 
 \newpage
 \subsection{Diagramm der gemessenen Temperaturverläufe} % a)
 In \autoref{fig:plot} sind die Approximationen aus \autoref{eqn:approx_poly} in \autoref{sec:approx} bereits enthalten.
-Dargestellt sind die zeitlichen Verläufe der Temperaturen $T_1$ und $T_2$ [TODO …der Reservoire].
+Dargestellt sind die zeitlichen Verläufe der Temperaturen $T_1$ und $T_2$.
 
 \begin{figure}
   \centering
@@ -23,23 +41,18 @@ Zur Approximation des Temperaturverläufe bietet sich ein Polynom zweiten Grades
 
 Als Fit-Parameter wurden berechnet:
 
-\begin{table}
+\begin{table}[H]
 \centering
-\caption{Fit-Parameter}
+\caption{Fit-Parameter.}
 \label{tab:fit_params}
 % \sisetup{table-format=2.1}
 \begin{tabular}{c c c c}
 \toprule
- & A & B & C \\
+&
+$A \,/\, \si{\kelvin\per\square\second}$ &
+$B \,/\, \si{\kelvin\per\second}$ &
+$C \,/\, \si{\kelvin}$ \\
 \midrule
-% $T_1$ &
-% \num{-3.2249e-06} ± \num{4.1934e-08} &
-% \num{0.02028} ± \num{9.1105e-05} &
-% \num{294.97} ± \num{0.041345}\\
-% $T_2$ &
-% \num{9.5504e-07} ± \num{2.6711e-07} &
-% \num{-0.011209} ± \num{0.00058032} &
-% \num{295.87} ± \num{0.26336}\\
 \input{../build/table_polyfit.tex}
 \bottomrule
 \end{tabular}
@@ -62,26 +75,16 @@ Fehlerrechnung:
 
 \begin{table}
 \centering
-\caption{Ableitungen der Approximationsfunktion}
+\caption{Ableitungen der Approximationsfunktion.}
 \label{tab:derivatives}
 \sisetup{table-format=2.1}
-\begin{tabular}{c c c c c c}
+\begin{tabular}{c c c}
 \toprule
 $t \,/\, \si{\minute}$ &
-$\frac{\mathrm{d}T_1}{\mathrm{d}t} \,/\, \si{\celsius\per\minute}$ &
-$\frac{\mathrm{d}T_2}{\mathrm{d}t} \,/\, \si{\celsius\per\minute}$ \\
+$\frac{\mathrm{d}T_1}{\mathrm{d}t} \,/\, \si{\kelvin\per\minute}$ &
+$\frac{\mathrm{d}T_2}{\mathrm{d}t} \,/\, \si{\kelvin\per\minute}$ \\
 \midrule
-7  & \num{0.017571}  ± \num{0.000098}  & \num{-0.010406}  ± \num{0.000622} \\
-14 & \num{0.014862}  ± \num{0.000115}  & \num{-0.0096042} ± \num{0.0007336} \\
-21 & \num{0.012153}  ± \num{0.000140}  & \num{-0.0088020} ± \num{0.0008887} \\
-28 & \num{0.0094441} ± \num{0.0001678} & \num{-0.0079998} ± \num{0.0010688} \\
-
-% 7  & \num{1.757e-02} ± \num{0.010e-02} & \num{-1.041e-02} ± \num{0.062e-02} \\
-% 14 & \num{1.486e-02} ± \num{0.012e-02} & \num{-9.604e-03} ± \num{0.734e-03} \\
-% 21 & \num{1.215e-02} ± \num{0.014e-02} & \num{-8.802e-03} ± \num{0.889e-03} \\
-% 28 & \num{9.444e-03} ± \num{0.168e-03} & \num{-8.000e-03} ± \num{1.069e-03} \\
-
-
+\input{build/table_ableitungen.tex}
 \bottomrule
 \end{tabular}
 \end{table}
@@ -94,109 +97,106 @@ $\frac{\mathrm{d}T_2}{\mathrm{d}t} \,/\, \si{\celsius\per\minute}$ \\
 % Als Füllmenge nehmen wir daher 4L an, wie es in "Daten.dat" steht
 
 % „Wärmekapazität der Kupferschlangen“ meint *Wärmekapazität jeder Kupferschlange*, oder?
-Jeder Wassereimer war mit $\SI{4}{\liter}$ Wasser befüllt, bei einem Fassungsvermögen von $\SI{4}{\kilo\gram}$.
-Die Wärmekapazität der \enquote{Kupferschlangen} war gegeben als $m_k c_k = \SI{750}{\joule\per\kelvin}$. Laut Versuchsanleitung soll $m_k c_k$ auch die Wärmekapazität der Eimer enthalten, dazu liegen jedoch keine weiteren Daten vor.
+Jeder Wassereimer war mit $\SI{4}{\liter}$ Wasser befüllt.
+Die Wärmekapazität der \enquote{Kupferschlangen} war gegeben als $m_k c_k = \SI{750}{\joule\per\kelvin}$.
+Laut Versuchsanleitung soll $m_k c_k$ auch die Wärmekapazität der Eimer enthalten,
+dazu liegen jedoch keine weiteren Daten vor.
 Die Wärmekapazität des Wassers in Reservoir 1 lässt sich mit
 \begin{align*}
   \rho_\text{Wasser} &= \SI{0.998207}{\kilo\gram\per\liter}
-  \tag*{(Wasserdichte bei 20°C \cite{wasserdichte})} \\
+  \tag*{(Wasserdichte bei $\SI{20}{\celsius}$ \cite{wasserdichte})} \\
   \\
   c_\text{Wasser} &= \SI{4.1851}{\joule\per\gram\and\kelvin}
-  \tag*{(spezifische Wärmekapazität von Wasser bei 20°C \cite{wasserwaermekapazitaet})} \\
+  \tag*{(spezifische Wärmekapazität bei $\SI{20}{\celsius}$ \cite{wasserwaermekapazitaet})} \\
   \\
   C_{\text{Wasser}, 1} &= m_1 \cdot c_\text{Wasser} \\
   &= (\rho_\text{Wasser} \cdot V_\text{Wasser}) \cdot c_\text{Wasser} \\
-  &= \left(\SI{0.998207}{\kilo\gram\per\liter} \cdot \SI{4}{\liter}\right) \cdot \SI{4.181}{\joule\per\gram\and\kelvin} \\
-  &= \SI{16736.0}{\joule\per\kelvin} \\
+  &= \left(\SI{0.998207}{\kilo\gram\per\liter} \cdot \SI{4}{\liter}\right) \cdot \SI{4.1851}{\joule\per\gram\and\kelvin} \\
+  &= \SI{16710.38}{\joule\per\kelvin} \\
 \end{align*}
 bestimmen, sodass aus einfacher Summation die gesamte Wärmekapazität
 \[
-C_\text{ges} = 750 \si{\joule\per\kelvin} + \SI{16736.0}{\joule\per\kelvin} = \SI{17486.0}{\joule\per\kelvin}
+C_\text{ges} = 750 \si{\joule\per\kelvin} + \SI{16710.38}{\joule\per\kelvin} = \SI{17460.38}{\joule\per\kelvin}
 \]
 folgt.
 
 \ \\
-Unter Zuhilfenahme von Gleichung \ref{eqn:reale_gueteziffer} und der Differentialquotienten aus Tabelle \ref{tab:derivatives} kann nun die reale Güteziffer für verschiedene $t$ berechnet werden.
+Unter Zuhilfenahme von \autoref{eqn:reale_gueteziffer} und der Differentialquotienten aus \autoref{tab:derivatives} kann nun die reale Güteziffer für verschiedene $t$ berechnet werden.
 
 \begin{table}
 \centering
-\caption{Vergleich der idealen und realen Güteziffern}
+\caption{Vergleich der idealen und realen Güteziffern.}
 % \sisetup{table-format=2.1}
-\begin{tabular}{c c c c c c}
+\begin{tabular}{c c c}
 \toprule
 $t \,/\, \si{\minute}$ &
 $\nu_\text{ideal}$ &
 $\nu_\text{real}$ \\
 % TODO: Abweichung in % dazu?
 \midrule
-7  & 27.04 ± 0.34  & 2.560 ± 0.014 \\
-14 & 13.41 ± 0.08  & 2.166 ± 0.017 \\
-21 & 9.76  ± 0.04  & 1.771 ± 0.020 \\
-28 & 8.139 ± 0.028 & 1.354 ± 0.024 \\
+\input{build/table_gueteziffern.tex}
 \bottomrule
 \end{tabular}
 \end{table}
 
 \subsection{Bestimmung des Massendurchsatzes} % e)
-% e) Man errechne für die 4 Temperaturen aus 5c den Massendurchsatz des hier benutzten Transportgases Dichlordifluormethan (Cl 2 F 2 C). Die Verdampfungswärme L dieses Stoffes kann man aus seiner Dampfdruck-Kurve gewinnen. (Näheres hierzu findet man in V203.) Wertepaare (p,T) zur Darstellung dieser Kurve können an den Manometern der Apparatur abgelesen werden. Mit den dort abgelesenen (p, T)-Werten führe man eine Ausgleichsrechnung zur Bestimmung von L durch.
 
-% TODO: Verschieben zur Theorie → 1.1.2
+Mithilfe der in \autoref{sec:massendurchsatz} aufgeführten Formeln
+lässt sich der Massendurchsatz für verschiedene Zeitpunkte bestimmen.
+Als Zwischenschritt wurde die Verdampfungswärme zu $L=\SI{118 \pm 6}{\joule\per\gram}$ berechnet.
+(Dieser Wert stimmt mit Literaturwerten in etwa überein. \cite{verdampfungswaerme})
+\autoref{fig:massendurchsatz_regression} zeigt die dabei durchgeführte Regression.
 
-! Dieser Abschnitt ist \textbf{work-in-progress} !
-
-universelle Gaskonstante $R$
-
-\begin{align*}
-  \frac{1}{p} \mathrm{d}p &= \frac{L}{R \cdot T^2} \mathrm{d} T \\
-  \mathrm{ln}(p) &= \frac{L}{R} \cdot \frac{1}{T} + c \\
-  \mathrm{ln}(p) &= \frac{L}{R \cdot T} + c \\
-  \mathrm{ln}(p) \cdot (R \cdot T) &= L + c \\
-\end{align*}
+\begin{figure}
+  \centering
+  \includegraphics{build/plot_massendurchsatz.pdf}
+  \caption{Visualisierung der durchgeführten linearen Regression.}
+  \label{fig:massendurchsatz_regression}
+\end{figure}
 
 \begin{table}
 \centering
-\caption{Massendurchsatz}
+\caption{Massendurchsatz.}
 % \sisetup{table-format=2.1}
-\begin{tabular}{c c c c c c}
+\begin{tabular}{c c c}
 \toprule
-$t \,/\, \si{\second}$ &
-$\frac{\mathrm{d}T_2}{\mathrm{d}t} \,/\, \SI{e-3}{\kelvin\per\second}$ &
+$t \,/\, \si{\minute}$ &
+$\frac{\mathrm{d}T_2}{\mathrm{d}t} \,/\, \si{\kelvin\per\minute}$ &
 $\frac{\mathrm{d}m}{\mathrm{d}t} \,/\, \si{\gram\per\second}$ \\
-% TODO: Abweichung in % dazu?
 \midrule
-% 7  | deriv: (-1.041+/-0.062)e-02 & -1.54+/-0.09 TODO \\
-% 14 | deriv: (-9.604+/-0.734)e-03 & -1.42+/-0.11 TODO \\
-% 21 | deriv: (-8.802+/-0.889)e-03 & -1.30+/-0.13 TODO \\
-% 28 | deriv: (-8.000+/-1.069)e-03 & -1.18+/-0.16 TODO \\
 \input{../build/table_massendurchsatz.tex}
 \bottomrule
 \end{tabular}
 \end{table}
 
+\FloatBarrier
 
 \subsection{Bestimmung der Kompressorleistung} % f)
-Die mechanische Leistung des Kompressors, die dieser abgibt, wenn
-er zwischen den Drücken $p_1$ und $p_2$ arbeitet,
-wird mithilfe von Gleichung \ref{eqn:N_mech}, der gegebenen Daten, und der Differentialquotienten aus Tabelle \ref{tab:derivatives} berechnet.
-\ \\
-Daten für $\mathrm{Cl}_2 \mathrm{F}_2 \mathrm{C}$: \\
-% \[
-$ρ_0 = \SI{5.51} g/l$ bei $T = \SI{0}{\celsius}$ und $p = \SI{1}{\bar}$, $κ = 1.14$
-% \]
+Im Folgenden wird die mechanische Leistung des Kompressors berechnet,
+die dieser abgibt,
+wenn er zwischen den Drücken $p_1$ und $p_2$ arbeitet.
+
+Folgende Daten für $\mathrm{Cl}_2 \mathrm{F}_2 \mathrm{C}$ waren bereits gegeben:
+$ρ_0 = \SI{5.51} g/l$ bei $T_0 = \SI{0}{\celsius}$ und $p_0 = \SI{1}{\bar}$, $κ = 1.14$
+
+Durch Umformen der idealen Gasgleichung kann $\rho(t)$ folgendermaßen ausgedrückt werden:
+% Ich habe bei der Umformung eine andere Gleichung herausbekommen, aber diese gibt schönere Werte…
+\begin{equation*}
+  \rho(t) = \frac{p_2(t) \cdot \rho_0 \cdot T_0}{p_0 \cdot T_2(t)} \; .
+\end{equation*}
+
+Einsetzen von $\rho(t)$ und den zuvor bestimmten \hyperref[tab:derivatives]{Differentialquotienten} in \autoref{eqn:N_mech} liefert dann Werte für $N_\text{mech}$,
+die in der folgenden Tabelle aufgelistet sind.
 
 \begin{table}
 \centering
-\caption{Kompressorleistung}
+\caption{Kompressorleistung.}
 % \sisetup{table-format=2.1}
-\begin{tabular}{c c c c c c}
+\begin{tabular}{c c c}
 \toprule
-% $t \,/\, \si{\second}$ &
-% $\frac{\mathrm{d}T_2}{\mathrm{d}t} \,/\, \SI{e-3}{\kelvin\per\second}$ &
-% $\frac{\mathrm{d}m}{\mathrm{d}t} \,/\, \si{\gram\per\second}$ \\
-
-$t \,/\, \si{\second}$ &
-% $\rho \,/\, \si{\kilo\gram\per\meter³}$ &
-$ N_\text{mech} \,/\, \si{\watt}$ \\
+$t \,/\, \si{\minute}$ &
+$\rho \,/\, \si{\gram\per\liter}$ &
+$N_\text{mech} \,/\, \si{\watt}$ \\
 \midrule
 \input{../build/table_kompressorleistung.tex}
 \bottomrule

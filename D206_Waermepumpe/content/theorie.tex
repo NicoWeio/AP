@@ -50,10 +50,12 @@
 
 
 \subsubsection{Bestimmung des Massendurchsatzes}
+\label{sec:massendurchsatz}
 
     Die aus dem Reservoir 2 entnommene Wärmemenge wird durch
     \begin{equation*}
-        \frac{\symup{\Delta} Q_2}{\symup{\Delta} t} =(m_2 c_\text{w} + m_\text{k} c_\text{k}) \frac{\symup{\Delta} T_2}{\symup{\Delta} t}
+        \frac{\symup{\Delta} Q_2}{\symup{\Delta} t}
+        = (m_2 c_\text{w} + m_\text{k} c_\text{k}) \frac{\symup{\Delta} T_2}{\symup{\Delta} t}
     \end{equation*}
     beschrieben.
 
@@ -63,6 +65,29 @@
     \end{equation*}
     bestimmen.
 
+    Tatsächlich muss $L$ noch bestimmt werden, was durch Berechnung einer linearen Regression geschieht.
+    Als Ansatz dient die Approximation der Clausius-Clapeyron-Gleichung für ein ideales Gas.
+    $L$ bezeichnet dabei die (molare) Verdampfungswärme, und $R$ ist die universelle Gaskonstante.
+
+    \begin{align*}
+      \frac{1}{p} \mathrm{d}p &= \frac{L}{R \cdot T^2} \mathrm{d} T \\
+      \ln(p) &= \frac{L}{R} \cdot \frac{1}{T} + c \\
+      % \mathrm{ln}(p) &= \frac{L}{R \cdot T} + c \\
+      % \mathrm{ln}(p) \cdot (R \cdot T) &= L + c \\
+    \end{align*}
+
+    Durch Integration wurde eine Form gefunden,
+    mit der $\frac{L}{R}$ die Steigung $a$ der Regressionsgeraden ist,
+    wenn $\ln(p)$ gegen $\frac{1}{T}$ aufgetragen wird.
+    Also ist $L = a \cdot R$.
+
+    Schließlich wird aus der molaren Verdampfungswärme $L$
+    die Verdampfungswärme mit Bezug auf eine Masse berechnet,
+    indem durch die molare Masse $M$ dividiert wird:
+    \begin{equation*}
+      L_\text{Masse} = \frac{L}{M}
+      \; .
+    \end{equation*}
 
 \subsubsection{Bestimmung der mechanischen Kompressorleistung}
 
@@ -83,7 +108,7 @@
     \begin{equation*}
        A_\text{m} = - p_\text{a} V_\text{a}^\text{\kappa} \displaystyle\int_{V_\text{a}}^{V_\text{b}} V^{-\kappa} dV
                   = \frac{1}{\kappa - 1} p_\text{a} V_\text{a}^\text{\kappa} (V_\text{b}^{-\kappa+1} - V_\text{a}^{-\kappa+1})
-                  = \frac{1}{\kappa - 1} (p_\text{b} \sqrt[\kappa]{\frac{p_\text{a}}{p_\text{b}}} - p_\text{a}) V_\text{a} \; .
+                  = \frac{1}{\kappa - 1} \left(p_\text{b} \sqrt[\kappa]{\frac{p_\text{a}}{p_\text{b}}} - p_\text{a}\right) V_\text{a} \; .
     \end{equation*}
 
     Außerdem gilt für die mechanische Kompressorleistung mit der Beziehung $V_\text{a} = \frac{1}{\rho} m$
@@ -103,12 +128,11 @@
     \begin{figure}
       \centering
       \includegraphics[scale=0.8]{content/img/aufbau.pdf}
-      % TODO: deskriptiver
-      \caption{Aufbau.}
+      \caption{Schematischer Aufbau einer Wärmepumpe.}
       \label{fig:aufbau}
     \end{figure}
 
-% TODO Grafik
+    % TODO: Mehr Bezug auf das Bild nehmen
 
     Der grundsätzliche Aufbau der Wärmepumpe besteht aus zwei unterschiedlich warmen Reservoiren und einem Kompressor $K$,
     der das Wärmetransportmedium durch die Kompression erhitzt.
@@ -121,8 +145,8 @@
     Der Kompressor stellt einen Mediumkreislauf in der Wärmepumpe her.
     Zwischen den Reservoiren herrscht ein hoher Druckunterschied,
     welcher durch ein Drosselventil $D$ erzeugt wird.
-    Bei einem Druck $p_1$ und einer Temperatur $T_1$ aus dem ersten Reservoir ist das Gas flüssig,
-    bei einem Druck $p_2$ und einer Temperatur $T_2$ aus dem zweiten Reservoir ist das Gas gasförmig.
+    Bei einem Druck $p_1$ (in der Abbildung $P_b$) und einer Temperatur $T_1$ aus dem ersten Reservoir ist das Gas flüssig,
+    bei einem Druck $p_2$ (in der Abbildung $P_a$) und einer Temperatur $T_2$ aus dem zweiten Reservoir ist das Gas gasförmig.
 
     Das Gas wird zu Beginn des Kreislaufs im Kompressor $K$ stark erhitzt und durchläuft anschließend das erste Reservoir.
     Hier wird dem Gas Wärme entzogen und es wird flüssig.
