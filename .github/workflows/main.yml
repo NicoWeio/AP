@@ -1,0 +1,29 @@
+name: Continuous Integration
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Generate PDFs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: docker://nicoweio/my-texlive
+      - uses: actions/upload-artifact@v2
+        with:
+            name: pdfs
+            path: ./*/build/main.pdf
+      - name: Extract PDFs for bundling
+        run: mkdir gh-pages-bundle && rsync -a --prune-empty-dirs --include '*/' --include '*.pdf' --exclude '*' ./ gh-pages-bundle/
+      - name: Generate index
+        run: sudo apt-get install tree && cd gh-pages-bundle && tree -H . > index.html
+      - name: Deploy to GitHub Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+            BRANCH: gh-pages
+            CLEAN: true
+            FOLDER: gh-pages-bundle
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            SINGLE_COMMIT: true
