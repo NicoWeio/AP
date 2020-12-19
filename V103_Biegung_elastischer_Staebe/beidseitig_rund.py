@@ -117,7 +117,7 @@ for (linearized_x_i, D_i, pofVals_i, xlabel, filename) in [
     plt.tight_layout()
     plt.legend()
     # plt.show()
-    # plt.savefig(filename)
+    plt.savefig(filename)
     plt.clf()
 
 d = ufloat(9.99, 0.020) * ureg.millimeters
