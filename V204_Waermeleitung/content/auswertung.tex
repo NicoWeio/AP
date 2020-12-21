@@ -1,1 +1,75 @@
 \section{Auswertung} \label{sec:auswertung}
+
+\subsection{Die statische Methode}
+
+    Für die Temperaturen T1 und T4 ergaben sich die Messwerte
+    \begin{figure}
+        \centering
+        \includegraphics{Graph_T1T4.pdf}
+        \caption{Die Temperaturen des breiten und schmalen Messingstabs.}
+        \label{fig:grapht1t4}
+    \end{figure}
+    %TODO: Abbildung zu groß
+
+    Die Temperaturen T1 und T4 steigen zu Beginn, nach einer kurzen Zeit, stark an.
+    Ab etwa $\SI{250}{\second}$ wachsen die Temperaturen weniger schnell an.\\
+    
+    Für die Temperaturen T5 und T8 ergaben sich die Messwerte 
+    \begin{figure}
+        \centering
+        \includegraphics{Graph_T5T8.pdf}
+        \caption{Die Temperaturen des Aluminiumstabes und des Edelstahlstabes.}
+        \label{fig:grapht5t8}
+    \end{figure}\\
+    %TODO: Abbildung ist nicht an der richtigen Stelle und zu groß
+
+    Die Temperatur T5 des Aluminiumstabes steigt zu Beginn der Messung 
+    sehr stark an und flacht ab etwa $\SI{100}{\second}$ ab.
+    Im Gegensatz dazu steht die Temperatur T8 des Edelstahlstabes.
+    Die Temperatur steigt langsamer und gleichmäßiger an und erreicht nur
+    einen geringeren Wert von etwa $\SI{37}{\celsius}$.\\
+    Im Vergleich der Metallstäbe erreicht der Aluminiumstab die höchste
+    Temperatur von etwa $\SI{47}{\celsius}$. Zum selben Zeitpunkt haben
+    die Messingstäbe eine Temperatur von etwa $\SI{42}{\celsius}$ bis $\SI{45}{\celsius}$,
+    wobei der breitere Messingstab eine höhere Temperatur erreicht.
+    Die Temperatur des Aluminiumstabes steigt zu Beginn auch schneller an als die
+    der Messingstäbe.\\
+
+    Um herauszufinden, welcher Stab die beste Wärmeleitung hat, wurden nach $\SI{700}{\second}$
+    folgende Temperaturen gemessen.
+
+    \begin{table}
+        \centering
+        \caption{Temperaturen T1, T4, T5, T8 in $\si{\celsius}$ nach $\SI{700}{\second}$.} %Einheit hier?
+        \label{tab:temp700s}
+        \begin{tabular}{c c c c}
+            \toprule
+            T1 & T4 & T5 & T8 \\
+            \midrule
+            42.36 & 40.81 & 45.72 & 32.73 \\ % 700s/5 = 140: Messwerte bei 140
+            \bottomrule  
+        \end{tabular}
+    \end{table}
+    Da die Temperatur T5 des Aluminiumstabes mit $\SI{45.72}{\celsius}$ am größten ist,
+    kann daraus geschlossen werden, dass Aluminium die Wärme am besten leitet.
+
+    %TODO: Wärmestrom für 5 Messzeiten berechnen.
+
+    Für die Temperaturdifferenzen $\symup{\Delta}T_\text{St} = T7 - T8$ und 
+    $T_\text{St} = T2 - T1$ ergeben sich folgende Graphen.
+    \begin{figure}
+        \centering
+        \includegraphics{Graph_Tempdiff.pdf}
+        \caption{Die Temperaturdifferenzen $\symup{\Delta}T_\text{St}$ und $T_\text{St}$ in $\si{\celsius}$.}
+        \label{fig:graphtempdiff}
+    \end{figure}
+    Im Vergleich ist zu erkennen, dass die Temperaturdifferenz zwischen T7 und T8 während der gesamten
+    Messung deutlich größer ist als die zwischen T1 und T2.
+    In beiden Graphen ist die Differenz zu Beginn der Messung größer und hat nach etwa %25-30s?
+    ihr Maximum erreicht, wobei dies bei $T_\text{St}$ etwas eher der Fall ist.
+    Nach dem Maximum flachen beide Graphen ab und laufen gegen einen konstanten Wert.
+    Die Abflachung bei $\symup{\Delta}T_\text{St}$ ist nicht so steil, während die Temperaturdifferenz
+    $T_\text{St}$ scheinbar schnell gegen einen konstanten Wert strebt. %Ich bin mit der Formulierung noch nicht zufrieden.
+
+
+    \subsection{Die dynamische Methode}
