@@ -61,7 +61,10 @@ def main(data):
     amplituden_fern = amplituden(*extrema_fern)
     Δt = phasendifferenzen(extrema_nah[0], extrema_fern[0])
 
-    t_bounds = (0 * ureg.seconds, (10+1) * data['periodendauer'])
+    # Diese Sektion ist nicht so wichtig; sie existiert nur, um passend viele xticks zu erzeugen.
+    # nPerioden könnte auch auf eine ausreichend große Konstante gesetzt werden.
+    nPerioden = int((indices[-1] / data['periodendauer']).m)
+    t_bounds = (0 * ureg.seconds, nPerioden * data['periodendauer'])
     xticks = list(pint_range(*t_bounds, data['periodendauer']))
 
     def plt_extrema(extrema_i): # nimmt maxima ODER minima
@@ -89,7 +92,7 @@ def main(data):
     A_verhältnis = amplituden_nah / amplituden_fern
 
     kappa = (data['ρ'] * data['c'] * Δx**2) / (2 * Δt * np.log(A_verhältnis))
-    # TODO: Der letzte Wert ist Mist!
+    # Der letzte Wert ist Mist, da durch den Abbruch der Messung „falsche“ Maxima entstehen!
     # daher:
     kappaMean = kappa[:-1].mean()
 

@@ -5,8 +5,7 @@ plots: \
 	build/plot_dynamisch_edelstahl.pdf \
 	build/plot_dynamisch_messing_breit.pdf \
 	build/plot_dynamisch_messing_schmal.pdf \
-	build/plot_statisch_aluminium_edelstahl.pdf \
-	build/plot_statisch_messing.pdf \
+	build/plot_statisch_alle.pdf \
 	build/plot_statisch_tdiff.pdf \
 
 build/plot_%.pdf: build
