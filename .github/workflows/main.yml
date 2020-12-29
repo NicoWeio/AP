@@ -5,6 +5,18 @@ on:
       - master
 
 jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Execute Linter
+        run: ./Linter/linter.py --json | tee ./annotations.json
+      - name: Upload Annotations
+        uses: yuzutech/annotations-action@v0.3.0
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          input: './annotations.json'
   build:
     name: Generate PDFs
     runs-on: ubuntu-latest
