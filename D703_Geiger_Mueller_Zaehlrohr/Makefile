@@ -1,6 +1,27 @@
 all: build/main.pdf
 
-build/main.pdf: main.tex lit.bib | build
+plots: \
+		build/plot1.pdf \
+		build/plot2.pdf \
+
+build/plot1.pdf: | build
+		python3 1_kennlinie.py
+
+build/plot2.pdf: | build
+		python3 3_zaehlrohrstrom.py
+
+tables: \
+		build/table_messwerte.tex \
+		build/table_zaehlrohrstrom.tex \
+
+build/table_messwerte.tex: | build
+	python3 0_messwerte.py
+
+build/table_zaehlrohrstrom.tex: | build
+	python3 3_zaehlrohrstrom.py
+
+
+build/main.pdf: main.tex lit.bib plots tables | build
 	  TEXINPUTS=build: \
 	  BIBINPUTS=build: \
 	  max_print_line=1048576 \
@@ -17,6 +38,6 @@ build:
 clean:
 	rm -rf build
 
-.PHONY: all clean
+.PHONY: all clean plots tables
 
 #NOTE: Vollständiges Rekompilieren lässt sich mit `make -B` erzwingen
