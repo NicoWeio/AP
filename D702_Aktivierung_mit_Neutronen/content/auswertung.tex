@@ -1,1 +1,167 @@
 \section{Auswertung} \label{sec:auswertung}
+
+Im Folgenden sollen auf Basis der aufgenommenen Messwerte
+die Halbwertszeiten von aktiviertem Vanadium und Rhodium bestimmt werden.
+Die nachstehenden Messwerte wurden nicht bearbeitet
+und beinhalten daher insbesondere die Untergrundrate.
+Diese wurde in \autoref{sec:auswertung:untergrundrate} bestimmt
+und anschließend ohne weitere Erwähnung von den Messwerten subtrahiert.
+
+\begin{table}[H]
+  \centering
+  \caption{Übersicht der für Vanadium aufgenommenen Messwerte \cite{datenundhinweise}.}
+  \label{tab:messwerte_vanadium}
+  \begin{tabular}{c c | c c}
+  \toprule
+  $t [\si{\second}]$ &
+  $N [\si{{Imp} \per 30 \second}]$ &
+  $t [\si{\second}]$ &
+  $N [\si{{Imp} \per 30 \second}]$ \\
+  \midrule
+  \input{build/table_vanadium.tex}
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \caption{Übersicht der für Rhodium aufgenommenen Messwerte \cite{datenundhinweise}.}
+  \label{tab:messwerte_rhodium}
+  \begin{tabular}{c c | c c}
+  \toprule
+  $t [\si{\second}]$ &
+  $N [\si{{Imp} \per 15 \second}]$ &
+  $t [\si{\second}]$ &
+  $N [\si{{Imp} \per 15 \second}]$ \\
+  \midrule
+  \input{build/table_rhodium.tex}
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Bestimmung der Untergrundrate}
+\label{sec:auswertung:untergrundrate}
+Zur Bestimmung der Untergrundrate $N_U$ wurden mehrere Messungen
+über ein Messintervall $t = \SI{300}{\second}$ durchgeführt:
+
+\begin{align*}
+  N_U &= \{129, 143, 144, 136, 139, 126, 158\} \\
+  \overline{N_U} &= \SI{139 \pm 4}{\per{300}\second} = \SI{0.464 \pm 0.013}{\per\second} \\
+\end{align*}
+
+\subsection{Bestimmung der Halbwertszeit von Vanadium}
+\label{sec:auswertung:vanadium}
+In \autoref{fig:plot1_log} sind die Messwerte und zwei Fit-Funktionen dargestellt,
+auf die im Folgenden näher eingegangen wird.
+Die grau gestrichelten Linien markieren die Halbwertszeit und die doppelte Halbwertszeit,
+die aus dem ersten Fit ermittelt wurden.
+
+Hier wurde der Fit durch Anpassung des \hyperref[eqn:zerfallsgesetz]{Zerfallsgesetzes} bestimmt,
+unter Zuhilfenahme von \textit{scipy}.
+
+Die folgenden Parameter wurden berechnet:
+\begin{align*}
+  N_\text{0, fit} &= \SI{6.964 \pm 0.185}{\per\second} \\
+  λ_\text{fit} &= \SI{0.00342 \pm 0.00012}{\per\second} \\
+\end{align*}
+Daraus ergibt sich eine (ungefähre) Halbwertszeit von
+\[ T_\text{½} = \SI{203 \pm 7}{\second} \; . \]
+
+Unter Verwendung dieser wurde ein zweiter Fit berechnet,
+der nur auf den Messwerten bis zur doppelten (ungefähren) Halbwertszeit beruht,
+um die aus dem Übergang in den Untergrund resultierende Ungenauigkeit auszulassen.
+
+\begin{align*}
+  N_\text{0, fit} &= \SI{7.289 \pm 0.530}{\per\second} \\
+  λ_\text{fit} &= \SI{0.00358 \pm 0.0002}{\per\second} \\
+\end{align*}
+Die genauere Halbwertszeit beträgt somit
+\[ T_\text{½, fit} = \SI{194 \pm 11}{\second} \; . \]
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{build/plot1_log.pdf}
+  \caption{Halblogarithmische Darstellung der berechneten Zählraten und Fits zu Vanadium.}
+  \label{fig:plot1_log}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.75\textwidth]{build/plot1_lin.pdf}
+  \caption{Lineare Darstellung der berechneten Zählraten und Fits zu Vanadium.}
+  \label{fig:plot1_lin}
+\end{figure}
+
+
+\subsection{Bestimmung der Halbwertszeit von Rhodium}
+Die Bestimmung der Halbwertszeit von Rhodium gliedert sich in mehrere Schritte auf,
+da Rhodium zwei unterschiedlich schnelle Zerfallskanäle besitzt (siehe \autoref{sec:theorie:zerfall_instabiler_isotope}).
+In \autoref{fig:plot2_log} ist daher ein \enquote{Knick} in den Messwerten erkennbar
+(gestrichelte Linie bei $\SI{240}{\second}$),
+nach welchem nur noch der langlebige Zerfall einen signifikanten Beitrag zur Zählrate leistet.
+
+Zunächst sei hier eine kurze Herleitung der benutzten Regression angegeben:
+\begin{align*}
+  N(t) &= N_0 e^{-\lambda t}
+  \tag{\hyperref[eqn:zerfallsgesetz]{Zerfallsgesetz}} \\
+  \ln \left( \frac{N(t)}{N_0} \right) &= - \lambda t \\
+  \ln{N(t)} &= \underbrace{(- \lambda)}_\text{Steigung} t + \underbrace{\ln{N_0}}_\text{Achsenabschnitt} \\
+\end{align*}
+Die Halbwertszeit berechnet sich dann gemäß \autoref{eqn:Halbwertszeit}.
+
+\subsubsection{langsamer Zerfall}
+\label{sec:auswertung:rhodium:langsam}
+Um die Zerfallskonstante $\lambda_\text{langsam}$ für den langsamen Zerfall zu bestimmen,
+wurde $\ln{N(t)}$ gegen die Zeit $t$ aufgetragen
+und eine Regressiongerade (orangene Gerade in \autoref{fig:plot2_log})
+für die Zeit nach $\SI{240}{\second}$ berechnet.
+Die Parameter der Regressiongerade
+$\ln{N_\text{langsam}} = mt+n$
+sind
+\begin{align*}
+  m &= -0.00327 \pm 0.0004 \\
+  n &= 1.839 \\
+\end{align*}
+und somit
+\begin{align*}
+  λ_\text{langsam} &= \SI{0.00327 \pm 0.0004}{\per\second} \\
+  T_\text{½, langsam} &= \SI{212 \pm 26}{\second} \; . \\
+\end{align*}
+
+\subsubsection{schneller Zerfall}
+\label{sec:auswertung:rhodium:schnell}
+Um die Zerfallskonstante des schnelleren Zerfalls zu bestimmen,
+wird die zugehörige Zählrate isoliert,
+indem aus der Fortsetzung der Fit-Funktion $\ln{N_\text{langsam}}$ (orange)
+die Zählrate $N_\text{langsam}$ durch Exponentiation ermittelt
+und diese von der gemessenen Zählrate subtrahiert wird,
+woraufhin erneut der Logarithmus angewandt wird.
+Das Ergebnis ist $\ln{N_\text{schnell}}$ (rot).
+% Es wurde auch $\ln{N_\text{schnell} + N_\text{langsam}}$ dargestellt (lila).
+
+Auch hierfür wurde eine Regressionsrechnung durchgeführt.
+% Wieder wurde eine Regressionsrechnung durchgeführt.
+Dabei ergaben sich die Parameter
+\begin{align*}
+  m &= -0.0190 \pm 0.0007 \\
+  n &= 4.137 \\
+\end{align*}
+und somit
+\begin{align*}
+  λ_\text{schnell} &= \SI{0.0190 \pm 0.0007}{\per\second} \\
+  T_\text{½, schnell} &= \SI{36.5 \pm 1.4}{\second} \; . \\
+\end{align*}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{build/plot2_log.pdf}
+  \caption{Halblogarithmische Darstellung der berechneten Zählraten und Fits zu Rhodium.}
+  \label{fig:plot2_log}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.75\textwidth]{build/plot2_lin.pdf}
+  \caption{Lineare Darstellung der berechneten Zählraten und Fits zu Rhodium.}
+  \label{fig:plot2_lin}
+\end{figure}
