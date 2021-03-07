@@ -4,11 +4,13 @@
 [![PDFs](https://img.shields.io/badge/PDFs-auf%20GitHub%20Pages-blue)](https://nicoweio.github.io/AP/)
 
 In diesem Repository sammeln wir, Katharina Popp und Nicolai Weitkemper, den Quellcode für unsere Protokolle.
-So weit, so unspektakulär…
 
+[→ Übersicht über unsere Abgaben](./UEBERSICHT.md)
+
+So weit, so unspektakulär…
 Aber es gibt drei Dinge, die dieses Repository besonders attraktiv machen sollen:
 
-## Ein Linter!
+### Ein Linter!
 
 Um uns die Arbeit des Korrekturlesens zu vereinfachen,
 habe ich (Nicolai) einen Linter programmiert,
@@ -20,7 +22,7 @@ Da ihr, werte Leser, wahrscheinlich ähnliche Anforderungen wie wir erfüllen m�
 und ebenfalls die [Latex-Vorlage aus dem Toolbox-Workshop](https://github.com/pep-dortmund/toolbox-workshop/tree/master/latex-template) nutzt,
 stehen die Chancen gut, dass auch ihr von diesem Linter profitieren könnt.
 
-## Continuous Integration
+### Continuous Integration
 
 Ein weiteres Goodie ist die automatische Generierung von PDFs,
 die stets den aktuellen Stand des Repositorys wiederspiegeln.
@@ -28,7 +30,7 @@ Sie finden sich auf [GitHub Pages](https://nicoweio.github.io/AP/).
 
 Der Docker-Container, in dem die eigentliche Erstellung läuft, ist in ein eigenes [Repository](https://github.com/NicoWeio/my-texlive) ausgelagert.
 
-## All-inclusive
+### All-inclusive
 
 Soll heißen:
 Dieses Repository enthält alles,
@@ -39,3 +41,7 @@ was man zum Erstellen der Protokolle braucht.
 -   Python-Code zur Auswertung
 -   .tex-Dateien
 -   Grafiken
+
+## Neu hier?
+
+Ich habe einige [Tipps](./TIPPS.md) zusammengestellt, die dir vielleicht helfen können.
