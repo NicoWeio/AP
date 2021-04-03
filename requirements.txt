@@ -1,0 +1,7 @@
+# Diese Liste erhebt keinen Anspruch auf Vollständigkeit, ist (bislang) unabhängig von CI/CD und nur zur erleichterten Einrichtung vorgesehen.
+# `pip3 install -r requirements.txt`
+matplotlib
+numpy
+pint
+scipy
+uncertainties
