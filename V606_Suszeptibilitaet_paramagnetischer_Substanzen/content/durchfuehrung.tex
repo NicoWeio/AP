@@ -1,0 +1,58 @@
+\section{Durchführung}
+
+    In diesem Abschnitt soll die Durchführung der Messung der paramagnetischen Suszeptibilität
+    von Proben Seltender Erde, sowie die Bestimmung der Filterkurve erläutert werden.
+
+\subsection{Die Filterkurve des Selektivverstärkers}
+
+    Zur Bestimmung der Filterkurve wird die Ausgansspannung $U_\text{A}$ gemessen, in Abhängigkeit der Frequenz.
+    Dazu wird eine konstante Eingangsspannung $U_\text{E}$ von etwa $\SI{100}{\milli\volt_\text{eff}}$ 
+    an den Selektivverstärker angelegt, welcher mit dem Spannungsmessgerät für $U_\text{A}$ verbunden ist.
+    Anschließend wird ein Frequenzbereich von $\SIrange{20}{40}{\kilo\hertz}$ durchlaufen,
+    und das Maximum von $U_\text{A}$ bestimmt.
+    Die Frequenz, bei der $U_\text{A}$ maximal wird, 
+    ist $\nu_0$.
+
+\subsection{Messung der Proben}
+
+    Der Aufbau der Apparatur zur Messung der Suszeptibilitäten wird in Abbildung %\ref{fig:Aufbau}
+    dargestellt.\\
+    %Abbildung der Messapparatur einfügen (Abb.4 in der Anleitung) \label{fig:Aufbau}
+    
+    Die Eingangsspannung $U_\text{E}$ (Wechselspannung) wird von einem Sinusgenerator erzeugt,
+    mit einer Frequenz von $\SI{35}{\kilo\hertz}$,
+    welche entsprechend als Durchlassfrequenz des Selektivverstärkers eingestellt wird.
+    Der Sinusgenerator wird an die Brückenspannung %\ref{fig:Brückenschaltung}
+    angeschlossen, 
+    welche mit dem Selektivverstärker verbunden ist.
+    Die in der Abbildung %\ref{fig:Aufbau}
+    gezeigten Verstärker vor und hinter dem Selektivverstärker werden hier nicht verwendet.
+    Die Brückenspannung wird allerdings am Selektivverstärker 10-fach verstärkt.
+    Der Selektivverstärker ist wiederum mit einem Spannungsmessgerät verbunden, 
+    welches die Brückenspannung $U_\text{Br}$ misst.\\
+    \\
+    Zu Beginn wird die Gesamtverstärkung gemessen,
+    indem die maximale Brückenspannung mit und ohne Verstärkung gemessen wird.\\ 
+    Bei der Ausmessung der Proben wird nun so vorgegangen,
+    dass zu Anfang die Brücke ohne eingefügte Probe abgeglichen wird.
+    Dazu wird der zu variierende Widerstand $R_3/R_4$ verstellt, 
+    sodass $U_\text{Br}$ minimal wird.
+    Es werden $U_\text{Br}$ und $R_3/R_4$ notiert.
+    Anschließend wird die erste Probe,
+    in diesem Fall $\ce{^{203}Dy}$,
+    vorsichtig in eine der zylinderförmigen Spulen in der Brückenschaltung eingefügt.
+    Die Brücke wird erneut abgeglichen und es werden $U_\text{Br}$ und $R_3/R_4$ notiert.
+    Mithilfe der Differenzen zwischen den Spannungen und Widerständen mit und ohne Probe 
+    kann mithilfe der Gleichungen \eqref{eqn:SusU} und \eqref{eqn:SusR} nun 
+    die paramagnetische Suszeptibilität der $\ce{^{203}Dy}$-Probe berechnet werden.
+    Die gesamte Messung für $\ce{^{203}Dy}$ wird dreimal ausgeführt.\\
+    Das Verfahren für die zweite Probe $\ce{^{203}Nd}$ ist analog,
+    auch diese Messung wird dreimal wiederholt.\\
+    %\\
+    Anschließend wird die Länge $L$ der beiden Proben jeweils dreimal ausgemessen.
+    um mithilfe der Gleichung
+    \begin{equation}
+        Q_\text{Real} = \frac{M_\text{p}}{L \rho_\text{w}}
+    \end{equation}
+    den realen Querschnitt der Probe zu berechnen mit der Dichte $\rho_\text{w}$ und $M_\text{p}$.
+    
