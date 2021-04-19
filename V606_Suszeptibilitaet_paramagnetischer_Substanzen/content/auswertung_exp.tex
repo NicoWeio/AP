@@ -1,0 +1,108 @@
+\subsection{Experimentelle Bestimmung der Suszeptibilität}
+
+Da die verwendete Probe ein (nicht beliebig stopfbares) Pulver ist,
+ist ihre Dichte $\rho_p$ geringer als die eines Einkristalls $\rho_w$.
+Daher wird statt des gemessenen Querschnitts derjenige Querschnitt $Q_\text{real}$ verwendet,
+den die Probe hätte,
+wenn sie aus einem Einkristall bestünde.
+Dieser kann mithilfe der Gleichung
+\begin{equation}
+  \label{eqn:Q_real}
+  Q_\text{real} = \frac{M_\text{p}}{l \cdot \rho_\text{w}}
+\end{equation}
+berechnet werden.
+Dabei ist $M_\text{p}$ die Masse und $l$ die Länge der jeweiligen Probe.
+
+$l$ wurde durch durch dreimaliges Messen bestimmt,
+wie in \autoref{tab:laengen} zu sehen ist.
+Die daraus bestimmten $Q_\text{real}$ finden sich in \autoref{tab:Q_real}.
+
+\begin{table}
+  \centering
+  \caption{Gemessene Längen der Proben.}
+  \label{tab:laengen}
+  \begin{tabular}{c S S S c}
+  \toprule
+  Stoff &
+  {$l_1$} [\si{\centi\meter}] &
+  {$l_2$} [\si{\centi\meter}] &
+  {$l_3$} [\si{\centi\meter}] &
+  $\bar{l}$ [\si{\centi\meter}] \\
+  \midrule
+  $\symup{Dy_2O_3}$ & 17.75 & 17.8 & 17.78 & $\num{17.777} \pm \num{0.021}$ \\
+  $\symup{Nd_2O_3}$ & 17.9  & 17.9 & 17.85 & $\num{17.883} \pm \num{0.024}$ \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \caption{$Q_\text{real}$ der untersuchten Seltenen Erden.}
+  \label{tab:Q_real}
+  \begin{tabular}{c c}
+  \toprule
+  Stoff &
+  $Q_\text{real} [\si{\square\centi\meter}]$ \\
+  \midrule
+  $\symup{Dy_2O_3}$ & \num{0.1037(1)} \\
+  $\symup{Nd_2O_3}$ & \num{0.1111(2)} \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \caption{Widerstände und Spannungen mit und ohne Probe.}
+  \label{tab:messwerte_U_R}
+  \begin{tabular}{c c | S S S | S S S}
+  \toprule
+  Stoff &
+  Messung No. &
+  $R_o [\si{\ohm}]$ &
+  $R_m [\si{\ohm}]$ &
+  $\symup{\Delta}R [\si{\ohm}]$ &
+  $U_o [\si{\milli\volt}]$ &
+  $U_m [\si{\milli\volt}]$ &
+  $\symup{\Delta}U [\si{\milli\volt}]$ \\
+  \midrule
+  $\symup{Dy_2O_3}$ & 1 & 2.43 & 4.21 & 1.79  &  2.41 & 8.62 & 6.21 \\
+                    & 2 & 2.52 & 4.16 & 1.64  &  2.30 & 7.80 & 5.50 \\
+                    & 3 & 2.52 & 4.21 & 1.69  &  2.35 & 7.81 & 5.46 \\
+  \midrule
+  $\symup{Nd_2O_3}$ & 1 & 2.56 & 2.68 & 0.12  &  2.25 & 2.31 & 0.06 \\
+                    & 2 & 2.58 & 2.68 & 0.10  &  2.39 & 2.39 & 0.00 \\
+                    & 3 & 2.52 & 2.67 & 0.14  &  2.39 & 2.41 & 0.02 \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+% \subsubsection{Bestimmung mithilfe der Widerstandssdifferenz}
+% \subsubsection{Bestimmung mithilfe der Spannungsdifferenz}
+
+Wie in \autoref{eqn:SusR} beschrieben,
+kann mithilfe $\symup{\Delta}R$,
+der Widerstandssdifferenz des Potentiometers mit und ohne Probe,
+die Suszeptibilität $\chi_R$ berechnet werden.
+Gemäß \autoref{eqn:SusU} kann die Suszeptibilität $\chi_U$ aber auch aus der
+Differenz der Spannung gewonnen werden.
+
+Beide Rechnungen wurden auf Basis der Daten aus \autoref{tab:messwerte_U_R} durchgeführt und die Ergebnisse in \autoref{tab:chi_all} aufgetragen.
+
+\begin{table}
+  \centering
+  \caption{Experimentell bestimmte Suszeptibilitäten im Vergleich mit den Theoriewerten aus \autoref{sec:auswertung:chi_T}.}
+  \label{tab:chi_all}
+  \begin{tabular}{c c c S}
+  \toprule
+  Stoff &
+  $\chi_R \cdot \num{e3}$ &
+  $\chi_U \cdot \num{e3}$ &
+  $\chi_T \cdot \num{e3}$ \\
+  \midrule
+  % $\symup{Dy_2O_3}$ & \num{0.0284 \pm 0.0010} & \num{0.0425  \pm 0.0026}  & 0.0254 \\
+  % $\symup{Nd_2O_3}$ & \num{0.0031 \pm 0.0005} & \num{0.00030 \pm 0.00028} & 0.0030 \\
+  $\symup{Dy_2O_3}$ & \num{28.4 \pm 1.0} & \num{42.5 \pm 2.6}  & 25.4 \\
+  $\symup{Nd_2O_3}$ & \num{3.1 \pm 0.5}  & \num{0.30 \pm 0.28} & 3.0  \\
+  \bottomrule
+  \end{tabular}
+\end{table}

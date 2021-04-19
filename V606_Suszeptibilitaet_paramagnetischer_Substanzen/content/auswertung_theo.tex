@@ -1,0 +1,72 @@
+\subsection{Theoretische Bestimmung der Suszeptibilität}
+\label{sec:auswertung:chi_T}
+
+Aus den \hyperref[Hundsche_Regeln]{Hund'schen Regeln} gehen die Quantenzahlen,
+also Spin $S$, Bahndrehimpuls $L$ und Gesamtdrehimpuls $J$,
+hervor.
+Aus diesen kann dann der jeweilige \hyperref[eqn:Lande_Faktor]{Landé-Faktor} $g_J$
+und schließlich die Suszeptibilität $\chi_T$ berechnet werden.
+
+Beispielhaft wird das Molekül $\symup{Dy_2O_3}$ betrachtet.
+Dieses hat 9 4f-Elektronen \cite{versuchsanleitung}.
+Die \hyperref[Hundsche_Regeln]{Hund'schen Regeln} liefern dann:
+\begin{align*}
+  L &= \lvert -3 -2 -1 +0 +1 \lvert = 5 \\
+  S &= \frac{1}{2} \cdot 7 - \frac{1}{2} \cdot 2 = \num{2.5} \\
+  J &= L - S = \frac{9}{2} = \num{4.5} \; .
+\end{align*}
+
+Die Zahl der Momente pro Volumeneinheit beschreibt
+\begin{equation*}
+  N = 2 \cdot \frac{\rho}{M} \cdot N_A
+\end{equation*}
+mit Avogadrokonstante $N_A$, Dichte $\rho$ und der molaren Masse $M$.
+
+In \autoref{tab:Quantenzahlen_Lande} sind alle zuvor genannten Werte aufgelistet.
+
+\begin{table}[H]
+  \centering
+  \caption{Quantenzahlen, Landé-Faktor und stoffliche Eigenschaften der untersuchten Seltenen Erden.}
+  \label{tab:Quantenzahlen_Lande}
+  \begin{tabular}{c S S S S c c S}
+  \toprule
+  Stoff &
+  $S$ &
+  $L$ &
+  $J$ &
+  $g_J$ &
+  $\rho_w [\si{\gram\per\cubic\centi\meter}]$ &
+  $M [\si{\gram\per\mol}]$ &
+  $N [\SI{e-28}{\per\cubic\meter}]$ \\
+  \midrule
+  $\symup{Dy_2O_3}$ & 2.5 & 5 & 7.5 & 1.333 & \num{7.8}  \cite{versuchsanleitung} & \num{373} \cite{molmasse_Dy_2O_3} & 2.519 \\
+  $\symup{Nd_2O_3}$ & 1.5 & 6 & 4.5 & 0.727 & \num{7.24} \cite{versuchsanleitung} & \num{336} \cite{molmasse_Nd_2O_3} & 2.595 \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+Schließlich wird die Suszeptibilität gemäß \autoref{eqn:chi_T} bestimmt.
+Die Ergebnisse finden sich in \autoref{tab:chi_T}.
+
+\begin{table}[H]
+  \centering
+  \caption{Theoretisch berechnete Suszeptibilitäten der untersuchten Seltenen Erden.}
+  \label{tab:chi_T}
+  \begin{tabular}{c S}
+  \toprule
+  Stoff &
+  $\chi_T$ \\
+  \midrule
+  $\symup{Dy_2O_3}$ & 0.0254 \\
+  % 0.0126 rkallo
+  % 0.025  aknierim
+  % 0.026  Mampfzwerg
+  % 0.256  mwindau (in sich inkonsistent)
+  $\symup{Nd_2O_3}$ & 0.0030 \\
+  % 0.003 aknierim
+  % 0.003 Mampfzwerg
+  % 0.003 mwindau
+  % 0.0039 rkallo
+  \bottomrule
+  \end{tabular}
+\end{table}

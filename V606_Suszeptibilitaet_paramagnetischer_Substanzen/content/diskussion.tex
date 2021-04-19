@@ -1,0 +1,64 @@
+\section{Diskussion} \label{sec:diskussion}
+
+\subsection{Abweichungen}
+
+Die relative Abweichung der Messwerte wird als
+\begin{equation*}
+  \symup{\Delta}\chi = \frac{\chi_{R/U} - \chi_T}{\chi_T}
+\end{equation*}
+angegeben.
+Daraus ergeben sich die Abweichungen,
+die in \autoref{tab:abweichungen} aufgelistet sind.
+
+\begin{table}
+  \centering
+  \caption{Abweichung der experimentell bestimmten Suszeptibilitäten von den Theoriewerten.}
+  \label{tab:abweichungen}
+  \begin{tabular}{c S S}
+  \toprule
+  Stoff &
+  {$\symup{\Delta} \chi_R$ [\%]} &
+  {$\symup{\Delta} \chi_U$ [\%]} \\
+  \midrule
+  $\symup{Dy_2O_3}$ & -11.94 & -67.25 \\
+  $\symup{Nd_2O_3}$ & - 2.38 &  90.16 \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+Die Abweichungen entsprechen in etwa dem,
+was mit Blick auf die Messwerte zu erwarten war.
+Die Spannungsdifferenzen $\symup{\Delta}U$ fielen beispielsweise in allen drei Messungen mit $\symup{Nd_2O_3}$ sehr unterschiedlich aus
+und waren sehr klein gegenüber ihrem Fehler.
+Entsprechend groß ist die Abweichung mit $\num{90.16}\%$.
+
+
+\subsection{Mögliche Fehlerquellen}
+
+Beim Einstellen des Abgleichwiderstands zeigte sich,
+dass das verwendete Spannungsmessgerät nicht hinreichend genau abgelesen werden konnte:
+Für einen gewissen Einstellbereich war auf dem Messgerät keine Änderung zu erkennen.
+Es ist daher mit einer Abweichung des Widerstands von circa $\pm\SI{50}{\milli\ohm}$ zu rechnen.
+Das entspricht rund $\num{50}\%$ der in \autoref{tab:messwerte_U_R} gelisteten $\symup{\Delta}R$ und kann zu entsprechend großen Fehlern führen.
+% Spannung ging nicht auf 0 runter… ¯\_(ツ)_/¯
+
+
+Der bestimmte reale Querschnitt $Q_\text{real}$ unterliegt einem systematischen Fehler,
+da die Röhrchen nicht vollständig gefüllt waren,
+aber die Länge des gesamten Teströhrchens gemessen wurde.
+Daraus resultieren zu niedrige Werte.
+% - Röhrchen nicht ganz gefüllt, nicht ganz in der Spule…
+
+
+Die \hyperref[fig:plot_filterkurve]{Filterkurve} fiel mit einer \hyperref[misc:güte]{Güte von $8.7611 \pm 0.0164$} breit aus.
+Dadurch konnten Störfrequenzen die gemessene Spannung stärker verfälschen.
+
+
+Die Suszeptibilität der Proben ist bekanntlich auch von deren Temperatur abhängig.
+Zwar wurde versucht, die Proben nicht durch längeren Hautkontakt zu erwärmen,
+allerdings variierte möglicherweise auch die Umgebungstemperatur nicht unerheblich,
+da ein nahegelegenes Fenster geöffnet war.
+
+
+% - diverse Probleme im Vorhinein…
+% - 100mV_eff

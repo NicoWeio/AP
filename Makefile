@@ -6,7 +6,8 @@ protokolle: \
 	D703_Geiger_Mueller_Zaehlrohr/build/main.pdf \
 	V103_Biegung_elastischer_Staebe/build/main.pdf \
 	V204_Waermeleitung/build/main.pdf \
-	V302_Brueckenschaltung/build/main.pdf
+	V302_Brueckenschaltung/build/main.pdf \
+	V606_Suszeptibilitaet_paramagnetischer_Substanzen/build/main.pdf \
 
 D206_Waermepumpe/build/main.pdf:
 	$(MAKE) -C D206_Waermepumpe
@@ -25,3 +26,6 @@ V204_Waermeleitung/build/main.pdf:
 
 V302_Brueckenschaltung/build/main.pdf:
 	$(MAKE) -C V302_Brueckenschaltung
+
+V606_Suszeptibilitaet_paramagnetischer_Substanzen/build/main.pdf:
+	$(MAKE) -C V606_Suszeptibilitaet_paramagnetischer_Substanzen
