@@ -1,4 +1,5 @@
 \section{Theorie}
+\label{sec:theorie}
 
 \subsection{Das grundsätzliche Prinzip des Photoeffekts}
 
@@ -8,14 +9,15 @@
     zum anderen das korpuskulare Modell,
     also das Teilchenmodell,
     mit dem sich der Compton-Effekt, die Paarbildung und der Photoeffekt erklären lassen.\\
-    Je nach dem Versuch ist entweder das Wellen- oder das Teilchenbild relevant.
-    Für den Photoeffekt ist das Teilchenbild des Lichts entscheidend.\\
-    Der generelle Aufbau zur Messung des Photoeffektes ist in Abbildung \ref{fig:genAufbau} gezeigt.
+    Abhängig vom Versuch ist also entweder das Wellen- oder das Teilchenbild eine gute Betrachtungsweise.
+    Für den Photoeffekt ist das Teilchenbild des Lichts entscheidend,
+    da die Wechselwirkung von Photonen mit Materie untersucht wird.\\
+    Der grundlegende Aufbau zur Messung des Photoeffektes ist in \autoref{fig:genAufbau} gezeigt.
 
     \begin{figure}
         \centering
-        \includegraphics[width=\textwidth]{content/img/Abb_1.pdf}
-        \caption{Grundlegender Aufbau zur Messung des Photoeffektes.}
+        \includegraphics[width=0.5\textwidth]{content/img/Abb_1.pdf}
+        \caption{Grundlegender Aufbau zur Messung des Photoeffektes. \cite{versuchsanleitung}}
         \label{fig:genAufbau}
     \end{figure}
 
@@ -28,20 +30,23 @@
     sofern ihre Energie groß genug ist,
     Elektronen aus dem Material der Photokathode herauslösen.
     Wenn $E_\text{Ph}$ größer als die Austrittsarbeit $A_\text{K}$ der Elektronen ist,
-    wird die zusätzlich übertragene Energie in kinetische Energie $E_\text{Kin}$ der Elektronen umgewandelt
+    wird die zusätzlich übertragene Energie in kinetische Energie $E_\text{kin}$ der Elektronen umgewandelt
     \begin{equation}
-        E_\text{Ph} = h \nu = A_\text{K} + E_\text{Kin} . \label{eqn:Photonenenergie}
+        \label{eqn:Photonenenergie}
+        E_\text{Ph} = h \nu = A_\text{K} + E_\text{kin} \; .
     \end{equation}
+    Mit $h$ wird das Plancksche Wirkungsquantum bezeichnet.
     Der Zusammenhang zwischen der Frequenz $\nu$ und der Wellenlänge $\lambda$ ist durch
     \begin{equation*}
         \nu = \frac{c}{\lambda}
     \end{equation*}
     gegeben,
-    mit der Lichtgeschwindigkeit $c = \SI{3e8}{\meter\per\second}$.
-    Die Elektronen fliegen zu einer positiv geladenen Anode,
-    an der ein Photostrom der herausgelösten Elektronen zu messen ist.
+    mit der Lichtgeschwindigkeit $c \approx \SI{3e8}{\meter\per\second}$.
+    % TODO: Formulierung?
+    Die Elektronen bewegen sich zu einer positiv geladenen Anode,
+    an welcher der Strom der herausgelösten Elektronen als sogenannter Photostrom zu messen ist.
     Wenn $E_\text{Ph}$ kleiner als $A_\text{K}$ ist,
-    können die Elektronen nicht herausgelöst werden,
+    können die Elektronen nicht herausgelöst werden;
     es existiert also eine Grenzfrequenz,
     ab der der Photoeffekt erst möglich ist.
     Zusätzlich gilt,
@@ -49,64 +54,72 @@
     Außerdem kann pro Photon nur ein Elektron herausgelöst werden,
     woraus folgt,
     dass die Anzahl der pro Zeit herausgelösten Elektronen proportional zur Lichtintensität ist.
-    Aus der Gleichung \eqref{eqn:Photonenenergie} folgt,
+    Aus \autoref{eqn:Photonenenergie} folgt,
     dass die kinetische Energie der Elektronen abhängig von der Frequenz $\nu$ des Lichts ist,
     mit dem die Photokathode bestrahlt wird.
 
-\subsection{Experimentelle Messung des Photoeffektes mit der Gegenfeldmethode} \label{sec:zweizwei}
+\subsection{Experimentelle Messung des Photoeffektes mit der Gegenfeldmethode}
 
     Zur Untersuchung des Photoeffektes wird die sogenannte Gegenfeldmethode verwendet.
-    Dazu wird ein variables Potential $U$ zwischen Photokathode und Anode (siehe Abbildung \ref{fig:genAufbau}) angelegt,
-    welche dazu führt,
+    Dazu wird ein variables Potential $U$ zwischen Photokathode und Anode (siehe \autoref{fig:genAufbau}) angelegt,
+    welches dazu führt,
     dass die herausgelösten Elektronen durch ein gegengerichtetes elektrisches Feld abgebremst werden.
     Dies sorgt dafür,
     dass der gemessene Photostrom kleiner wird,
     da nur noch Elektronen,
-    deren Energie groß genug ist das Feld zu überwinden,
+    deren Energie ausreicht, um das Feld zu überwinden,
     auf der Anode auftreffen.
     Der Photostrom verschwindet,
     wenn
     \begin{equation}
-        e_0 U_\text{g} = \frac{1}{2} m_0 v_\text{max} ^2
+        e U_\text{g} = \frac{1}{2} m_0 v_\text{max}^2
     \end{equation}
     gilt,
     also auch die Elektronen mit der größten Geschwindigkeit $v_\text{max}$ bei einer Grenz-Gegenspannung $U_\text{g}$
     die Kathode nicht mehr erreichen.
-    Dabei ist hier $e_0$ die Elementarladung der Elektronen und $m_0$ ihre Ruhemasse.
-    Die Energie der schnellsten Elektronen kann durch
+    Dabei ist  $e$ die Elementarladung der Elektronen und $m_0$ ihre Ruhemasse.
+    % Die Energie der schnellsten Elektronen kann mithilfe des Planckschen Wirkungsquantums $h$ und der Lichtfrequenz $\nu$
+    % beziehungsweise Austrittsarbeit $A_\text{K}$ und Potentialdifferenz des Gegenfeldes $U_g$
+    % Mit einem Gegenfeld verändert sich die Energiebilanz aus \autoref{eqn:Photonenenergie}.
+    Mit einem Gegenfeld lässt sich die Energiebilanz aus \autoref{eqn:Photonenenergie} anders lesen.
+    Die auf ein Elektron übertragene Energie teilt sich dann
+    in Austrittsarbeit $A_\text{K}$ und Arbeit im Gegenfeld $E_\text{kin} \geq e U_\text{g}$ auf:
     \begin{equation}
-        h \nu = A_\text{K} + e_0 U_\text{g}
+        E_\text{Ph} = h \nu = A_\text{K} + e U_\text{g} \; .
     \end{equation}
-    berechnet werden.\\
-    Der Photostrom fällt bei steigender Gegenspannung $U$ allerdings nicht sofort ab, wie in Abbildung \ref{fig:GegSpannungStrom} gezeigt,
+    \ \\
+    Der Photostrom fällt bei steigender Gegenspannung $U$ allerdings nicht sofort ab, wie in \autoref{fig:GegSpannungStrom} gezeigt,
     was daran liegt,
     dass die Elektronen im Material verschiedene Energieniveaus besitzen und daher verschiedenenergetisch sind,
     wenn sie aus der Photokathode herausgelöst werden.
 
     \begin{figure}
         \centering
-        \includegraphics[width=\textwidth]{content/img/Abb_5.pdf}
-        \caption{Verlauf des Photostroms bei steigender Gegenspannung.}
+        \includegraphics[width=0.75\textwidth]{content/img/Abb_5.pdf}
+        \caption{Verlauf des Photostroms bei steigender Gegenspannung. \cite{versuchsanleitung}}
         \label{fig:GegSpannungStrom}
     \end{figure}
     %\clearpage
 
+    \phantomsection
+    \label{sec:theorie:fermi_dirac}
     Die Energieverteilung der Elektronen im Material kann mit der Fermi-Dirac-Statistik erläutert werden.
     Sie besagt, dass sich die Energie der Elektronen auf einem Intervall von 0 bis zu einer Fermi-Energie $\zeta$ beschreiben lässt.
     Die obere Grenze $\zeta$ ist materialabhängig.
     Die herausgelösten Elektronen haben teilweise also eine Energie, die größer als $h \nu - A_\text{K}$ ist.\\
-    Für den Photostrom ergibt sich folgender Zusammenhang
+    Für den Photostrom ergibt sich der Zusammenhang
     \begin{equation}
-        I_\text{Ph} \propto U^2 .
+        \label{eqn:sqrt_I_gesetz}
+        I_\text{Ph} \propto U^2 \; .
     \end{equation}
-    In einem Diagramm von $\sqrt{I_\text{Ph}}$ gegen $U$ bildet $U_\text{g}$ die Nullstelle (siehe Abbildung \ref{fig:GegSpannungStrom}).\\
+    In einem Diagramm von $\sqrt{I_\text{Ph}}$ gegen $U$ bildet $U_\text{g}$ die Nullstelle (siehe \autoref{fig:GegSpannungStrom}).\\
     \\
     Zusätzlich muss in manchen Fällen eine Beschleunigungsspannung $U_\text{b}$ angelegt werden,
-    damit Photostrom ensteht und
+    damit ein Photostrom ensteht und
     \begin{equation}
-        h \nu + e_0 U_\text{b} \geq A_\text{A}
+        h \nu + e U_\text{b} \geq A_\text{A}
     \end{equation}
     ist.
-    Die Energie der Elektronen, welche sich aus $E_\text{Ph} =  h \nu$ und der elektrischen Energie $e_0 U_\text{b}$ zusammensetzt,
-    muss größer sein als die Austrittsarbeit $A_\text{A}$ der Anode sein,
+    Die Energie der Elektronen, welche sich aus $E_\text{Ph} =  h \nu$ und der elektrischen Energie $e U_\text{b}$ zusammensetzt,
+    muss größer als die Austrittsarbeit $A_\text{A}$ der Anode sein,
     damit die Elektronen auf die Anode treffen.
