@@ -1,0 +1,67 @@
+\section{Diskussion}
+
+\subsection{Abweichungen}
+Insgesamt lieferte die Auswertung gute bis sehr gute Werte mit minimalen Abweichungen.
+
+Die in \autoref{sec:auswertung:wellenlaenge} bestimmte Wellenlänge des Lasers
+$\SI{632(9)}{\nano\meter}$
+unterscheidet sich um $\SI{2.953(8989)}{\nano\meter}$
+von der Herstellerangabe von $\SI{635}{\nano\meter}$,
+welche auf diesem angebracht ist.
+Das ist ein gutes Ergebnis und beweist die hohe Präzision und Genauigkeit des genutzten Versuchsaufbaus.
+Dies ist darauf zurückzuführen,
+dass es keine bedeutsamen Quellen systematischer Fehler gibt;
+das mehrfache Zählen vieler Intensitätsmaxima
+(hier rund $\num{30000}$ in $\num{10}$ Durchgängen)
+minimiert den statistischen Fehler dabei nahezu beliebig.
+% …ist idealerweise ohne Fehler möglich.
+% Bin ich zu optimistisch? :P
+
+Um die Fehler in \autoref{sec:auswertung:brechungsindex} besser vergleichen und einordnen zu können,
+wird die Änderung des Brechungsindex $\symup{\Delta}n$
+statt des absoluten Wertes $n$ betrachtet.
+Für den Literaturwert $n_\text{lit}$ \cite{brechzahl} wird diese durch Umstellen von \autoref{eqn:brechungsindex} ermittelt:
+\begin{equation*}
+  \symup{\Delta}n_\text{lit} = \frac{n_\text{lit} - 1}{\frac{T}{T_0} \cdot \frac{p_0}{Δp}} = \num{0.000150} \; .
+\end{equation*}
+
+Dann ergibt sich eine Abweichung von $\SI{19.74(2453)}{\percent}$,
+wenn alle Messwerte berücksichtigt werden,
+beziehungsweise $\SI{1.837(16365)}{\percent}$,
+wenn nur Werte zu positiver Druckänderung ($\uparrow$) betrachtet werden.
+Offenbar verringert letzteres Vorgehen den systematischen Fehler,
+während die schon in den Ausgangsdaten beobachtbaren statistischen Fehler weiterhin durchschlagen.
+
+Es sei erwähnt,
+dass die prozentuale Abweichung von $n$ mit
+$\SI{0.0054(67)}{\percent}$ beziehungsweise $\SI{0.00050(445)}{\percent}$
+deutlich geringer ist.
+
+
+\subsection{Mögliche Fehlerquellen}
+\label{sec:diskussion:fehlerquellen}
+
+Aufgrund der hohen Empfindlichkeit des Interferometers
+konnten auch kleine Erschütterungen zu einer ungewollten Auslösung des Zählers führen.
+
+Insbesondere bei der Erzeugung des Grobvakuums
+mithilfe einer Handpumpe
+ließen sich solche Fehler beobachten,
+da die verwendeten Schläuche einen Teil der Bewegungen übertrugen.
+
+Daher könnten einerseits die Werte mit negativer Druckänderung ($\downarrow$),
+während derer also die handbetriebene Vakuumpumpe zur Erzeugung eines Grobvakuums benutzt wurde,
+zu groß sein,
+da bei diesem Vorgang die Übertragung von Erschütterungen über die Schläuche nicht zu vermeiden war.
+
+Andererseits könnten diese Werte auch zu niedrig sein,
+da sich mit der Handpumpe nur sprunghafte Druckänderungen erzeugen lassen,
+was schnelle Phasendurchgänge % ist das ein Wort?
+zur Folge hatte,
+welche vom Zähler möglicherweise nicht registriert wurden.
+
+Dieses Problem bezieht sich in erster Linie auf die positiven,
+aber auch auf die negativen Druckänderungen,
+da das Belüftungsventil ebenfalls schwer zu kontrollieren war.
+
+% - Ablesegenauigkeit der Mikrometerschraube

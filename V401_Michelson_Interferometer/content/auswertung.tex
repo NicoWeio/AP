@@ -1,0 +1,101 @@
+\section{Auswertung}
+
+\subsection{Bestimmung der Wellenlänge des Lasers}
+\label{sec:auswertung:wellenlaenge}
+
+Zunächst soll berechnet werden,
+welche Änderung der optischen Weglänge $\Delta$
+aus dem Verstellen der Mikrometerschraube um $\SI{5}{\milli\meter}$ resultiert.
+Dazu muss beachtet werden,
+dass diese über einen Untersetzungsgebel mit Übersetzung $\num{5.017}$
+mit dem zu verschiebenden Spiegel verbunden ist.
+Außerdem muss berücksichtigt werden,
+dass das Licht die Strecke zweimal (hin und zurück) passiert.
+Daher ergibt sich
+\begin{equation*}
+  \Delta = 2 \cdot \frac{\SI{5}{\milli\meter}}{\num{5.017}} = \SI{1.993}{\milli\meter} \; .
+\end{equation*}
+% TODO: Abgleichen mit Theorie-Kapitel
+
+\begin{table}[H]
+  \centering
+  \caption{Gezählte Intensitätsmaxima für jeden Messdurchlauf.}
+  \label{tab:messwerte1}
+  \begin{tabular}{c}
+  \toprule
+  $z$ \\
+  \midrule
+  3184 \\
+  3028 \\
+  3177 \\
+  3137 \\
+  3179 \\
+  3154 \\
+  3183 \\
+  3158 \\
+  3186 \\
+  3150 \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+Wird über die in \autoref{tab:messwerte1} angegebenen Zählwerte gemittelt,
+ergibt sich $\bar{z} = \num{3153.6(449)}$.
+Mithilfe von \autoref{eqn:Wellenlänge} berechnet sich dann die Wellenlänge des benutzten Lasers zu
+% ↑ ($\lambda = \frac{\Delta}{z}$)
+$\SI{632(9)}{\nano\meter}$.
+% TODO: mehr Stellen?
+
+\subsection{Bestimmung des Brechungsindex von Luft}
+\label{sec:auswertung:brechungsindex}
+
+Die Normalbedingungen sind durch
+\begin{align*}
+  p_0 &= \SI{1.0132}{\bar} \\
+  T_0 &= \SI{273.15}{\kelvin} \\
+\end{align*}
+gegeben \cite{versuchsanleitung};
+die Umgebungstemperatur wird auf $T = \SI{293.15}{\kelvin}$ festgelegt.
+
+\begin{table}[H]
+  \centering
+  \caption{Gezählte Intensitätsmaxima mit Angabe der Richtung der Druckänderung.}
+  \label{tab:messwerte2}
+  \def\arraystretch{1.2}
+  \begin{tabular}{r c}
+  \toprule
+  Druckänderung ($\SI{0.6}{\bar}$) &
+  $z$ \\
+  \midrule
+  $\downarrow$ & 27 \\
+  $\uparrow$   & 33 \\
+  $\downarrow$ & 16 \\
+  $\uparrow$   & 34 \\
+  $\downarrow$ & 24 \\
+  $\uparrow$   & 33 \\
+  $\downarrow$ & 23 \\
+  $\uparrow$   & 34 \\
+  $\downarrow$ & 26 \\
+  $\uparrow$   & 33 \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+Der Mittelwert für die in \autoref{tab:messwerte2} angegebenen Zählwerte beträgt $\num{28.3(58)}$.
+Mithilfe von \autoref{eqn:brechungsindexunterschied} wird die Brechungsindexänderung damit
+zu $\symup{\Delta}n = \num{0.00018(4)}$ bestimmt.
+Für diese Berechnung wurde die angegebene Wellenlänge von $\SI{635}{\nano\meter}$,
+nicht die zuvor experimentell bestimmte,
+verwendet.
+Aus \autoref{eqn:brechungsindex} kann schließlich der Brechungsindex berechnet werden.
+Es ergibt sich $n = \num{1.00033(7)}$.
+
+Auffällig ist die Abweichung zwischen den Messwerten bei Erhöhung und Verminderung des Drucks.
+Es liegt daher nahe,
+dass ein systematischer Fehler vorliegt.
+Darauf soll in \autoref{sec:diskussion:fehlerquellen} näher eingegangen werden.
+Werden die Werte mit negativer Druckänderung ($\downarrow$) weggelassen,
+ergibt sich
+die Brechungsindexänderung zu $\symup{\Delta}n = \num{0.000147(25)}$,
+der Brechungsindex zu $n = \num{1.00027(4)}$,
+und eine deutlich geringere (relative) Abweichung vom Literaturwert.
