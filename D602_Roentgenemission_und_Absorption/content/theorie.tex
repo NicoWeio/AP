@@ -1,0 +1,173 @@
+\section{Theorie} 
+\label{sec:theorie}
+
+    Im folgenden Abschnitt sollen die theoretischen Grundlagen der Entstehung von Röntgenstrahlung,
+    die Gestalt des Röntgen- und Absorptionsspektrums, 
+    sowie die Bragg-Reflexion erläutert werden.
+
+\subsection{Das Röntgenspektrum}
+
+    Röntgenstrahlung entsteht in einer Röntgenröhre.\\
+
+    \begin{figure}
+        \centering 
+        \includegraphics[scale=0.75]{Röntgenröhre.PNG}
+        \caption{Der Aufbau einer Röntgenröhre.}
+        \label{fig:Röntgenröhre}
+    \end{figure}
+
+    In einer evakuierten Röhre werden mithilfe des glühelektrischen Effekts an einer negativ geladenen Kathode Elektronen erzeugt.
+    Die Elektronen werden in einem elektrischen Feld zu einer positiv geladenen Anode hin beschleunigt,
+    wobei ihre potentielle (elektrische) Energie in kinetische Energie umgewandelt wird.
+    Wenn die Elektronen auf die Anode auftreffen,
+    werden sie so stark abgebremst,
+    dass sie Energie in Form von Strahlung abgeben.
+    Es wird dabei zwischen kontinuierlicher Bremsstrahlung und charakteristischer Röntgenstrahlung unterschieden.\\
+    Das \textbf{kontinuierliche Bremsspektrum} entsteht durch die Abbremsung.
+    Die Elektronen geben Energie in Form eines Photons, 
+    auch Röntgenquant genannt,
+    ab.
+    Dabei muss das Elektron jedoch nicht seine gesamte Energie abgeben,
+    sondern kann einen Teil als kinetische Energie behalten,
+    was zu einem kontinuierlichen Spektrum führt,
+    da jedes Elektron einen unterschiedlichen Energiebetrag abgeben kann,
+    wie in Abbildung \ref{fig:Bremsspektrum} gezeigt. 
+
+    \begin{figure}
+        \centering
+        \includegraphics[scale=1]{Bremsspektrum.PNG}
+        \caption{Das kontinierliche Spektrum der Bremsstrahlung.}
+        \label{fig:Bremsspektrum}
+    \end{figure}
+    
+    Die minimale Wellenlänge $\lambda_\text{min}$ beschreibt den Fall,
+    bei dem das Elektron seine gesamte kinetische Energie abgibt und diese in Strahlungsenergie umgewandelt wird.
+    Es gilt
+    \begin{equation}
+        \lambda_\text{min} = \frac{hc}{eU_\text{B}} \ ,
+    \end{equation}
+    mit der Elementarladung $e$ des Elektrons und der Beschleunigungsspannung $U_\text{B}$.
+    %Die Wellenlänge beschreibt die größte Energie,
+    %die ein Teilchen als Quant übertragen kann.
+    %%Das habe ich damals im LK so gelernt, ich weiß nicht ob wir das reinnehmen sollen, es steht so nicht in der Anleitung.
+    \\
+    Das \textbf{charakteristische Spektrum} kommt durch Ionisierung der Anodenatome zustande,
+    wenn die Elektronen auf die Anode treffen.
+    Dabei entsteht eine Lücke auf einer der inneren Schalen,
+    sodass ein Elektron von einem höheren Energieniveau in die Lücke zurückfallen kann.
+    Die dabei freiwerdende Energie wird in Form eines Röntgenquants ausgesendet,
+    welches genau die diskrete Energiedifferenz 
+    \begin{equation*}
+        E = h \nu = E_\text{m} - E_\text{n}
+    \end{equation*}
+    besitzt.
+    Die freiwerdende Energie ist abhängig vom Anodenmaterial,
+    was zu einem diskreten Energiespektrum führt.
+    Die entstehenden scharfen Linien des Spekrums werden mit $K_{\symup{\alpha}}$, $K_{\symup{\beta}}$, $L_{\symup{\alpha}}$ bezeichnet,
+    abhängig von der Schale $K$, $L$, $M$, 
+    auf die das Elektron zurückfällt.
+    Der Index $\alpha$, $\beta$ bezeichnet den Ursprungsort des Elektrons.
+    Die Elektronen in den inneren Schalen werden von denen aus den äußeren Schalen abgeschirmt,
+    sodass sich die Bindungsenergien der einzelnen Elektronen auf den Schalen unterscheidet.
+    Für die n-te Schale ergibt sich eine Energie von
+    \begin{equation}
+        E_\text{n} = - R_\infty z_{\text{eff}}^2 \cdot \frac{1}{n^2} \ ,
+    \end{equation}
+    mit der Rydbergenergie $R_\infty = \SI{13.6}{\electronvolt}$,
+    der effektiven Kernladungszahl $z_{\text{eff}} = z - \sigma$ und der Abschirmkonstante $\sigma$.
+    Die Spektrumslinien der äußeren Elektronen teilen sich in mehrere eng aneineranderliegende Linien auf,
+    da die Bindungsenergien dieser Elektronen sich durch Bahndrehimpuls und Elektronenspin unterscheiden.
+    Diese Reihe von beieinanderliegenden Linien wird als Feinstruktur bezeichnet.
+    Die genaue Energie der einzelnen Linien kann mithilfe der Sommerfeld'schen Feinstrukturformel berechnet werden
+    \begin{equation}
+        E_\text{n,j} = - R_\infty \Biggl(z_{\text{eff},1}^2 \cdot \frac{1}{n^2} + \alpha^2 \cdot \frac{1}{n^3} \Biggl(\frac{1}{j+\frac{1}{2}}- \frac{3}{4n}\Biggr)\Biggr) \ ,
+        \label{eqn:Feinstrukturformel}
+    \end{equation}
+    wobei $\alpha = \frac{1}{137}$ die Sommerfeld'sche Feinstrukturkonstante und $j$ der Gesamtdrehimpuls des Elektrons darstellt.
+    Für die K-Schale kann die Energie mit Vernachlässigung des Drehimpulses mithilfe von
+    \begin{gather}
+        E_\text{K,abs} = R_\infty (z - \sigma_1)^2 \\
+        E_{\text{K},\symup{\alpha}} = R_\infty \Bigl(\frac{1}{n}\Bigr)^2 \cdot (z - \sigma_1)^2 -R_\infty \Bigl(\frac{1}{m}\Bigr)^2 \cdot (z - \sigma_2)^2 
+        \label{eqn:EnergieKalpha}\\
+        E_{\text{K},\symup{\beta}} = R_\infty \Bigl(\frac{1}{n}\Bigr)^2 \cdot (z - \sigma_1)^2 - R_\infty \Bigl(\frac{1}{l}\Bigr)^2 \cdot (z - \sigma_3)^2
+        \label{eqn:EnergieKbeta}
+    \end{gather}
+    berechnet werden.\\
+    %Das Auflösevermögen zwischen den einzelnen Linien kann mit einer Halbwertsbreite mithilfe der Gleichung
+    %\begin{equation}
+    %    A = \frac{E_\text{K}}{\symup{\Delta}E_\text{FWHM}}
+    %    \label{eqn:Auflösevermögen}
+    %\end{equation}
+    %bestimmt werden. 
+    %%Ich bin mir nicht sicher, ob das nicht in der Auswertung besser wäre.
+    
+\subsection{Absorption von Röntgenstrahlung}
+
+    Bei Röntgenstrahlung mit einer Energie unter $\SI{1}{\mega\electronvolt}$ sind die dominanten Prozesse der Photoeffekt und der Compton-Effekt.
+    Wenn die Röntgenstrahlung auf einen Absorber trifft,
+    nimmt der Absorptionskoeffizient bei zunehmender Energie ab,
+    steigt aber stark an,
+    sobald die Photonenenergie größer als die Bindungsenergie der ersten Schale ist,
+    was in Abbildung \ref{fig:Absorption} darstellt ist.\\
+    Nach dem Moseley'schen Gesetz ist die Absorptionsenergie $E_\text{K}$ proportional zum Quadrat der Ordnungszahl $Z$ des Absorbermaterials.
+    Es gilt 
+    \begin{equation}
+        E_\text{K} = R h (z - \sigma)^2
+        \label{eqn:Moseley}
+    \end{equation}
+    
+    \begin{figure}
+        \centering
+        \includegraphics[scale=1]{Absorption.PNG}
+        \caption{Verlauf der Absorption bei steigender Energie der Röntgenstrahlung.}
+        \label{fig:Absorption}
+    \end{figure}
+    
+    Die Energie der Schale,
+    aus der das Elektron stammt,
+    wird als $K$, $L$, $M$, -Absorptionskante bezeichnet.
+    Für die einzelne $K$-Kante der K-Schale,
+    welche die Hauptquantenzahl $n=1$ besitzt,
+    ergibt sich mithilfe der Gleichung \eqref{eqn:Feinstrukturformel} die Abschirmkonstante
+    \begin{equation}
+        \sigma_\text{K} = Z - \sqrt{\frac{E_\text{K}}{R_\infty} - \frac{\alpha^2 Z^2}{4}} \ ,
+        \label{eqn:SigmaK}
+    \end{equation}
+    mit der Ordnungszahl $Z$ des zu untersuchenden Materials.
+    Die $L$-Schale besitzt drei Kanten $L_I$, $L_{II}$ und $L_{III}$,
+    wobei in diesem Versuch nicht zwischen $L_I$ und $L_{II}$ unterschieden werden kann,
+    sodass sich mit $\symup{\Delta} E_\text{L} = E_{\text{L}_{II}} - E_{\text{L}_{III}}$ für die Abschirmkonstante
+    \begin{equation}
+        \sigma_\text{L} = Z - \sqrt{\frac{4}{\alpha} 
+        \sqrt{\frac{\symup{\Delta}E_\text{L}}{R_\infty}} - \frac{5\symup{\Delta}E_\text{L}}{R_\infty}} 
+        \sqrt{1 + \frac{19}{32}\alpha^2 \frac{\symup{\Delta}E_\text{L}}{R_\infty}}  
+    \end{equation}
+    ergibt.
+
+\subsection{Untersuchung der Röntgenstrahlung mithilfe der Bragg'schen Reflexion}
+
+    Die Wellenlängen und damit auch die Energien der Röntgenstrahlung können mithilfe von Reflexion untersucht werden.
+    Die Röntgenstrahlung wird aus der Röntgenröhre (siehe Abbildung \ref{fig:Röntgenröhre}) auf einen Gitterkristall (hier ein LiF-Kristall) gelenkt.
+    An den Atomen des Kristalls,
+    welche einen Abstand $d$ voneinander haben,
+    werden die Strahlen reflektiert.
+    \begin{figure}
+        \centering
+        \includegraphics[scale=1.25]{BraggReflexion.PNG}
+        \caption{Reflexion der Röntgenstrahlung am Gitterkristall.}
+        \label{fig:BraggReflexion}
+    \end{figure}
+    
+    Bei einem sogenannten Glanzwinkel $\theta$ kommt es zu konstruktiver Interferenz und die Wellenlänge $\lambda$ kann mihilfe der Bragg-Bedingung
+    \begin{equation}
+        2 d \sin{\theta} = n \cdot \lambda
+        \label{eqn:BraggBedingung}
+    \end{equation}
+    bestimmt werden,
+    wobei die Zahl $n$ hier die Beugungsordnung angibt.
+
+    
+    
+
+
+
