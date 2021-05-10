@@ -2,20 +2,21 @@
 
     Der folgende Abschnitt stellt die verwendete Messapparatur vor.
     Zudem wird beschrieben,
-    wie das Emissions- und Absorptionsspektrums,
-    sowie die Bragg-Bedingung gemessen wird.
+    wie das Emissions- und Absorptionsspektrum
+    sowie die Bragg-Bedingung gemessen werden.
+
 
 \subsection{Versuchsaufbau}
 
     \begin{figure}
         \centering
-        \caption{Die Versuchsapparatur mit Benennung der Bestandteile.}
-        \includegraphics[scale=1]{Versuchsaufbau.PNG}
+        \includegraphics[width=\textwidth]{content/img/Abb_4_compressed.pdf}
+        \caption{Die Versuchsapparatur mit Benennung der Bestandteile. \cite{versuchsanleitung}}
         \label{fig:Versuchsapparatur}
     \end{figure}
 
-    In Abbildung \ref{fig:Versuchsapparatur} ist die gesamte Versuchsapparatur dargestellt.
-    Die Hauptbestandteile sind eine Kupfer-Röntgenröhre, 
+    In \autoref{fig:Versuchsapparatur} ist die gesamte Versuchsapparatur dargestellt.
+    Die Hauptbestandteile sind eine Kupfer-Röntgenröhre,
     ein LiF-Kristall,
     der für die Bragg-Reflexion verwendet wird,
     und ein Geiger-Müller-Zählrohr.
@@ -25,16 +26,17 @@
     Die Messung kann mithilfe der Einstellelemente im unteren Bereich der Apparatur geregelt werden.
     Für alle Messungen wird eine Beschleunigungsspannung von $U_\text{B} = \SI{35}{\kilo\volt}$ an der Röntgenröhre eingestellt,
     sowie ein Emissionsstrom von $I = \SI{1}{\milli\ampere}$ am Geiger-Müller-Zählrohr.
-    Mithilfe der Winkeleinstellung $7$ kann ein fester Winkel des LiF-Kristalls eingestellt werden.
+    Mithilfe der Winkeleinstellung \textbf{7} kann ein fester Winkel des LiF-Kristalls eingestellt werden.
     Zudem muss darauf geachtet werden,
     dass die $\SI{1}{\milli\meter}$-Blende und der Kristall in den jeweiligen Halterungen sind.
     Die Schlitzblende muss in Drehrichtung waagerecht auf dem Geiger-Müller-Zählrohr angebracht sein.
     %Warum waagerecht????
     \\
-    Die Messergebnisse können über einen Rechner aufgenommen werden,
+    Die Messergebnisse können über einen Rechner aufgenommen werden;
     dazu wird unter dem Programmpunkt \textit{measure} unter \textit{Messgeräte} das Röntgengerät ausgewählt.
-    Es kann die Messart, der Drehwinkel $\theta$, ein Drehmodus und eine Integrationszeit $\symup{\Delta}t$ festgelegt werden.
+    Es können die Messart, der Drehwinkel $\theta$, ein Drehmodus und eine Integrationszeit $\symup{\Delta}t$ festgelegt werden.
     Die Messart muss dabei auf \textit{Spektren} eingestellt sein.
+
 
 \subsection{Überprüfung der Bragg-Bedingung}
 
@@ -43,27 +45,43 @@
     wird die Intensität der Röntgenstrahlung am Geiger-Müller-Zählrohr in einem Winkelbereich von $\theta_\text{GM} = \SI{26}{\degree}$
     bis $\theta_\text{GM} = \SI{30}{\degree}$ gemessen.
 
+
 \subsection{Das Emissionsspektrum der Kupfer-Röntgenröhre}
 
-    Für diese Messung wird im Rechner das Programm \textit{2:1 Koppelmodus} ausgewählt.
-    Es wird in einem Winkelbereich von $\theta = \SI{8}{\degree}$ bis $\theta = \SI{25}{\degree}$ in Schritten von $\symup{\Delta}\theta = \SI{0.1}{\degree}$.
+    Für diese Messung wird am Rechner das Programm \textit{2:1 Koppelmodus} ausgewählt.
+    Es wird in einem Winkelbereich von $\theta = \SI{8}{\degree}$ bis $\theta = \SI{25}{\degree}$ in Schritten von $\symup{\Delta}\theta = \SI{0.1}{\degree}$ gemessen.
     Als Integrationszeit wird $\symup{\Delta}t = \SI{10}{\second}$ gewählt.
-    Das Röntgenspektrum wird in einer Beugungsordnung von $n=1$ ausgemessen.\\
-    Das Auflösevermögen wird %mithilfe von Gleichung \eqref{eqn:Auflösevermögen} %%Theorie l.91-97
+    Das Röntgenspektrum wird in einer Beugungsordnung von $n=1$ ausgemessen.
+    \\
+    Das Auflösungsvermögen wird
+    %mithilfe von \autoref{eqn:Auflösungsvermögen} %%Theorie l.91-97
     bestimmt,
     wobei die Halbwertsbreiten gemessen werden.
+
     Mithilfe der Gleichungen \eqref{eqn:EnergieKalpha} und \eqref{eqn:EnergieKbeta} können die Abschirmkonstanten $\sigma_1$, $\sigma_2$, und $\sigma_3$, bestimmt werden,
     wobei $m=2$ und $l=3$ zu wählen sind.
 
+    \begin{align}
+    \begin{split}
+        \label{eqn:sigma_123}
+        % \label{eqn:si1}
+        \sigma_1 &= Z - \sqrt{\frac{E_\text{K,abs}}{R_\infty}} \\
+        % \label{eqn:si2}
+        \sigma_2 &= Z - 2 \sqrt{\frac{1}{n^2} (Z - \sigma_1)^2-\frac{E_{K,\alpha}}{R_\infty}} \\
+        % \label{eqn:si3}
+        \sigma_3 &= Z - 3 \sqrt{\frac{1}{n^2} (Z - \sigma_1)^2-\frac{E_{K,\beta}}{R_\infty}} \; .
+    \end{split}
+    \end{align}
+
+
 \subsection{Das Absorptionsspektrum verschiedener Materialien}
 
-    Um das Absorptionsspektrum zu messen, 
+    Um das Absorptionsspektrum zu messen,
     wird ein Absorber zwischen dem LiF-Kristall und dem Geiger-Müller-Zählrohr angebracht,
     sodass die Röntgenstrahlung nach der Reflexion auf den Absorber und nicht direkt auf das Zählrohr trifft.
     Das Absorptionsspektrum wird in Abständen von $\symup{\Delta}\theta = \SI{0.1}{\degree}$ mit einer Integrationszeit von $\symup{\Delta}t = \SI{20}{\second}$ gemessen.
-    Als Absorber dienen Materialien mit Ordnungszahlen von $30 \leq Z \leq 50$,
-    hier sind es Zink, Germanium, Brom, Rubidium, Strontium und Zirkonium,
-    deren Literaturwerte in Kapitel \ref{sec:vorbereitung} angegeben sind.
+    Als Absorber dienen Materialien mit Ordnungszahlen von $30 \leq Z \leq 50$.
+    Hier sind es Zink, Germanium, Brom, Rubidium, Strontium und Zirkonium,
+    deren Literaturwerte in \autoref{sec:vorbereitung} angegeben sind.
     Mithilfe der Gleichungen \eqref{eqn:EnergieKalpha} und \eqref{eqn:EnergieKbeta} und der Literaturwerte können die Abschirmkonstanten berechnet werden.
-    Die Rydbergenergie $R_\infty = R \cdot h$ kann nach dem Moseley'schen Gesetz mit Gleichung \eqref{eqn:Moseley} bestimmt werden.
-
+    Die Rydbergenergie $R_\infty = R \cdot h$ kann nach dem Moseley'schen Gesetz mit \autoref{eqn:Moseley} bestimmt werden.

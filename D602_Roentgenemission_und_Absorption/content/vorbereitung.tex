@@ -2,57 +2,63 @@
 \label{sec:vorbereitung}
 
     In Aufgabe 1 sollte recherchiert werden,
-    bei welchen Energien sich die $\ce{Cu} K_\alpha$- und $\ce{Cu} K_\beta$- Linien ergeben und 
-    bei welchen Glanzwinkeln $\theta$ diese bei einem LiF-Kristall mit $d = \SI{201.4}{\pico\meter}$ liegen.\\
+    bei welchen Energien sich die $\ce{Cu} K_\alpha$- und $\ce{Cu} K_\beta \,$- Linien ergeben
+    und bei welchen Glanzwinkeln $\theta$ diese bei einem LiF-Kristall mit $d = \SI{201.4}{\pico\meter}$ liegen.\\
     \\
-    Mit den Wellenlängen der $\ce{Cu} K_\alpha$- und $\ce{Cu} K_\beta$- Linien können die Energien mithilfe der Gleichung
+    Mit den Wellenlängen der $\ce{Cu} K_\alpha$- und $\ce{Cu} K_\beta \,$- Linien können die Energien mithilfe der Gleichung
     \begin{equation}
+        \label{eqn:lambda_to_E}
         E = h \cdot \frac{c}{\lambda}
     \end{equation}
-    mit dem Planck'schen Wirkungsquantum $\SI{6.626e-34}{\joule\second}$ und der Lichtgeschwindigkeit $c$ im Vakuum berechnet werden.
-    Für die Berechnung der Glanzwinkel $\theta_n$,
-    mit der Beugungsordnung $n$ (hier $n=1$ und $n=2$),
-    wird die Gleichung \eqref{eqn:BraggBedingung} aus Kapitel \ref{sec:theorie} nach $\theta$ umgeformt.
+    mit dem Planck'schen Wirkungsquantum ($h = \SI{6.626e-34}{\joule\second}$) und der Lichtgeschwindigkeit im Vakuum $c$ berechnet werden.
+    Für die Berechnung der Glanzwinkel $\theta_n$
+    mit der Beugungsordnung $n$ (hier $n=1$ und $n=2$)
+    wird die \autoref{eqn:BraggBedingung} aus \autoref{sec:theorie} nach $\theta$ umgeformt.
     Es ergeben sich folgende Werte.
 
     \begin{table}
         \centering
-        \caption{Wellenlängen, Energien und Glanzwinkel der $\ce{Cu} K_\alpha$- und $\ce{Cu} K_\beta$- Linie.}
+        \caption{Wellenlängen, Energien und Glanzwinkel der $\ce{Cu} K_\alpha$- und $\ce{Cu} K_\beta \,$- Linie.}
         \label{tab:Vorbereitung1}
-        \begin{tabular}{c c c c c}
+        \begin{tabular}{c S[table-format=1.3] S[table-format=1.5] S[table-format=2.3] S[table-format=2.3]}
             \toprule
-            & {$\lambda$} & {$E$} & {$\theta_1$} & {$\theta_2$}\\
+            &
+            {$\lambda [\si{\angstrom}]$} &
+            {$E [\si{\kilo\electronvolt}]$} &
+            {$\theta_1 [\si{\degree}]$} &
+            {$\theta_2 [\si{\degree}]$} \\
             \midrule
-            $\ce{Cu} K_\alpha$ & $\SI{1.530}{\angstrom}$ & $\SI{8.10996}{\kilo\electronvolt}$ & $\SI{22.323}{\degree}$ & $\SI{49.436}{\degree}$\\
-            $\ce{Cu} K_\beta$ & $\SI{1.392}{\angstrom}$ & $\SI{8.91396}{\kilo\electronvolt}$ & $\SI{20.217}{\degree}$ & $\SI{43.722}{\degree}$\\
+            $\ce{Cu} K_\alpha$ & 1.530 & 8.10996 & 22.323 & 49.436 \\
+            $\ce{Cu} K_\beta$  & 1.392 & 8.91396 & 20.217 & 43.722 \\
             \bottomrule
         \end{tabular}
     \end{table}
-    
-    In Aufgabe 2 sollten Ordnungszahl, 
-    Energie $E^\text{Lit}_\text{K}$ der $K$-Kante, 
-    der entsprechende Glanzwinkel $\theta^\text{Lit}_\text{K}$ der zu untersuchenden Materialen Zink, 
-    Germanium, Brom, Rubidium, Strontium und Zirkonium recherchiert werden.
-    Mithilfe von Gleichung \eqref{eqn:SigmaK} aus Kapitel \ref{sec:theorie} können folgende Werte für die Abschirmkonstante $\sigma_\text{K}$ berechnet werden.
+
+
+    In Aufgabe 2 sollten Ordnungszahl,
+    Energie $E^\text{Lit}_\text{K}$ der $K$-Kante,
+    der entsprechende Glanzwinkel $\theta^\text{Lit}_\text{K}$ der zu untersuchenden Materialen
+    Zink, Germanium, Brom, Rubidium, Strontium und Zirkonium recherchiert werden.
+    Mithilfe von \autoref{eqn:SigmaK} aus \autoref{sec:theorie} können die folgenden Werte für die Abschirmkonstante $\sigma_\text{K}$ berechnet werden.
 
     \begin{table}
         \centering
         \caption{Größen der zu untersuchenden Materialen.}
-        \begin{tabular}{c c c c c}
+        \label{tab:Vorbereitung2}
+        \begin{tabular}{c c S S S}
             \toprule
-            & {Z} & {$E^\text{Lit}_\text{K}$} & {$\theta^\text{Lit}_\text{K}$} & {$\sigma_\text{K}$}\\
+            &
+            {Z} &
+            {$E^\text{Lit}_\text{K} [\si{\kilo\electronvolt}]$} &
+            {$\theta^\text{Lit}_\text{K} [\si{\degree}]$} &
+            {$\sigma_\text{K}$} \\
             \midrule
-            $\ce{Zn}$ & 30 & $\SI{09.65}{\kilo\electronvolt}$ & $\SI{18.6}{\degree}$ & 3.65 \\
-            $\ce{Ge}$ & 32 & $\SI{11.10}{\kilo\electronvolt}$ & $\SI{16.11}{\degree}$ & 3.431 \\
-            $\ce{Br}$ & 35 & $\SI{13.47}{\kilo\electronvolt}$ & $\SI{13.22}{\degree}$ & 3.528 \\
-            $\ce{Rb}$ & 37 & $\SI{15.20}{\kilo\electronvolt}$ & $\SI{11.69}{\degree}$ & 3.569 \\
-            $\ce{Sr}$ & 38 & $\SI{16.10}{\kilo\electronvolt}$ & $\SI{11.03}{\degree}$ & 3.593 \\
-            $\ce{Zr}$ & 40 & $\SI{17.99}{\kilo\electronvolt}$ & $\SI{09.85}{\degree}$ & 3.630 \\
+            $\ce{Zn}$ & 30 &  9.65 & 18.60 & 3.650 \\
+            $\ce{Ge}$ & 32 & 11.10 & 16.11 & 3.431 \\
+            $\ce{Br}$ & 35 & 13.47 & 13.22 & 3.528 \\
+            $\ce{Rb}$ & 37 & 15.20 & 11.69 & 3.569 \\
+            $\ce{Sr}$ & 38 & 16.10 & 11.03 & 3.593 \\
+            $\ce{Zr}$ & 40 & 17.99 & 09.85 & 3.630 \\
             \bottomrule
         \end{tabular}
     \end{table}
-
-    
-    
-
-    

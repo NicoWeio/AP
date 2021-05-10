@@ -1,6 +1,8 @@
 \PassOptionsToPackage{sorting=none}{biblatex}
 \input{../header_common.tex}
 \usepackage{parskip}
+% Um Tabellen-Inhalte einzulesen.
+\makeatletter\let\expandableinput\@@input\makeatother
 
 \subject{D602}
 \title{Röntgenemission und -absorption}
@@ -18,10 +20,10 @@
 \newpage
 
 \section{Zielsetzung}
-
     In dem folgenden Versuch wird das Emissionsspektrum einer Kupfer-Röntgenröhre untersucht,
-    wobei dabei die Bragg-Bedingung nachgewiesen werden soll.
+    mithilfe dessen die Bragg-Bedingung nachgewiesen werden soll.
     Außerdem wird das Absorptionsspektrum verschiedener Materialien gemessen.
+
 \input{content/theorie.tex}
 \clearpage
 
@@ -31,11 +33,11 @@
 \input{content/durchfuehrung.tex}
 \clearpage
 
-%\input{content/auswertung.tex}
-%\clearpage
+\input{content/auswertung.tex}
+\clearpage
 
-%\input{content/diskussion.tex}
-%\clearpage
+\input{content/diskussion.tex}
+\clearpage
 
 \printbibliography
 
