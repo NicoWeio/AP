@@ -12,6 +12,34 @@ def linregress(x, y):
     )
 
 
+def curve_fit(fit_fn, x, y, p0=None):
+    params, pcov = sp.optimize.curve_fit(fit_fn, x, y, p0)
+    param_errors = np.sqrt(np.diag(pcov))
+    return tuple(ufloat(p, e) for p, e in zip(params, param_errors))
+
+
+def pint_curve_fit(fit_fn, x, y, param_units, p0=None):
+    #TODO: Abweichung mittels sigma-Parameter berücksichtigen
+    if p0:
+        assert len(param_units) == len(p0)
+        for p0_single, pu in zip(p0, param_units):
+            if p0_single.units != pu.units:
+                raise Exception(f"Wrong unit in p0 – got '{p0_single.units}' instead of '{pu.units}'")
+        p0 = tuple(p0_s.m for p0_s in p0)
+
+    u_params = curve_fit(fit_fn, x.m, y.m, p0)
+    pint_params = tuple(p * u for p, u in zip(u_params, param_units))
+
+    try:
+        pint_params_nominal = tuple(p.n * u for p, u in zip(u_params, param_units))
+        test_val = fit_fn(x, *pint_params_nominal)
+    except:
+        raise Exception("Could not test fit_fn")
+    if test_val.units != y.units:
+        raise Exception(f"Wrong param_units – fit_fn(x[0], *fit_params_nominal) returns '{test_val.units}' instead of '{y.units}'")
+    return pint_params
+
+
 def pintify(list):
     assert len(list) > 0
     units = list[0].units
