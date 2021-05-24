@@ -1,8 +1,11 @@
 \PassOptionsToPackage{sorting=none}{biblatex}
 \input{../header_common.tex}
 \usepackage{parskip}
+% Um Tabellen-Inhalte einzulesen.
+\makeatletter\let\expandableinput\@@input\makeatother
+% TODO: Verschieben in header_common!
 
-\subject{V353}
+\subject{V901}
 \title{Grundlagen der Ultraschalltechnik}
 \date{
     Durchführung: 18.05.2021
@@ -19,10 +22,10 @@
 
 \section{Zielsetzung}
 
-    Dieser Versuch dient dazu, 
+    Dieser Versuch dient dazu,
     sich mit den Grundlagen der Ultraschalltechnik vertraut zu machen.
     Zu diesem Zweck werden zwei verschiedene Proben untersucht.
-    
+
 \input{content/theorie.tex}
 \clearpage
 
@@ -32,11 +35,11 @@
 \input{content/durchfuehrung.tex}
 \clearpage
 
-%\input{content/auswertung.tex}
-%\clearpage
+\input{content/auswertung.tex}
+\clearpage
 
-%\input{content/diskussion.tex}
-%\clearpage
+\input{content/diskussion.tex}
+\clearpage
 
 \printbibliography
 

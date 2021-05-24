@@ -12,6 +12,7 @@ protokolle: \
 	V401_Michelson_Interferometer/build/main.pdf \
 	V500_Photoeffekt/build/main.pdf \
 	V606_Suszeptibilitaet_paramagnetischer_Substanzen/build/main.pdf \
+	V901_Grundlagen_der_Ultraschalltechnik/build/main.pdf \
 
 D206_Waermepumpe/build/main.pdf:
 	$(MAKE) -C D206_Waermepumpe
@@ -45,3 +46,6 @@ V500_Photoeffekt/build/main.pdf:
 
 V606_Suszeptibilitaet_paramagnetischer_Substanzen/build/main.pdf:
 	$(MAKE) -C V606_Suszeptibilitaet_paramagnetischer_Substanzen
+
+V901_Grundlagen_der_Ultraschalltechnik/build/main.pdf:
+	$(MAKE) -C V901_Grundlagen_der_Ultraschalltechnik
