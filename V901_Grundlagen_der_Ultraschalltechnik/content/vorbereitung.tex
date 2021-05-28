@@ -2,32 +2,24 @@
 
     Als Vorbereitung für diesen Versuch sollten die Schallgeschwindigkeiten und die akustischen Impedanzen für Luft,
     destilliertes Wasser, Blut, Knochen und Acryl recherchiert werden.\\
-    Er ergaben sich die folgenden Werte für die Schallgeschwindgkeiten.
+    Er ergaben sich die folgenden Werte.
 
     \begin{table}
         \centering
-        \caption{Schallgeschwindigkeiten in $\si{\meter \per \second}$.}
-        \label{tab:schallgeschwindigkeiten}
-        \begin{tabular}{c c c c c}
+        \caption{Literaturwerte für Schallgeschwindigkeit und akustische Impedanz verschiedener Materialien.}
+        \label{tab:vorbereitung}
+        \begin{tabular}{l S S}
             \toprule
-            $Luft$ & $dest. Wasser$ & $Blut$ & $Knochen$ & $Acryl$\\
+            Medium &
+            {Schallgeschwindigkeit [$\si{\meter\per\second}$]} &
+            {akustische Impedanz [$10^6 \cdot \si{\newton\second\per\cubic\meter}$]} \\
             \midrule
-             &  &  &  &  \\
-            \bottomrule
-        \end{tabular}
-    \end{table}
-
-    Für die akustischen Impedanzen ergaben sich die folgenden Werte.
-
-    \begin{table}
-        \centering
-        \caption{Akustische Impedanzen in $\SI{e6}{\newton \per \meter^3}$.}
-        \label{tab:akustische_impedanzen}
-        \begin{tabular}{c c c c c}
-            \toprule
-            $Luft$ & $dest. Wasser$ & $Blut$ & $Knochen$ & $Acryl$\\
-            \midrule
-             &  &  &  &  \\
+            Luft         & 331 \cite{semmelweis} & 0.00043 \cite{semmelweis} \\
+            dest. Wasser & 1492 \cite{semmelweis} & 1.49 \cite{semmelweis} \\
+            Blut         & 1570 \cite{semmelweis} & 1.6 \cite{semmelweis} \\
+            Knochen      & {\num{3000} - \num{3600}} \cite{semmelweis} & {\num{2.2} - \num{6.12}} \cite{semmelweis} \\
+            Acryl        & 2730 & {–} \\
+            % https://www.xn--ultraschallprfung-f3b.com/schallgeschwindigkeiten/
             \bottomrule
         \end{tabular}
     \end{table}

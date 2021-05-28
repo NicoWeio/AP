@@ -51,9 +51,11 @@ def ufloat_from_list(vals):
     return ufloat(np.mean(vals), np.std(vals))
 
 
-def fmt_abs_err(own, reference, precise=False):
-    own_abs_err = own - reference
-    return f'{(own_abs_err).n:.2f}'
+def fmt_abs_err(o, r, precise=False, show_uncertainty=True):
+    o_abs_err = o - r
+    if isinstance(o_abs_err, UFloat) and not show_uncertainty:
+        o_abs_err = o_abs_err.n
+    return f'{o_abs_err:.2f}'
 
 
 def fmt_rel_err_percent(o, r, precise=False, show_uncertainty=True):
@@ -73,5 +75,26 @@ def fmt_compare_to_ref(o, r, name=None, unit=None):
     return my_name + (
         f'- ist: {my_o:.2f}\n'
         f'- soll: {my_r:.2f}\n'
+        f'- abs. Abweichung: {fmt_abs_err(my_o, my_r)}\n'
         f'- rel. Abweichung: {fmt_rel_err_percent(o, r)}'
     )
+
+def pint_concat(*lists):
+    units = lists[0].units
+    out = []
+    for l in lists:
+        vals = l.to(units).m
+        out.extend(vals)
+    out *= units
+    return out
+
+    # return [*[l.to(units).m for l in lists]] * units
+
+# Entfernt Wertepaare(/-tupel…), die NaNs enthalten
+def remove_nans(*inputs):
+    # return tuple(zip(*[input_tuple for input_tuple in zip(*inputs) if not any(np.isnan(v) for v in input_tuple)]))
+    return (pintify(x) for x in zip(*[input_tuple for input_tuple in zip(*inputs) if not any(np.isnan(v) for v in input_tuple)]))
+
+# Hilfreich, um z.B. eine Gerade zu plotten…
+def bounds(vals):
+    return pintify([min(vals), max(vals)])

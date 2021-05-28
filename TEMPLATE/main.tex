@@ -1,0 +1,39 @@
+% \PassOptionsToPackage{sorting=none}{biblatex}
+\input{../header_common.tex}
+\KOMAoption{parskip}{half}
+% Um Tabellen-Inhalte einzulesen.
+\makeatletter\let\expandableinput\@@input\makeatother
+
+\subject{V123}
+\title{Der Versuch}
+\date{
+    Durchführung: 01.01.2000
+     \hspace{3em}
+    Abgabe: 01.01.2000
+}
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+
+\section{Zielsetzung}
+
+    Im folgenden Versuch…
+
+\input{content/theorie.tex}
+\clearpage
+
+\input{content/durchfuehrung.tex}
+\clearpage
+
+\input{content/auswertung.tex}
+\clearpage
+
+\input{content/diskussion.tex}
+\clearpage
+
+\printbibliography
+
+\end{document}
