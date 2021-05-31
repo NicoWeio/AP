@@ -47,6 +47,15 @@ def pintify(list):
     return [e.m for e in list] * units
 
 
+def nominal_value(v):
+    units = v.units
+    return v.m.n * units
+
+
+def linspace(start, end, num=50):
+    return np.linspace(start.m, end.to(start.units).m, num=num) * start.units
+
+
 def ufloat_from_list(vals):
     return ufloat(np.mean(vals), np.std(vals))
 
@@ -68,6 +77,7 @@ def fmt_rel_err_percent(o, r, precise=False, show_uncertainty=True):
 def fmt_err(o, r, precise=False):
     return f'{fmt_rel_err_percent(o, r, precise)} | {fmt_abs_err(o, r, precise)}'
 
+
 def fmt_compare_to_ref(o, r, name=None, unit=None):
     my_o = o.to(unit) if unit else o
     my_r = r.to(unit) if unit else r
@@ -79,6 +89,7 @@ def fmt_compare_to_ref(o, r, name=None, unit=None):
         f'- rel. Abweichung: {fmt_rel_err_percent(o, r)}'
     )
 
+
 def pint_concat(*lists):
     units = lists[0].units
     out = []
@@ -87,13 +98,14 @@ def pint_concat(*lists):
         out.extend(vals)
     out *= units
     return out
-
     # return [*[l.to(units).m for l in lists]] * units
+
 
 # Entfernt Wertepaare(/-tupel…), die NaNs enthalten
 def remove_nans(*inputs):
     # return tuple(zip(*[input_tuple for input_tuple in zip(*inputs) if not any(np.isnan(v) for v in input_tuple)]))
     return (pintify(x) for x in zip(*[input_tuple for input_tuple in zip(*inputs) if not any(np.isnan(v) for v in input_tuple)]))
+
 
 # Hilfreich, um z.B. eine Gerade zu plotten…
 def bounds(vals):

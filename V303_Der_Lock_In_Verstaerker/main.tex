@@ -1,6 +1,10 @@
-\PassOptionsToPackage{sorting=none}{biblatex}
+% \PassOptionsToPackage{sorting=none}{biblatex}
 \input{../header_common.tex}
-\usepackage{parskip}
+\KOMAoption{parskip}{half}
+% Um Tabellen-Inhalte einzulesen.
+\makeatletter\let\expandableinput\@@input\makeatother
+% TODO: Verschieben in header_common!
+
 
 \subject{V303}
 \title{Der Lock-In-Verstärker}
@@ -22,18 +26,18 @@
     Der folgende Versuch dient dazu,
     sich mit einem Lock-In-Verstärker vertraut zu machen,
     indem für verschiedene Szenarien das Ausgangssignal gemessen wird.
-   
+
 \input{content/theorie.tex}
 \clearpage
 
 \input{content/durchfuehrung.tex}
 \clearpage
 
-%\input{content/auswertung.tex}
-%\clearpage
+\input{content/auswertung.tex}
+\clearpage
 
-%\input{content/diskussion.tex}
-%\clearpage
+\input{content/diskussion.tex}
+\clearpage
 
 \printbibliography
 
