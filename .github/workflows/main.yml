@@ -38,4 +38,3 @@ jobs:
             CLEAN: true
             FOLDER: gh-pages-bundle
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            SINGLE_COMMIT: true
