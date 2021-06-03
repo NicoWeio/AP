@@ -1,7 +1,7 @@
 \section{Vorbereitung}
 \label{sec:vorbereitung}
 
-    In Aufgabe 1 sollte recherchiert werden,
+    In \textbf{Aufgabe 1} sollte recherchiert werden,
     bei welchen Energien sich die $\ce{Cu} K_\alpha$- und $\ce{Cu} K_\beta \,$- Linien ergeben
     und bei welchen Glanzwinkeln $\theta$ diese bei einem LiF-Kristall mit $d = \SI{201.4}{\pico\meter}$ liegen.\\
     \\
@@ -23,10 +23,10 @@
         \begin{tabular}{c S[table-format=1.3] S[table-format=1.5] S[table-format=2.3] S[table-format=2.3]}
             \toprule
             &
-            {$\lambda [\si{\angstrom}]$} &
-            {$E [\si{\kilo\electronvolt}]$} &
-            {$\theta_1 [\si{\degree}]$} &
-            {$\theta_2 [\si{\degree}]$} \\
+            {$\lambda \mathbin{/} \si{\angstrom}$} &
+            {$E \mathbin{/} \si{\kilo\electronvolt}$} &
+            {$\theta_1 \mathbin{/} \si{\degree}$} &
+            {$\theta_2 \mathbin{/} \si{\degree}$} \\
             \midrule
             $\ce{Cu} K_\alpha$ & 1.530 & 8.10996 & 22.323 & 49.436 \\
             $\ce{Cu} K_\beta$  & 1.392 & 8.91396 & 20.217 & 43.722 \\
@@ -35,11 +35,13 @@
     \end{table}
 
 
-    In Aufgabe 2 sollten Ordnungszahl,
-    Energie $E^\text{Lit}_\text{K}$ der $K$-Kante,
-    der entsprechende Glanzwinkel $\theta^\text{Lit}_\text{K}$ der zu untersuchenden Materialen
-    Zink, Germanium, Brom, Rubidium, Strontium und Zirkonium recherchiert werden.
-    Mithilfe von \autoref{eqn:SigmaK} aus \autoref{sec:theorie} können die folgenden Werte für die Abschirmkonstante $\sigma_\text{K}$ berechnet werden.
+    In \textbf{Aufgabe 2} sollten Ordnungszahl und
+    Energie $E^\text{Lit}_\text{K}$ der $K$-Kante und
+    der zu untersuchenden Materialen Zink, Gallium, Brom, Rubidium, Strontium und Zirkonium
+    recherchiert werden \cite{science_and_fun}.
+    Durch Umstellen von \autoref{eqn:BraggBedingung} und \autoref{eqn:lambda_to_E}
+    kann daraus der zu erwartende Glanzwinkel $\theta^\text{Lit}_\text{K}$ bestimmt werden.
+    Mithilfe von \autoref{eqn:SigmaK} aus \autoref{sec:theorie} wird die Abschirmkonstante $\sigma_\text{K}$ berechnet.
 
     \begin{table}
         \centering
@@ -48,17 +50,17 @@
         \begin{tabular}{c c S S S}
             \toprule
             &
-            {Z} &
-            {$E^\text{Lit}_\text{K} [\si{\kilo\electronvolt}]$} &
-            {$\theta^\text{Lit}_\text{K} [\si{\degree}]$} &
-            {$\sigma_\text{K}$} \\
+            Z &
+            {$E_\text{K}^\text{Lit} \mathbin{/} \si{\kilo\electronvolt}$} &
+            {$\theta_\text{K}^\text{Lit} \mathbin{/} \si{\degree}$} &
+            {$\sigma_\text{K}^\text{Lit}$} \\
             \midrule
-            $\ce{Zn}$ & 30 &  9.65 & 18.60 & 3.650 \\
-            $\ce{Ge}$ & 32 & 11.10 & 16.11 & 3.431 \\
-            $\ce{Br}$ & 35 & 13.47 & 13.22 & 3.528 \\
-            $\ce{Rb}$ & 37 & 15.20 & 11.69 & 3.569 \\
-            $\ce{Sr}$ & 38 & 16.10 & 11.03 & 3.593 \\
-            $\ce{Zr}$ & 40 & 17.99 & 09.85 & 3.630 \\
+            $\ce{Zn}$ & 30 &  9.65 & 18.601 & 3.571 \\
+            $\ce{Ga}$ & 31 & 10.37 & 17.267 & 3.616 \\
+            $\ce{Br}$ & 35 & 13.47 & 13.209 & 3.854 \\
+            $\ce{Rb}$ & 37 & 15.20 & 11.683 & 3.951 \\
+            $\ce{Sr}$ & 38 & 16.10 & 11.022 & 4.006 \\
+            $\ce{Zr}$ & 40 & 17.99 &  9.852 & 4.109 \\
             \bottomrule
         \end{tabular}
     \end{table}

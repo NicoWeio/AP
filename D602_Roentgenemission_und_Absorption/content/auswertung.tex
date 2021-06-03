@@ -1,5 +1,9 @@
 \section{Auswertung}
 
+In den folgenden Unterabschnitten sollen
+die Bragg-Bedingung und das Moseley'sche Gesetz verifiziert und
+Emissions- und Absorptionsspektren analysiert werden.
+
 \subsection{Messwerte}
 
 Zunächst seien die Messwerte angegeben,
@@ -13,7 +17,7 @@ mit denen im Folgenden gerechnet wird.
 Gemäß der \hyperref[eqn:BraggBedingung]{Bragg-Bedingung} wird erwartet,
 dass das gemessene Intensitätsmaximum
 ($\theta_\text{B, exp} = \SI{28.2}{\degree}$ bzw. $N = \num{218}$)
-unter einem der Glanzwinkel auftritt.
+unter dem ersten Glanzwinkel auftritt.
 In \autoref{fig:plot_bragg} ist gezeigt,
 dass diese Annahme zutrifft;
 die Abweichung beträgt nur $\SI{0.2}{\degree}$.
@@ -60,7 +64,7 @@ Die Halbwertsbreiten lassen sich mit \texttt{scipy.signal.peak\_widths} finden:
     \symup{\Delta}\theta_{K_\beta}  &= \SI{0.476}{\degree} \; .
 \end{align*}
 
-
+%KORREKTUR: Schöner wäre angeblich, wieder lineare Interpolation zu benutzen…
 Aus der \hyperref[eqn:BraggBedingung]{Bragg-Bedingung} können nun
 die Wellenlänge \hyperref[eqn:lambda_to_E]{und somit die Energie} eines Röntgenquants bestimmt werden.
 Die Energien für die Peaks ergeben sich zu
@@ -85,7 +89,7 @@ Das Auflösungsvermögen ist definiert als
 und kann aus den gerade gewonnen Werten zu
 \begin{align*}
     A_{K_\alpha} &= \num{48.92} \\
-    A_{K_\beta}  &= \num{44.85} \\
+    A_{K_\beta}  &= \num{44.85}
 \end{align*}
 bestimmt werden.
 % TODO: Versuchsanleitung: Wie genau ist diese Angabe? Ist es sinnvoll den statistischen Fehler zu bestimmen?
@@ -104,97 +108,31 @@ berechnet.
 % \autoref{eqn:SigmaK}
 % TODO: Abweichung von den Literaturwerten, siehe https://docs.google.com/viewer?url=https://raw.githubusercontent.com/Jean1995/Praktikum/master/Protokolle_Fertig/V602.pdf
 
-
+\clearpage
 \subsection{Analyse der Absorptionsspektren}
 \label{sec:auswertung:absorptionsspektren}
 
 Schließlich sollen die Absorptionsspektren verschiedener Absorbermaterialien analysiert werden.
 Dazu wird wieder die Zählrate $N$ gegen den Winkel $\theta$ aufgetragen
-und ein näherungsweise linearer Abschnitt als Absorptionskante identifiziert.
-Aus dem Winkel in der Mitte dieser kann dann wie zuvor
+und der näherungsweise lineare Abschnitt
+zwischen Maximum und Minimum
+als Absorptionskante identifiziert.
+In der Mitte der Kante,
+also bei einer Intensität
+\[ I_K = \frac{I_K^\text{min} + I_K^\text{max}}{2} \ , \]
+wird der zugehörige Winkel $\theta$
+aus einer linearen Interpolation (in den nachfolgenden Plots als graue Gerade dargestellt)
+zwischen den nächstgelegenen Messwerten bestimmt.
+%KORREKTUR Bei mehreren absoluten Extrema wird gemittelt.
+% TODO: Was dann überhaupt wozu mitteln!?
+
+Aus dem Winkel $\theta$ kann dann wie zuvor
 über die Zusammenhänge von
 \hyperref[eqn:BraggBedingung]{Winkel und Wellenlänge (Bragg)} sowie
 \hyperref[eqn:lambda_to_E]{Wellenlänge und Energie}
 die Absorptionsenergie bestimmt werden.
 
-\subsubsection{Zink}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{build/plot_zink.pdf}
-    \caption{Absorptionsspektrum von Zink.}
-    \label{fig:zink}
-\end{figure}
-
-Die Mitte der abgelesenen Absorptionskante liegt bei $\SI{18.7}{\degree}$.
-Die Absorptionsenergie beträgt demnach $E_\text{Zink} = \SI{9.601}{\kilo\electronvolt}$.
-Die Abschirmkonstante ist $\sigma_{K, \text{Zink}} = \num{3.64}$.
-
-\subsubsection{Gallium}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{build/plot_gallium.pdf}
-    \caption{Absorptionsspektrum von Gallium.}
-    \label{fig:gallium}
-\end{figure}
-
-Die Mitte der abgelesenen Absorptionskante liegt bei $\SI{17.35}{\degree}$.
-Die Absorptionsenergie beträgt demnach $E_\text{Gallium} = \SI{10.322}{\kilo\electronvolt}$.
-Die Abschirmkonstante ist $\sigma_{K, \text{Gallium}} = \num{3.68}$.
-
-\subsubsection{Brom}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{build/plot_brom.pdf}
-    \caption{Absorptionsspektrum von Brom.}
-    \label{fig:brom}
-\end{figure}
-
-Die Mitte der abgelesenen Absorptionskante liegt bei $\SI{13.25}{\degree}$.
-Die Absorptionsenergie beträgt demnach $E_\text{Brom} = \SI{13.430}{\kilo\electronvolt}$.
-Die Abschirmkonstante ist $\sigma_{K, \text{Brom}} = \num{3.90}$.
-
-\subsubsection{Rubidium}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{build/plot_rubidium.pdf}
-    \caption{Absorptionsspektrum von Rubidium.}
-    \label{fig:rubidium}
-\end{figure}
-
-Die Mitte der abgelesenen Absorptionskante liegt bei $\SI{11.75}{\degree}$.
-Die Absorptionsenergie beträgt demnach $E_\text{Rubidium} = \SI{15.115}{\kilo\electronvolt}$.
-Die Abschirmkonstante ist $\sigma_{K, \text{Rubidium}} = \num{4.05}$.
-
-\subsubsection{Strontium}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{build/plot_strontium.pdf}
-    \caption{Absorptionsspektrum von Strontium.}
-    \label{fig:strontium}
-\end{figure}
-
-Die Mitte der abgelesenen Absorptionskante liegt bei $\SI{11.1}{\degree}$.
-Die Absorptionsenergie beträgt demnach $E_\text{Strontium} = \SI{15.988}{\kilo\electronvolt}$.
-Die Abschirmkonstante ist $\sigma_{K, \text{Strontium}} = \num{4.13}$.
-
-\subsubsection{Zirkonium}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{build/plot_zirkonium.pdf}
-    \caption{Absorptionsspektrum von Zirkonium.}
-    \label{fig:zirkonium}
-\end{figure}
-
-Die Mitte der abgelesenen Absorptionskante liegt bei $\SI{9.95}{\degree}$.
-Die Absorptionsenergie beträgt demnach $E_\text{Zirkonium} = \SI{17.814}{\kilo\electronvolt}$.
-Die Abschirmkonstante ist $\sigma_{K, \text{Zirkonium}} = \num{4.29}$.
-
+\input{build/auswertung_absorptionsspektren.tex}
 
 \newpage
 \subsection{Moseley'sches Gesetz}
@@ -217,8 +155,8 @@ Dazu wird \autoref{eqn:Moseley} zu einer Geradengleichung umgeformt:
 
 Mithilfe von linearer Regression werden die Parameter zu
 \begin{align*}
-    a &= \SI{3.550(8)}{\sqrt{\electronvolt}} \\
-    b &= \SI{-8.46(28)}{\sqrt{\electronvolt}} \\
+    a &= \SI{3.539(18)}{\sqrt{\electronvolt}} \\
+    b &= \SI{-8.0(6)}{\sqrt{\electronvolt}}
 \end{align*}
 bestimmt.
 Daraus lassen sich die Rydbergenergie
@@ -227,7 +165,7 @@ Daraus lassen sich die Rydbergenergie
 %     \intertext{und die Rydbergfrequenz}
 %     R &= \frac{a^2}{h} = \SI{3.05}{\peta\hertz}
 % \end{align*}
-\[ R_y = a^2 = \SI{12.60(6)}{\electronvolt} \]
+\[ R_y = a^2 = \SI{12.52(13)}{\electronvolt} \]
 und die Rydbergfrequenz
-\[ R = \frac{a^2}{h} = \SI{3.05}{\peta\hertz} \]
+\[ R = \frac{a^2}{h} = \SI{3.03(3)}{\peta\hertz} \]
 errechnen.

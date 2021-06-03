@@ -46,6 +46,10 @@ def pintify(list):
     assert all(e.units == units for e in list)
     return [e.m for e in list] * units
 
+def nominal_values(list):
+    assert isinstance(list, pint.Quantity)
+    units = list.units
+    return [e.m.n for e in list] * units
 
 def nominal_value(v):
     units = v.units

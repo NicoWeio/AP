@@ -40,6 +40,7 @@
 
 \subsection{Überprüfung der Bragg-Bedingung}
 
+    Für diese Messung wird am Rechner das Programm \textit{2:1 Koppelmodus} ausgewählt.
     Für die Überprüfung der Bragg-Bedingung wird der LiF-Kristall auf einen festen Winkel von $\theta = \SI{14}{\degree}$ eingestellt.
     Mit einem Winkelzuwachs von $\symup{\Delta}\theta = \SI{0.1}{\degree}$ in einer Integrationszeit von $\symup{\Delta}t = \SI{5}{\second}$
     wird die Intensität der Röntgenstrahlung am Geiger-Müller-Zählrohr in einem Winkelbereich von $\theta_\text{GM} = \SI{26}{\degree}$
@@ -48,7 +49,7 @@
 
 \subsection{Das Emissionsspektrum der Kupfer-Röntgenröhre}
 
-    Für diese Messung wird am Rechner das Programm \textit{2:1 Koppelmodus} ausgewählt.
+    % Für diese Messung wird am Rechner das Programm [TODO] ausgewählt.
     Es wird in einem Winkelbereich von $\theta = \SI{8}{\degree}$ bis $\theta = \SI{25}{\degree}$ in Schritten von $\symup{\Delta}\theta = \SI{0.1}{\degree}$ gemessen.
     Als Integrationszeit wird $\symup{\Delta}t = \SI{10}{\second}$ gewählt.
     Das Röntgenspektrum wird in einer Beugungsordnung von $n=1$ ausgemessen.
@@ -64,11 +65,8 @@
     \begin{align}
     \begin{split}
         \label{eqn:sigma_123}
-        % \label{eqn:si1}
-        \sigma_1 &= Z - \sqrt{\frac{E_\text{K,abs}}{R_\infty}} \\
-        % \label{eqn:si2}
+        \sigma_1 &= Z -   \sqrt{\frac{E_\text{K,abs}}{R_\infty}} \\
         \sigma_2 &= Z - 2 \sqrt{\frac{1}{n^2} (Z - \sigma_1)^2-\frac{E_{K,\alpha}}{R_\infty}} \\
-        % \label{eqn:si3}
         \sigma_3 &= Z - 3 \sqrt{\frac{1}{n^2} (Z - \sigma_1)^2-\frac{E_{K,\beta}}{R_\infty}} \; .
     \end{split}
     \end{align}
@@ -80,8 +78,9 @@
     wird ein Absorber zwischen dem LiF-Kristall und dem Geiger-Müller-Zählrohr angebracht,
     sodass die Röntgenstrahlung nach der Reflexion auf den Absorber und nicht direkt auf das Zählrohr trifft.
     Das Absorptionsspektrum wird in Abständen von $\symup{\Delta}\theta = \SI{0.1}{\degree}$ mit einer Integrationszeit von $\symup{\Delta}t = \SI{20}{\second}$ gemessen.
+    Die Winkelbereiche werden für jedes Material einzeln gewählt.
     Als Absorber dienen Materialien mit Ordnungszahlen von $30 \leq Z \leq 50$.
-    Hier sind es Zink, Germanium, Brom, Rubidium, Strontium und Zirkonium,
+    Hier sind es Zink, Gallium, Brom, Rubidium, Strontium und Zirkonium,
     deren Literaturwerte in \autoref{sec:vorbereitung} angegeben sind.
     Mithilfe der Gleichungen \eqref{eqn:EnergieKalpha} und \eqref{eqn:EnergieKbeta} und der Literaturwerte können die Abschirmkonstanten berechnet werden.
     Die Rydbergenergie $R_\infty = R \cdot h$ kann nach dem Moseley'schen Gesetz mit \autoref{eqn:Moseley} bestimmt werden.
