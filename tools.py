@@ -61,7 +61,7 @@ def linspace(start, end, num=50):
 
 
 def ufloat_from_list(vals):
-    return ufloat(np.mean(vals), np.std(vals))
+    return ufloat(np.mean(vals), sp.stats.sem(vals))
 
 
 def fmt_abs_err(o, r, precise=False, show_uncertainty=True):
