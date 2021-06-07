@@ -1,19 +1,19 @@
 # Protokolle
 
-- [V103_Biegung_elastischer_Staebe](V103_Biegung_elastischer_Staebe)
-- [V106_Gekoppelte_Pendel](V106_Gekoppelte_Pendel)
-- [V204_Waermeleitung](V204_Waermeleitung)
-- [D206_Waermepumpe](D206_Waermepumpe)
-- [V302_Brueckenschaltung](V302_Brueckenschaltung)
-- [V303_Der_Lock_In_Verstaerker](V303_Der_Lock_In_Verstaerker)
-- [V353_Relaxationsverhalten_eines_RC_Kreises](V353_Relaxationsverhalten_eines_RC_Kreises)
-- [V401_Michelson_Interferometer](V401_Michelson_Interferometer)
-- [V500_Photoeffekt](V500_Photoeffekt)
-- [D602_Roentgenemission_und_Absorption](D602_Roentgenemission_und_Absorption)
-- [V606_Suszeptibilitaet_paramagnetischer_Substanzen](V606_Suszeptibilitaet_paramagnetischer_Substanzen)
-- [D702_Aktivierung_mit_Neutronen](D702_Aktivierung_mit_Neutronen)
-- [D703_Geiger_Mueller_Zaehlrohr](D703_Geiger_Mueller_Zaehlrohr)
-- [V901_Grundlagen_der_Ultraschalltechnik](V901_Grundlagen_der_Ultraschalltechnik)
+- [V103_Biegung_elastischer_Staebe](V103_Biegung_elastischer_Staebe/build/main.pdf)
+- [V106_Gekoppelte_Pendel](V106_Gekoppelte_Pendel/build/main.pdf)
+- [V204_Waermeleitung](V204_Waermeleitung/build/main.pdf)
+- [D206_Waermepumpe](D206_Waermepumpe/build/main.pdf)
+- [V302_Brueckenschaltung](V302_Brueckenschaltung/build/main.pdf)
+- [V303_Der_Lock_In_Verstaerker](V303_Der_Lock_In_Verstaerker/build/main.pdf)
+- [V353_Relaxationsverhalten_eines_RC_Kreises](V353_Relaxationsverhalten_eines_RC_Kreises/build/main.pdf)
+- [V401_Michelson_Interferometer](V401_Michelson_Interferometer/build/main.pdf)
+- [V500_Photoeffekt](V500_Photoeffekt/build/main.pdf)
+- [D602_Roentgenemission_und_Absorption](D602_Roentgenemission_und_Absorption/build/main.pdf)
+- [V606_Suszeptibilitaet_paramagnetischer_Substanzen](V606_Suszeptibilitaet_paramagnetischer_Substanzen/build/main.pdf)
+- [D702_Aktivierung_mit_Neutronen](D702_Aktivierung_mit_Neutronen/build/main.pdf)
+- [D703_Geiger_Mueller_Zaehlrohr](D703_Geiger_Mueller_Zaehlrohr/build/main.pdf)
+- [V901_Grundlagen_der_Ultraschalltechnik](V901_Grundlagen_der_Ultraschalltechnik/build/main.pdf)
 
 
 
