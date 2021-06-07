@@ -1,0 +1,260 @@
+\section{Auswertung}
+\label{sec:auswertung}
+
+Im Folgenden sind beide Durchgänge stets
+unter Angabe der jeweiligen Pendellänge
+nebeneinander aufgeführt.
+
+\subsection{Gleichsinnige Schwingungen}
+\label{sec:auswertung:gleichsinnig}
+
+Tatsächlich wurde nicht wirklich eine gleichsinnige Schwingung gemessen;
+stattdessen werden die einzeln bestimmten Schwingungsdauern $T_1$ und $T_2$ als Datengrundlage genommen.
+(Das ist vertretbar, weil aus \autoref{eqn:dauer_gleichsinnig} hervorgeht,
+dass die Schwingungsdauern nicht von der Kopplungskonstante abhängen,
+sodass auch $K=0$ gewählt und somit die koppelnde Feder entfernt werden kann.)
+Entsprechend wird in \autoref{tab:gleichsinnig} zwischen dem linken und rechten Pendel unterschieden,
+aber nachher über alle Werte gemittelt.
+
+Es lässt sich aber erkennen,
+dass die Schwingungsdauern links ($T_1$) und rechts ($T_2$) in beiden Durchläufen
+im Rahmen der Messgenauigkeit übereinstimmen.
+
+Die aufgelisteten Werte wurden bereits durch die Anzahl der pro Messung gezählten Perioden dividiert,
+sodass es sich tatsächlich um Periodendauern handelt.
+
+\begin{table}
+    \centering
+    \caption{Periodendauern der gleichsinnigen Schwingung.}
+    \label{tab:gleichsinnig}
+    \begin{tabular}{r S S S S}
+        \toprule
+        & \multicolumn{4}{c}{$T_+ \mathbin{/} \si{\second}$} \\
+        \cmidrule(lr){2-5}
+        Pendellänge $l \mathbin{/} \si{\meter}$ &
+        \multicolumn{2}{S}{0.5} &
+        \multicolumn{2}{S}{1} \\
+        \cmidrule(lr){2-3}
+        \cmidrule(lr){4-5}
+        & {links ($T_1$)}
+        & {rechts ($T_2$)}
+        & {links ($T_1$)}
+        & {rechts ($T_2$)} \\
+        \midrule
+        & 1.38 & 1.40 & 1.94 & 1.98 \\
+        & 1.44 & 1.41 & 1.94 & 1.92 \\
+        & 1.30 & 1.41 & 1.96 & 1.93 \\
+        & 1.40 & 1.44 & 1.96 & 1.97 \\
+        & 1.40 & 1.41 & 1.94 & 1.95 \\
+        & 1.41 & 1.45 & 1.97 & 1.96 \\
+        & 1.42 & 1.43 & 1.97 & 1.96 \\
+        & 1.43 & 1.43 & 1.98 & 1.95 \\
+        & 1.41 & 1.43 & 1.99 & 1.96 \\
+        & 1.43 & 1.42 & 1.95 & 1.95 \\
+        & 1.44 & 1.39 & 1.95 & 1.90 \\
+        & 1.41 & 1.42 & 1.91 & 1.91 \\
+        & 1.39 & 1.42 & 1.91 & 1.89 \\
+        & 1.41 & 1.41 & 1.93 & 1.93 \\
+        & 1.41 & 1.43 & 1.93 & 1.95 \\
+        & 1.40 & 1.40 & 1.94 & 1.93 \\
+        & 1.41 & 1.42 & 1.94 & 1.93 \\
+        & 1.36 & 1.40 & 1.91 & 1.91 \\
+        & 1.41 & 1.41 & 1.93 & 1.92 \\
+        & 1.42 & 1.44 & 1.92 & 1.95 \\
+        \midrule
+        % \hyperref[eqn:mittelwert]{Mittelwerte} $\bar{T_1}$, $\bar{T_2}$ &
+        % 1.403 & 1.418 & 1.943 & 1.938 \\
+        % Standardabweichung &
+        % 0.0304 & 0.0141 & 0.0217 & 0.0237 \\
+        % \midrule
+        \hyperref[eqn:mittelwert]{Mittelwert} $\bar{T_+}$ &
+        \multicolumn{2}{S}{1.410} &
+        \multicolumn{2}{S}{1.941} \\
+        \hyperref[eqn:standardabweichung]{Standardabweichung des Mittelwerts} &
+        \multicolumn{2}{S}{0.00398} &
+        \multicolumn{2}{S}{0.00365} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Der in den folgenden Tabellen verwendete Mittelwert berechnet sich mittels folgender Formel:
+\begin{equation}
+    \bar{T}=\frac{1}{n}\sum_{\textrm{i=1}}^n T_\textrm{i} \ .
+    \label{eqn:mittelwert}
+\end{equation}
+Die Standardabweichung des Mittelwerts wird mit
+\begin{equation}
+    \sigma = \sqrt{\frac{\sum_{i=1}^{n}(x_i-\bar{x})^2}{n}}
+    \label{eqn:standardabweichung}
+\end{equation}
+berechnet.
+
+Die prozentuale Abweichung wird stets als
+\begin{equation}
+  \frac{\omega_\text{exp} - \omega_\text{theo}}{\omega_\text{theo}} \cdot \SI{100}{\percent}
+  \label{eqn:abweichung_prozent}
+\end{equation}
+angegeben.
+
+\begin{table}
+    \centering
+    \caption{Vergleich der experimentell bestimmten mit der berechneten Schwingungsfrequenz für gleichsinnige Schwingungen.}
+    \label{tab:omega_gleichsinnig}
+    \begin{tabular}{r S S}
+        \toprule
+        & \multicolumn{2}{c}{$\omega_+ \mathbin{/} \si{\radian\per\second}$} \\
+        \cmidrule(lr){2-3}
+        Pendellänge $l \mathbin{/} \si{\meter}$ &
+        0.5 &
+        1 \\
+        \midrule
+        gemessen (nach \autoref{eqn:omega_T}) & 4.456 & 3.238 \\
+        berechnet (nach \autoref{eqn:frequenz_gleichsinnig}) & 4.429 & 3.132 \\
+        \midrule
+        \hyperref[eqn:abweichung_prozent]{Abweichung in \%} & 0.61 & 3.39 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+\subsection{Gegensinnige Schwingungen}
+\label{sec:auswertung:gegensinnig}
+
+\autoref{tab:gegensinnig} zeigt die Periodendauern der gegensinnigen Schwingungen
+sowie die zugehörigen Mittelwerte und Standardabweichungen.
+
+\begin{table}
+    \centering
+    \caption{Periodendauern der gegensinnigen Schwingung.}
+    \label{tab:gegensinnig}
+    \begin{tabular}{r S S}
+        \toprule
+        & \multicolumn{2}{c}{$T_- \mathbin{/} \si{\second}$} \\
+        \cmidrule(lr){2-3}
+        Pendellänge $l \mathbin{/} \si{\meter}$ &
+        0.5 &
+        1 \\
+        \midrule
+        & 1.37 & 1.89 \\
+        & 1.36 & 1.93 \\
+        & 1.38 & 1.91 \\
+        & 1.37 & 1.92 \\
+        & 1.35 & 1.89 \\
+        & 1.39 & 1.92 \\
+        & 1.40 & 1.94 \\
+        & 1.38 & 1.93 \\
+        & 1.37 & 1.93 \\
+        & 1.37 & 1.93 \\
+        & 1.35 & 1.89 \\
+        & 1.34 & 1.87 \\
+        & 1.36 & 1.91 \\
+        & 1.38 & 1.88 \\
+        & 1.36 & 1.90 \\
+        & 1.36 & 1.87 \\
+        & 1.35 & 1.88 \\
+        & 1.33 & 1.91 \\
+        & 1.37 & 1.96 \\
+        & 1.39 & 1.92 \\
+        \midrule
+        \hyperref[eqn:mittelwert]{Mittelwert} $\bar{T}$                       & 1.366   & 1.910 \\
+        \hyperref[eqn:standardabweichung]{Standardabweichung des Mittelwerts} & 0.00380 & 0.00548 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Die in \autoref{tab:omega_gegensinnig} angegebenen berechneten Werte
+greifen bereits auf die nach \autoref{eqn:kopplungskonstante} berechnete Kopplungskonstante $K$ zurück.
+
+\begin{table}
+    \centering
+    \caption{Vergleich der experimentell bestimmten mit der berechneten Schwingungsfrequenz für gegensinnige Schwingungen.}
+    \label{tab:omega_gegensinnig}
+    \begin{tabular}{r S S}
+        \toprule
+        & \multicolumn{2}{c}{$\omega_- \mathbin{/} \si{\radian\per\second}$} \\
+        \cmidrule(lr){2-3}
+        Pendellänge $l \mathbin{/} \si{\meter}$ &
+        0.5 &
+        1 \\
+        \midrule
+        gemessen (nach \autoref{eqn:omega_T}) & 4.601 & 3.290 \\
+        berechnet (nach \autoref{eqn:frequenz_gegensinnig}) & 4.443 & 3.137 \\
+        \midrule
+        \hyperref[eqn:abweichung_prozent]{Abweichung in \%} & 3.55 & 4.90 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+\subsection{Gekoppelte Schwingungen}
+\label{sec:auswertung:gekoppelt}
+
+In \autoref{tab:gekoppelt} sind Schwingungsdauern $T$ und Schwebungsdauern $T_S$ sowie Mittelwerte und Standardabweichungen der gekoppelten Schwingung aufgeführt.
+Für das $\SI{1}{\meter}$-Pendel wurde $T_S$ nur in ganzen Sekunden gemessen.
+
+\begin{table}
+    \centering
+    \caption{Schwingungsdauern $T$ und Schwebungsdauern $T_S$ der gekoppelten Schwingung.}
+    \label{tab:gekoppelt}
+    \begin{tabular}{r S S S S}
+        \toprule
+        Pendellänge $l \mathbin{/} \si{\meter}$ &
+        \multicolumn{2}{S}{0.5} &
+        \multicolumn{2}{S}{1} \\
+        \cmidrule(lr){2-3}
+        \cmidrule(lr){4-5}
+        & {$T   \mathbin{/} \si{\second}$}
+        & {$T_S \mathbin{/} \si{\second}$}
+        & {$T   \mathbin{/} \si{\second}$}
+        & {$T_S \mathbin{/} \si{\second}$} \\
+        \midrule
+        & 1.40 & 37.23 & 1.97 & 92.00 \\
+        & 1.38 & 39.80 & 1.92 & 95.00 \\
+        & 1.42 & 36.91 & 1.92 & 96.00 \\
+        & 1.37 & 37.75 & 1.93 & 95.00 \\
+        & 1.40 & 37.73 & 1.95 & 96.00 \\
+        & 1.37 & 36.85 & 1.86 & 92.00 \\
+        & 1.37 & 38.63 & 1.91 & 93.00 \\
+        & 1.37 & 36.78 & 1.91 & 96.00 \\
+        & 1.41 & 36.44 & 1.89 & 95.00 \\
+        & 1.45 & 37.97 & 1.92 & 97.00 \\
+        \midrule
+        \hyperref[eqn:mittelwert]{Mittelwert} &
+        1.395 & 37.609 & 1.920 & 94.7 \\
+        \hyperref[eqn:standardabweichung]{Standardabweichung des Mittelwerts} &
+        0.00857 & 0.321 & 0.00993 & 0.559 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}
+    \centering
+    \caption{Vergleich der experimentell bestimmten mit der berechneten Schwebungsfrequenz für gekoppelte Schwingungen.}
+    \label{tab:omega_gekoppelt}
+    \begin{tabular}{r S S}
+        \toprule
+        & \multicolumn{2}{c}{$\omega_S \mathbin{/} \si{\radian\per\second}$} \\
+        \cmidrule(lr){2-3}
+        Pendellänge $l \mathbin{/} \si{\meter}$ &
+        0.5 &
+        1 \\
+        \midrule
+        gemessen (nach \autoref{eqn:omega_T})             & 0.167 & 0.0663 \\
+        berechnet (nach \autoref{eqn:frequenz_schwebung}) & 0.145 & 0.0530 \\
+        \midrule
+        \hyperref[eqn:abweichung_prozent]{Abweichung in \%} & 15.08 & 26.03 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+\subsection{Kopplungskonstante}
+
+Aus den experimentellen Werten zu $\omega_+$ und $\omega_-$
+kann mithilfe von \autoref{eqn:kopplungskonstante} die Kopplungskonstante $K$ bestimmt werden.
+Sie ergibt sich zu
+$\SI{0.032(4)}{\meter\per\square\second}$ für das $\SI{0.5}{\meter}$-Pendel
+beziehungsweise
+$\SI{0.0161(34)}{\meter\per\square\second}$ für das $\SI{1}{\meter}$-Pendel.
+% Es ist sinnvoll, dass sich unterschiedliche Werte ergeben,
+% weil wir auch die Position der Feder geändert haben – glaube ich.

@@ -11,7 +11,7 @@
         \label{eqn:dgl_einzelpendel}
     \end{equation*}
     beschreiben,
-    wobei in diesem Fall die Kleinwinkelnäherung 
+    wobei in diesem Fall die Kleinwinkelnäherung
     \begin{equation}
         \sin{\phi} \approx \phi
         \label{eqn:kleinwinkelnaeherung}
@@ -27,7 +27,9 @@
     Das Pendel schwingt nach der Auslenkung harmonisch,
     was bedeutet,
     dass es um seine Ruhelage oszilliert und vollständig durch eine Sinus- oder Kosinusfunktion beschrieben werden kann.
-    Aus der Lösung der Differentialgleichung \eqref{eqn:dgl_einzelpendel} kann die Schwingungsfrequenz
+    Anders ausgedrückt ist die rücktreibende Kraft stets proportional zur Auslenkung,
+    wie aus der Differentialgleichung \eqref{eqn:dgl_einzelpendel} ersichtlich wird.
+    Aus der Lösung dieser kann die Schwingungsfrequenz
     \begin{equation*}
         \omega = \sqrt{\frac{D_\text{p}}{J}} = \sqrt{\frac{g}{l}}
     \end{equation*}
@@ -37,26 +39,26 @@
     welche durch eine Feder gekoppelt sind.
     Durch die Kopplung wirken zusätzliche Drehmomente $M_1 = D_\text{F}(\phi_2 - \phi_1)$ und $M_2 = D_\text{F}(\phi_1 - \phi_2)$ auf die Pendel.
     Ihre Bewegung lässt sich mit gekoppelten Differentialgleichungen darstellen,
-    bei denen die linke Seite die Bewegung des jeweiligen Pendels,
+    bei denen die linke Seite die Bewegung des jeweiligen Pendels
     und die rechte Seite die Kopplung beschreibt.
     Es gilt
-    \begin{gather*}
-        J \ddot{\phi_1} + D \phi_1 = D_\text{F}(\phi_2 - \phi_1) 
-        \label{eqn:dgl1_kopplung}\\
-        J \ddot{\phi_2} + D \phi_2 = D_\text{F}(\phi_1 - \phi_2) \ .
-        \label{eqn:dgl2_kopplung}
-    \end{gather*}
-    Bei der Entkopplung der Schwingungen wird eine Überlagerung aus Eigenschwingungen mit den Auslenkwinkeln $\alpha_1$ und $\alpha_2$ beschrieben.
-    Abhängig von den Anfangsbedingungen der Auslenkung $\alpha(t=0)$ und $\dot{\alpha}(t=0)$ können zwischen gleichsinnigen,
-    gegensinnigen und gekoppelten Schwingungen unterschieden werden.
+    \begin{align*}
+        J \ddot{\phi_1} + D \phi_1 &= D_\text{F}(\phi_2 - \phi_1) \\
+        J \ddot{\phi_2} + D \phi_2 &= D_\text{F}(\phi_1 - \phi_2) \ .
+    \end{align*}
+    Bei der Entkopplung der Schwingungen wird eine Überlagerung aus Eigenschwingungen
+    um die Auslenkwinkel $\alpha_1$ und $\alpha_2$ beschrieben.
+    Abhängig von den Anfangsbedingungen der Auslenkung $\alpha(t=0)$ und $\dot{\alpha}(t=0)$
+    kann zwischen gleichsinnigen, gegensinnigen und gekoppelten Schwingungen unterschieden werden.
+
 
 \subsection{Gleichsinnige Schwingungen}
 \label{sec:gleichsinnige_schwingung}
 
     Die beiden Pendel werden,
-    wie in Abbildung \ref{fig:gleichsinnig} dargestellt,
+    wie in \autoref{fig:gleichsinnig} dargestellt,
     um den gleichen Winkel $\alpha_1 = \alpha_2$ ausgelenkt,
-    sodass nur die Gewichtskraft als rücktreibenden Kraft wirkt.
+    sodass nur die Gewichtskraft als rücktreibende Kraft wirkt.
     Die Verbindung der Pendel über die Feder hat keinen Einfluss auf die Schwingung,
     weshalb die Feder entfernt werden kann.
     Für die Schwingungsfrequenz ergibt sich
@@ -65,58 +67,70 @@
         \label{eqn:frequenz_gleichsinnig}
     \end{equation}
     wobei $g$ die Erdbeschleunigung darstellt.
-    Die Schwingungsdauer $T$ ergibt sich aus dem Zusammenhang $\omega = \frac{2\symup{\pi}}{T}$ 
+    Die Schwingungsdauer $T_+$ ergibt sich aus dem grundlegenden Zusammenhang
+    \begin{equation}
+      \omega = \frac{2\symup{\pi}}{T}
+      \label{eqn:omega_T}
+    \end{equation}
+    zu
     \begin{equation}
         T_+ = 2\symup{\pi} \sqrt{\frac{l}{g}} \ .
         \label{eqn:dauer_gleichsinnig}
     \end{equation}
 
-    \begin{figure} 
+    \begin{figure}
         \centering
         \includegraphics[scale=0.9]{content/img/Abb_1.pdf}
-        \caption{Darstellung der gleichsinnigen Schwingung bei zwei gekoppelten Pendel.}
+        \caption{Darstellung der gleichsinnigen Schwingung bei zwei gekoppelten Pendeln. \cite{versuchsanleitung}}
         \label{fig:gleichsinnig}
     \end{figure}
 
+
+\clearpage
 \subsection{Gegensinnige Schwingungen}
 \label{sec:gegensinnige_schwingung}
 
     Beide Pendel werden um den gleichen Winkel $\alpha_1 = -\alpha_2$ in entgegengesetzte Richtungen ausgelenkt,
+    wie in \autoref{fig:gegensinnig} dargestellt ist,
+    %TODO „gleich große“ !? ↓
     sodass die Feder eine gleich große,
-    rücktreibende Kraft ausübt,
-    siehe Abbildung \ref{fig:gegensinnig}.
+    rücktreibende Kraft ausübt.
     Für die Schwingungsfrequenz ergibt sich
     \begin{equation}
         \omega_- = \sqrt{\frac{g}{l} + \frac{2K}{l}}
         \label{eqn:frequenz_gegensinnig}
     \end{equation}
     mit der Kopplungskonstante $K$ der Feder.
-    Für die Schwingungsdauer ergibt sich 
+    Für die Schwingungsdauer ergibt sich
     \begin{equation}
         T_- = 2\symup{\pi} \sqrt{\frac{l}{g + 2K}} \ .
         \label{eqn:dauer_gegensinnig}
-    \end{equation} 
+    \end{equation}
     \begin{figure}
         \centering
             \includegraphics[scale=0.9]{content/img/Abb_2.pdf}
-            \caption{Darstellung der gegensinnigen Schwingung bei zwei gekoppelten Pendel.}
+            \caption{Darstellung der gegensinnigen Schwingung bei zwei gekoppelten Pendeln. \cite{versuchsanleitung}}
             \label{fig:gegensinnig}
     \end{figure}
-    
-    
-    Die Kopplungskonstante $K$ wird als Maß für die Kopplung betrachtet und kann aus den folgenden Zusammenhängen berechnet werden.
+
+
+    Die Kopplungskonstante $K$ wird als Maß für die Kopplung betrachtet und kann aus den folgenden Zusammenhängen berechnet werden:
     \begin{equation}
-        K = \frac{\omega^2_- - \omega^2_+}{\omega^2_- + \omega^2_+} = \frac{T^2_+ - T^2_-}{T^2_+ + T^2_-} 
+        K = \frac{\omega^2_- - \omega^2_+}{\omega^2_- + \omega^2_+} = \frac{T^2_+ - T^2_-}{T^2_+ + T^2_-} \ .
         \label{eqn:kopplungskonstante}
     \end{equation}
 
-\subsection{Gekoppelte Schwingungen}    
-\label{sec:gekoppelte_schwingung}   
-        
+
+\clearpage
+\subsection{Gekoppelte Schwingungen}
+\label{sec:gekoppelte_schwingung}
+
     Ein Pendel bleibt zu Beginn in seiner Ruhelage $\alpha_1 = 0$,
     während das andere um den Winkel $\alpha_2 \neq 0$ ausgelenkt wird.
     Durch die Feder kann das schwingende Pendel seine Energie auf das ruhende Pendel übertragen und es so zum Schwingen anregen,
-    wie in Abbildung \ref{fig:gekoppelt} gezeigt.
+    wie in \autoref{fig:gekoppelt} gezeigt.
+    % TODO: Formulierung ↓
+    % vllt. besser von Amplituden sprechen oder so?
     Dabei sinkt die Auslenkung des ersten Pendels und die des zweiten Pendels nimmt solange zu,
     bis sich das erste Pendel in Ruhe befindet und das zweite Pendel maximal ausgelenkt wird.
     Der Zeitraum,
@@ -124,18 +138,30 @@
     wird als Schwebung bezeichnet.
     Für die Schwebungsfrequenz ergibt sich
     \begin{equation}
-        \omega_\text{S} = \omega_+ - \omega_-
         \label{eqn:frequenz_schwebung}
+        \omega_\text{S} = \omega_+ - \omega_-
     \end{equation}
     und für die Schwebungsdauer
     \begin{equation}
-        T_\text{S} = \frac{T_+ \cdot T_-}{T_+ - T_-} \ . 
+      % \newcommand*{\AlignMe}[3][c]{%
+      % \makebox[\widthof{$#2$}][#1]{$#3$}}%
         \label{eqn:dauer_schwebung}
+        T_\text{S} = \frac{T_+ \cdot T_-}{T_+ - T_-} \ .
+        % TODO: Es will einfach nicht…
+        % T_\text{S} = \frac{T_+ \makebox[0pt][l]{$\cdot$}\phantom{$-$} T_-}{T_+ - T_-} \ .
+        % T_\text{S} = \frac{T_+ \makebox[0pt][l]{$\cdot$}\phantom{$asdf$} T_-}{T_+ - T_-} \ .
+        % T_\text{S} = \frac{T_+ \makebox[\widthof{$-$}][l]{$\cdot$} T_-}{T_+ - T_-} \ .
+        % T_\text{S} = \frac{T_+ \AlignMe[c]{-}{\cdot} T_-}{T_+ - T_-} \ .
+        % T_\text{S} = \frac{T_+ \AlignMe[r]{- T_-}{\cdot T_-} }{T_+ - T_-} \ .
+%
+        % T_\text{S} = \frac{T_+ \makebox[0pt][l]{\cdot}\phantom{-} T_-}{T_+ - T_-} \ .
+        % T_\text{S} = \frac{T_+ \makebox[\widthof{-}][l]{\cdot} T_-}{T_+ - T_-} \ .
+        % T_\text{S} = \frac{T_+ \makebox[\widthof{$- T_-$}][l]{$\cdot T_-$} }{T_+ - T_-} \ .
     \end{equation}
     Der Vorgang der vollständigen Energieübertragung setzt sich periodisch fort.
     \begin{figure}
         \centering
             \includegraphics[scale=0.9]{content/img/Abb_3.pdf}
-            \caption{Darstellung der gekoppelten Schwingung bei zwei gekoppelten Pendel.}
+            \caption{Darstellung der gekoppelten Schwingung bei zwei gekoppelten Pendeln. \cite{versuchsanleitung}}
             \label{fig:gekoppelt}
     \end{figure}
