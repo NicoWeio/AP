@@ -4,3 +4,4 @@ build/
 *.log
 *.toc
 *.run.xml
+__pycache__
