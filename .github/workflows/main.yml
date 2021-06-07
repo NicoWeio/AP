@@ -30,7 +30,7 @@ jobs:
       - name: Extract PDFs for bundling
         run: mkdir gh-pages-bundle && rsync -a --prune-empty-dirs --include '*/' --include '*.pdf' --exclude '*' ./ gh-pages-bundle/
       - name: Generate index
-        run: sudo apt-get install tree && cd gh-pages-bundle && tree -H . > index.html
+        run: python3 build_index.py > gh-pages-bundle/index.md
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
