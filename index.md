@@ -9,6 +9,7 @@
 - [V353_Relaxationsverhalten_eines_RC_Kreises](V353_Relaxationsverhalten_eines_RC_Kreises/build/main.pdf)
 - [V401_Michelson_Interferometer](V401_Michelson_Interferometer/build/main.pdf)
 - [V500_Photoeffekt](V500_Photoeffekt/build/main.pdf)
+- [V501_V502_Ablenkung_eines_Elektronenstrahls_im_elektrischen∕magnetischen_Feld](V501_V502_Ablenkung_eines_Elektronenstrahls_im_elektrischen∕magnetischen_Feld/build/main.pdf)
 - [D602_Roentgenemission_und_Absorption](D602_Roentgenemission_und_Absorption/build/main.pdf)
 - [V606_Suszeptibilitaet_paramagnetischer_Substanzen](V606_Suszeptibilitaet_paramagnetischer_Substanzen/build/main.pdf)
 - [D702_Aktivierung_mit_Neutronen](D702_Aktivierung_mit_Neutronen/build/main.pdf)
