@@ -1,0 +1,83 @@
+\section{Diskussion}
+\label{sec:diskussion}
+
+Zuletzt soll eine Diskussion der durchgeführten Experimente erfolgen.
+
+\subsection{Abweichungen}
+
+\newcommand{\dings}[2]{\hyperref[#1]{\textbf{#2}}\\}
+
+\subsubsection*{Ablenkung im elektrischen Feld}
+\dings{sec:auswertung:501:empfindlichkeit}{Linearer Zusammenhang zwischen Ablenkspannung und Leuchtpunktverschiebung}
+Die Regressionsrechnungen zu Empfindlichkeit und Apparaturkonstante des Kathodenstrahl-Oszillographen
+lieferten gute Werte,
+wie an den Plots (\ref{fig:a_501}, \ref{fig:c_501})
+und den relativ geringen Unsicherheiten zu erkennen ist.
+
+\dings{sec:auswertung:501:apparaturkonstante}{Bestimmung der Apparaturkonstante}
+Die Apparaturkonstante weicht um $\SI{-11.53}{\percent}$ vom theoretisch bestimmten Wert ab.
+
+Dabei ist zu beachten,
+dass auch der Theoriewert nur eine Näherung darstellt,
+weil beispielsweise das elektrische Feld zwischen den Ablenkplatten nicht homogen ist.
+Tatsächlich sind diese auch nicht über ihre gesamte Länge parallel zueinander.
+
+Die prozentuale Abweichung sei hier und im Folgenden so definiert:
+\[ \frac{x_\text{exp} - x_\text{theo}}{x_\text{theo}} \ . \]
+
+\dings{sec:auswertung:501:frequenz}{Wechselstromfrequenz des Sinusgenerators}
+Die Messung der Frequenz des Sinusgenerators
+konnte aufgrund der technischen Gegebenheiten zwar nicht genau wie geplant durchgeführt werden,
+die aufgenommenen Messwerte sind jedoch optimal.
+
+Für die Spannungsamplitude liegt kein Vergleichswert vor.
+
+\subsubsection*{Ablenkung im magnetischen Feld}
+\dings{sec:auswertung:502:spezifische_elektronenladung}{spezifische Ladung der Elektronen}
+Die Unsicherheiten der experimentell bestimmten spezifischen Ladung wurden bereits in \autoref{tab:a_502} angegeben.
+Erwähnenswert ist jedoch,
+dass die jeweils bestimmte spezifische Ladung stets kleiner als der Theoriewert ist.
+Es ist daher von einem systematischen Fehler auszugehen.
+Der Mittelwert $\SI{1.613(24) e11}{\coulomb\per\kilo\gram}$ weicht entsprechend um $\SI{-8.31}{\percent}$ vom Theoriewert
+$\SI{1.759 e11}{\coulomb\per\kilo\gram}$ ab.
+
+\dings{sec:auswertung:502:erdmagnetfeld}{Bestimmung des lokalen Erdmagnetfelds}
+Der Literaturwert für die magnetische Flussdichte in Deutschland
+liegt bei etwa $\SI{49}{\micro\tesla}$. \cite{erdmagnetfeld}
+Experimentell bestimmt wurde ein Wert von $\SI{36.79(95)}{\micro\tesla}$.
+Der Inklinationswinkel $\varphi$ müsste $\SI{37.40}{\degree}$ statt $\SI{54}{\degree}$ betragen,
+damit diese Abweichung vom Literaturwert genau ausgeglichen wird.
+Tatsächlich sollte er aber bei etwa $\SI{60}{\degree}$ liegen.
+
+\subsection{Mögliche Fehlerquellen}
+
+Zunächst soll auf diejenigen Fehlerquellen,
+welche in beiden Versuchen relevant sind,
+eingegangen werden.
+
+So gab es an verschiedenen Stellen Probleme beim Ablesen:
+Insbesondere bei geringen Beschleunigungsspannungen konnte der Elektronenstrahl
+nicht präzise fokussiert werden,
+was einen gewissen Interpretationsspielraum beim Zentrieren auf eine Skalenlinie ließ.
+
+
+\subsubsection*{Ablenkung im elektrischen Feld}
+
+Auch der für die \hyperref[sec:auswertung:501:frequenz]{Bestimmung einer Sinusfrequenz}
+benötigte Frequenzzähler ließ sich nicht genau ablesen,
+weil sich die angezeigte Frequenz sehr häufig aktualisierte.
+
+
+\subsubsection*{Ablenkung im magnetischen Feld}
+
+Es war vorgesehen,
+dass der Versuchsaufbau für die Messung der spezifischen Elektronenladung
+parallel zur Horizontalkomponente des Erdmagnetfelds ausgerichtet wird.
+Dies ließ sich jedoch nur in grober Näherung realisieren,
+da das verwendete Deklinatorium-Inklinatorium
+zu einer genauen Messung nicht geeignet war.
+Entsprechend unpräzise war auch die Messung des Inklinationswinkels.
+
+Der Inkrementgeber der an das Helmholtzspulenpaar angeschlossenen Stromquelle
+ließ sich nicht präzise einstellen;
+die angezeigten Werte fluktuierten etwas.

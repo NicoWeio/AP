@@ -43,6 +43,8 @@ def generate_table(name, rows, **kwargs):
     with open(f"build/{name}.tex", 'w') as f:
         numCols = len(rows[0])
         col_fmt = kwargs.get('col_fmt', [None]*numCols)
+        if headers := kwargs.get('headers'):
+            f.write('% ' + ' | '.join(headers) + '\n')
 
         #TODO: einmal umgekehrt betrachten, um die maxColWidth zu errechnen…
         maxColWidth = [max([len(stringify(r[i_col], kwargs.get('scientific', False), col_fmt[i_col])) for r in rows]) for i_col in range(numCols)]
