@@ -11,6 +11,7 @@
 - [V500_Photoeffekt](V500_Photoeffekt/build/main.pdf)
 - [V501_V502_Ablenkung_eines_Elektronenstrahls_im_elektrischen∕magnetischen_Feld](V501_V502_Ablenkung_eines_Elektronenstrahls_im_elektrischen∕magnetischen_Feld/build/main.pdf)
 - [D602_Roentgenemission_und_Absorption](D602_Roentgenemission_und_Absorption/build/main.pdf)
+- [D603_Compton_Effekt](D603_Compton_Effekt/build/main.pdf)
 - [V606_Suszeptibilitaet_paramagnetischer_Substanzen](V606_Suszeptibilitaet_paramagnetischer_Substanzen/build/main.pdf)
 - [D702_Aktivierung_mit_Neutronen](D702_Aktivierung_mit_Neutronen/build/main.pdf)
 - [D703_Geiger_Mueller_Zaehlrohr](D703_Geiger_Mueller_Zaehlrohr/build/main.pdf)
@@ -78,6 +79,15 @@
 	- [Abb_3.pdf](D602_Roentgenemission_und_Absorption/content/img/Abb_3.pdf)
 	- [Abb_4.pdf](D602_Roentgenemission_und_Absorption/content/img/Abb_4.pdf)
 	- [Abb_4_compressed.pdf](D602_Roentgenemission_und_Absorption/content/img/Abb_4_compressed.pdf)
+
+
+- D603_Compton_Effekt
+	- [Abb_1.pdf](D603_Compton_Effekt/content/img/Abb_1.pdf)
+	- [Abb_2.pdf](D603_Compton_Effekt/content/img/Abb_2.pdf)
+	- [Abb_3.pdf](D603_Compton_Effekt/content/img/Abb_3.pdf)
+	- [Abb_3a.pdf](D603_Compton_Effekt/content/img/Abb_3a.pdf)
+	- [Abb_3b.pdf](D603_Compton_Effekt/content/img/Abb_3b.pdf)
+	- [Abb_nonumber_bragg.pdf](D603_Compton_Effekt/content/img/Abb_nonumber_bragg.pdf)
 
 
 - V606_Suszeptibilitaet_paramagnetischer_Substanzen
