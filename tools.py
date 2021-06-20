@@ -2,7 +2,7 @@ import numpy as np
 import pint
 import scipy as sp
 import scipy.stats
-from uncertainties import ufloat, UFloat
+from uncertainties import unumpy, ufloat, UFloat
 
 def linregress(x, y):
     r = sp.stats.linregress(x.m, y.m)
@@ -46,10 +46,21 @@ def pintify(list):
     assert all(e.units == units for e in list)
     return [e.m for e in list] * units
 
+def uarray(nominal_values, std_devs):
+    # assert len(nominal_values) == len(std_devs)
+    units = nominal_values.units
+    return unumpy.uarray(nominal_values.to(units).m, std_devs.to(units).m) * units
+
+
 def nominal_values(list):
     assert isinstance(list, pint.Quantity)
     units = list.units
     return [e.m.n for e in list] * units
+
+def std_devs(list):
+    assert isinstance(list, pint.Quantity)
+    units = list.units
+    return [e.m.s for e in list] * units
 
 def nominal_value(v):
     units = v.units
@@ -114,3 +125,21 @@ def remove_nans(*inputs):
 # Hilfreich, um z.B. eine Gerade zu plotten…
 def bounds(vals):
     return pintify([min(vals), max(vals)])
+
+def errorbar(plt, x, y, **kwargs):
+    try:
+        x_n = nominal_values(x)
+        x_s = std_devs(x)
+    except AttributeError: # scheinbar keine Unsicherheiten angegeben
+        x_n = x
+        x_s = None
+    try:
+        y_n = nominal_values(y)
+        y_s = std_devs(y)
+    except AttributeError: # scheinbar keine Unsicherheiten angegeben
+        y_n = y
+        y_s = None
+
+    # return plt.errorbar(nominal_values(x), nominal_values(y), xerr=std_devs(x), yerr=std_devs(y), **kwargs)
+    # return plt.errorbar(x, nominal_values(y), xerr=0, yerr=std_devs(y), **kwargs)
+    return plt.errorbar(x_n, y_n, xerr=x_s, yerr=y_s, **kwargs)

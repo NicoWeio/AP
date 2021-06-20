@@ -1,0 +1,54 @@
+\section{Diskussion}
+\label{sec:diskussion}
+
+\subsection{Abweichungen}
+
+% ▒▒▒ Emissionsspektrum der Kupfer-Röntgenröhre
+Die in \autoref{sec:auswertung:emissionsspektrum} bestimmten Energien zu $K_\alpha$ und $K_\beta$
+konnten genau bestimmt werden;
+die relative Abweichung von den Literaturwerten aus \autoref{tab:vorbereitung_1}
+beträgt nur $\SI{0.06}{\kilo\electronvolt}$ bzw. $\SI{0.75}{\percent}$ für $K_\alpha$
+und $\SI{0.01}{\kilo\electronvolt}$ bzw. $\SI{0.08}{\percent}$ für $K_\beta$.
+
+% ▒▒▒ Bestimmung der Transmission als Funktion der Wellenlänge
+Die Abhängigkeit der Transmission von der Wellenlänge konnte in \autoref{sec:auswertung:transmission}
+genau bestimmt werden, wie an \autoref{fig:plt_transmission}
+aber auch der geringen Unsicherheit der Parameter $a$ und $b$
+erkennbar ist.
+Die Unsicherheit der Messwerte ist im Plot kaum erkennbar;
+dies ist unter anderem mit der guten Kondition
+bei der Division der ähnlich großen und mit einem ähnlich großen relativen Fehler behafteten Impulszahlen
+zu erklären:
+\[
+  \newcommand{\relerr}[1]{ \ensuremath{\frac{\symup{\Delta}{#1}}{#1}} }
+  \relerr{T} = \relerr{I_\text{Al}} - \relerr{I_\text{0}} \ .
+\]
+
+% ▒▒▒ Bestimmung der Compton-Wellenlänge
+Die Transmissionen $T_{1/2}$ sowie die zugehörigen Wellenlängen $\lambda_{1/2}$
+konnten mit ausreichender Präzision bestimmt werden.
+Über die Genauigkeit lässt sich mangels Referenz keine Aussage treffen.
+
+Die Compton-Wellenlänge als Differenz $\lambda_2 - \lambda_1$
+weicht vom Literaturwert ($\SI{2.43}{\pico\meter}$)
+um $\SI{54.94}{\percent}$ ab,
+wobei die Unsicherheit hier fast ebenso groß ist.
+Damit liegt der bestimmte Wert zwar in der richtigen Größenordnung,
+ist jedoch weder genau, noch präzise.
+
+
+\subsection{Mögliche Fehlerquellen}
+
+Zwar war die Integrationszeit ausreichend groß angesetzt,
+doch für noch größere Integrationszeiten würde sich naturgemäß
+die Messunsicherheit der Zählrate weiter verringern.
+
+Bei geringen Impulszahlen haben mögliche Störeffekte
+– beispielsweise äußere Strahlung oder Strahlung, welche nicht den vorgesehenen Weg durch die Apparatur nimmt –
+einen größeren Einfluss,
+wenn das Geiger-Müller-Zählrohr unzureichend vor diesen abgeschirmt ist.
+
+Die Totzeitkorrektur hatte nur bei den \hyperref[sec:auswertung:transmission]{Messungen zur Transmission}
+wegen der relativ großen Zählraten
+einen signifikanten Einfluss.
+Ein ungenauer Wert für die Totzeit $\tau$ könnte diese Messungen allerdings verfälscht haben.
