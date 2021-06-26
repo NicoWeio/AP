@@ -1,0 +1,191 @@
+\section{Theorie}
+
+    Im Folgenden werden die theoretischen Grundlagen des Franck-Hertz-Versuches vorgestellt.\\
+    \\
+    Der Franck-Hertz-Versuch gehört zu den Elektronenstoßexperimenten,
+    bei denen beschleunigte Elektronen und Atome geschossen werden.
+    Aus der Energiedifferenz der Elektronen können Informationen über die angeregten Zustände des Atoms gewonnen werden.
+
+\subsection{Das Franck-Hertz-Experiment}
+\label{sec:grundprinzip}
+
+    Für den Franck-Hertz-Versuch ist der folgende Aufbau gegeben.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.8]{content/img/Abb_1.pdf}
+        \caption{Aufbau des Franck-Hertz-Versuches.}
+        \label{fig:aufbau}
+    \end{figure}
+    Die Apparatur besteht aus einer evakuierten Röhre,
+    in der sich ein Quecksilber-Tropfen befindet,
+    der spontan verdampft,
+    sodass sich ein Gleichgewichtsdruck $p_\text{Sät}$ einstellt.
+    Die Dampfdichte hängt ist ausschließlich von der Umgebungstemperatur $T$ ab und kann so kontrolliert werden.\\
+    In der Röhre befindet sich außerdem eine negativ geladener Glühdraht,
+    aus dem beim glühelektrischen Effekt Elektronen austreten.
+    Er ist zusätzlich mit einem Material beschichtet,
+    welches eine geringe Austrittsarbeit besitzt,
+    sodass möglichst viele freie Elektronen erzeugt werden können.
+    Die Elektronen werden zu einer positiv geladenen Gitterelektrode hin beschleunigt,
+    wobei zwischen Draht und Gitterelektrode die Beschleunigungsspannung $U_\text{B}$ anliegt.
+    Wenn die Elektronen zu Beginn eine Geschwindigkeit von Null besitzen,
+    gilt nach der Energieerhaltung bei der Beschleunigung
+    \begin{equation*}
+        \frac{m_0}{2}v^2_\text{vor} = e_0 U_\text{B} \ .
+    \end{equation*}
+    \\
+    Hinter der Gitterelektrode befindet sich eine Auffängerelektrode,
+    welche negativ geladen ist.
+    Zwischen Gitter- und Auffängerelektrode liegt eine Bremsspannung $U_\text{A}$ an.
+    Es entsteht ein Gegenfeld,
+    gegen das die Elektronen ankommen müssen,
+    um auf die Auffängerelektrode zu treffen,
+    an der ein Auffängerstrom $I_\text{A}$ gemessen wird.
+    Es kommen nur die Elektronen an der Auffängerelektrode an,
+    deren Energie groß genug ist,
+    sodass sie das Gegenfeld überwinden können. 
+    Es gilt
+    \begin{equation}
+        \frac{m_0}{2}v^2_\text{z} \geq e_0 U_\text{B} \ .
+        \label{eqn:energie_gegenfeld}
+    \end{equation}
+    \\
+    Im Bereich zwischen Glühdraht und Gitterelektrode kann es zu Stößen zwischen Elektronen und Quecksilber-,
+    kurz $\ce{Hg}$-Atomen,
+    kommen.
+    Abhängig von der Beschleunigungsspannung $U_\text{B}$ wird zwischen zwei Möglichkeiten unterschieden.\\
+    Zum einen ist Energie der Elektronen gerade bei niedriger Beschleunigungsspannung noch nicht groß genug,
+    um die $\ce{Hg}$-Atome anzuregen,
+    sodass es nur zu elastischen Stößen kommt,
+    bei denen die Elektronen nicht viel Energie abgeben,
+    aber ihre Richtung ändern können,
+    aufgrund des Massenverhältnisses $\sfrac{m_0}{M}$ zwischen Elektronen und $\ce{Hg}$-Atomen von $\sfrac{1}{1836\cdot201}$.
+    Die übertragene Energie beim elastischen Stoß beträgt
+    \begin{equation*}
+        \symup{\Delta}E = \frac{4 m_0 M}{(m_0 + M)^2} E \approx \num{1.1e-5} E
+    \end{equation*}
+    mit der Elektronenmasse $m_0$ und der $\ce{Hg}$-Atommmasse $M$.\\
+    Bei der zweiten Möglichkeit ist die Energie der Elektronen durch eine größere Beschleunigungsspannung groß genug,
+    dass sie die $\ce{Hg}$-Atome anregen können.
+    Dabei überträgt das Elektron den Energiebetrag $E_1 -E_0$ zwischen dem Grundzustand und dem ersten angeregten Zustand des $\ce{Hg}$-Atoms auf ein Elektron in einer inneren Hülle des Atoms.
+    Das Elektron behält eine Restenergie von $E - (E_1 - E_0)$ zurück.
+    Nach einer Relaxationszeit von etwa $\SI{e-8}{\second}$ kehrt das $\ce{Hg}$-Atom in den Grundzustand zurück und ein Photon der Energie
+    \begin{equation*}
+        E_\text{Photon} = h \nu = E_1 - E_0
+    \end{equation*}
+    wird emittiert.\\
+    Aus der Geschwindigkeitsänderung des Elektrons durch die Energieabgabe kann die Energiedifferenz zur Anregung bestimmt werden.
+    Es gilt
+    \begin{equation*}
+        \frac{m_0 v^2_\text{vor}}{2} - \frac{m_0 v^2_\text{nach}}{2} = E_1 - E_0 \ .
+    \end{equation*}
+    \\
+    Immer,
+    wenn die Energie des Elektrons größer oder gleich der Anregungsenergie ist,
+    hat es nach dem Stoß nicht mehr genug Restenergie,
+    um das Gegenfeld zwischen Gitter- und Auffängerelektrode zu überwinden,
+    wodurch der Auffängerstrom sinkt.
+    Dies ist in Abhängigkeit der Beschleunigungsspannung in der folgenden Abbildung dargestellt,
+    wobei dies nur den Verlauf unter idealen Bedingungen beschreibt.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.8]{content/img/Abb_2.pdf}
+        \caption{Idealer Verlauf des Auffängerstroms in Abhängigkeit der Beschleunigungsspannung.}
+        \label{fig:idealer_verlauf}
+    \end{figure}
+    Zu Beginn ist die Beschleunigungsspannung noch gering, 
+    sodass keine Elektronen das Gegenfeld überwinden können.
+    Der Auffängerstrom ist gleich Null.
+    Bei steigender Beschleunigungsspannung haben mehr Elektronen genug Energie und kommen auf der Auffängerelektrode an,
+    sodass der Strom $I_\text{A}$ ab dem Punkt steigt,
+    bei dem $U_\text{B} > U_\text{A}$ gilt.
+    Der Strom nimmt mit steigender Spannung bis zu dem Punkt zu,
+    an dem die Beschleunigungsspannung einen Wert von $U_1$ errreicht hat und die Elektronen die Energie $E_1-E_0$ besitzen.
+    Nun werden die $\ce{Hg}$-Atome angeregt und der Auffängerstrom sinkt stark ab,
+    wie oben gezeigt.
+    Wenn die Beschleunigungsspannung nun weiter steigt,
+    haben die Elektronen eher genügend Energie,
+    um die $\ce{Hg}$-Atome anzuregen und die \enquote{Anregungszone} wandert in Richtung des Glühdrahts.
+    Zudem haben auch mehr Elektronen genug Energie,
+    um das Gegenfeld zu überwinden,
+    sodass auch der Betrag (?)/das Maximum des Auffängerstroms steigt.\\
+    %TODO: Hier nochmal gucken wie das am besten beschrieben werden kann
+    Dieser Vorgang setzt sich periodisch fort.
+    Der Spannungsabstand $U_1$ entspricht der Anregungsenergie des $\ce{Hg}$-Atoms
+    \begin{equation*}
+        U_1 = \frac{1}{e_0} (E_1 - E_0)
+    \end{equation*}
+    mit der Elektronenladung $e_0$.
+
+\subsection{Einflüsse auf den Verlauf der Franck-Hertz-Kurve}
+\label{sec:einflüsse}
+
+    Der in Abbildung \ref{fig:idealer_verlauf} dargestellte Verlauf der Kurve kann nicht realisiert werden,
+    da einige Nebeneffekte zu berücksichtigen sind, 
+    die den Verlauf beeinflussen.
+
+\subsubsection{Das Kontaktpotential}
+\label{sec:kontaktpotential}
+
+    Ein Nebeneffekt ist dadurch gegeben,
+    dass das Potential des Glühdrahtes und der Gitterelektrode verschieden sind.
+    Bei gleichem Potential würden bei steigender Temperatur auch aus der Gitterelektrode Elektronen austreten,
+    welche die Messung verfälschen würden.
+    Deshalb werden Materialien mit verschiedenen Austrittsarbeiten gewählt.\\
+    Die Potentialverhältnisse sind in der folgenden Abbildung dargestellt.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.7]{content/img/Abb_3.pdf}
+        \caption{Das Verhältnis zwischen dem Potential des Glühdrahtes und der Gitterelektrode.}
+        \label{fig:potentialverhältnisse}
+    \end{figure}
+    Die Größen $\Phi_\text{G}$ und $\Phi_\text{B}$ stellen die Austrittsarbeiten des Drahtes und der Gitterelektrode dar.\\
+    Aus dem Potentialverhältniss ergibt sich ein Kontaktpotential
+    \begin{equation*}
+        K = \frac{1}{e_0} (\Phi_\text{B} - \Phi_\text{G}) \ ,
+    \end{equation*}
+    welches eine Verschiebung der Franck-Hertz-Kurve nach der Gleichung
+    \begin{equation*}
+        U_\text{B,eff} = U_\text{B} - K
+    \end{equation*}
+    bewirkt.
+
+\subsubsection{Die Energieverteilung der Elektronen}
+\label{fig:energieverteilung}
+
+    Ein weiterer Nebeneffekt ist durch die Fermi-Dirac-Verteilung der Elektronen
+    im Glühdraht gegeben,
+    welche aussagt,
+    dass sich die Elektronen schon vor dem Herauslösen auf verschiedenen Energieniveaus befinden,
+    sodass sie unterschiedliche Anfangsgeschwindigkeiten haben,
+    wenn sie aus dem Draht gelöst werden,
+    und somit nach der Beschleunigung ein kontinuierliches Energiespektrum besitzen.\\
+    Es kann also kein einheitlicher Abstand $U_1$ zwischen den Strommaxima erreicht werden,
+    da die Elektronen unterschiedlich stark beschleunigt werden,
+    um bei inelastischen Stößen die $\ce{Hg}$-Atome anzuregen.
+    Aus diesem Grund wird auch der Auffängerstrom nicht mehr ganz auf Null abfallen,
+    sondern immer nur einen Minimalwert erreichen.\\
+    \\
+    Zudem ist die Richtungsänderung der Elektronen bei elastischen Stößen im Bereich zwischen der Gitterelektrode und der Auffängerelektrode relevant,
+    da bei diesen Stößen die z-Richtung der Elektronen verändert wird,
+    woraus folgt,
+    dass sie nach der Ungleichung \ref{eqn:energie_gegenfeld} die Auffängerelektrode nicht mehr erreichen können.
+
+\subsubsection{Der Dampfdruck}
+\label{sec:dampfdruck}
+
+    Ein weiterer Einfluss auf den Verlauf der Kurve ist durch den Dampfdruck $p_\text{Sät}$ gegeben,
+    da der Franck-Hertz-Effekt nur auftreten kann,
+    wenn es zu genügend inelastischen Stößen zwischen Elektronen und $\ce{Hg}$-Atomen kommt.
+    Dies ist gegeben,
+    wenn die mittlere Weglänge $\bar{w}$ klein gegenüber dem Abstand $a$ zwischen Glühdraht und Gitterelektrode ist.\\
+    Da der Dampfdruck ausschließlich von der Temperatur $T$ abhängig ist,
+    können so die Temperaturen bestimmt werden,
+    bei denen der Franck-Hertz-Effekt auftritt.\\
+    Die Abbildung \ref{fig:dampfdruckkurve} zeigt diese Abhängigkeit.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{content/img/Abb_4.pdf}
+        \caption{Abhängigkeit des Dampfdrucks von $\ce{Hg}$ von der Temperatur.}
+        \label{fig:dampfdruckkurve}
+    \end{figure}
