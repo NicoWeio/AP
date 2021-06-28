@@ -10,6 +10,7 @@
 - [V401_Michelson_Interferometer](V401_Michelson_Interferometer/build/main.pdf)
 - [V500_Photoeffekt](V500_Photoeffekt/build/main.pdf)
 - [V501_V502_Ablenkung_eines_Elektronenstrahls_im_elektrischen∕magnetischen_Feld](V501_V502_Ablenkung_eines_Elektronenstrahls_im_elektrischen∕magnetischen_Feld/build/main.pdf)
+- [V601_Franck_Hertz_Versuch](V601_Franck_Hertz_Versuch/build/main.pdf)
 - [D602_Roentgenemission_und_Absorption](D602_Roentgenemission_und_Absorption/build/main.pdf)
 - [D603_Compton_Effekt](D603_Compton_Effekt/build/main.pdf)
 - [V606_Suszeptibilitaet_paramagnetischer_Substanzen](V606_Suszeptibilitaet_paramagnetischer_Substanzen/build/main.pdf)
@@ -21,6 +22,17 @@
 
 
 # Abbildungen
+
+- V103_Biegung_elastischer_Staebe
+	- [Abb_1.pdf](V103_Biegung_elastischer_Staebe/content/img/Abb_1.pdf)
+	- [Abb_2.pdf](V103_Biegung_elastischer_Staebe/content/img/Abb_2.pdf)
+	- [Abb_3.pdf](V103_Biegung_elastischer_Staebe/content/img/Abb_3.pdf)
+	- [Abb_4.pdf](V103_Biegung_elastischer_Staebe/content/img/Abb_4.pdf)
+	- [Abb_5.pdf](V103_Biegung_elastischer_Staebe/content/img/Abb_5.pdf)
+	- [Abb_6.pdf](V103_Biegung_elastischer_Staebe/content/img/Abb_6.pdf)
+	- [Abb_7.pdf](V103_Biegung_elastischer_Staebe/content/img/Abb_7.pdf)
+	- [Abb_8.pdf](V103_Biegung_elastischer_Staebe/content/img/Abb_8.pdf)
+
 
 - V106_Gekoppelte_Pendel
 	- [Abb_1.pdf](V106_Gekoppelte_Pendel/content/img/Abb_1.pdf)
@@ -73,6 +85,16 @@
 	- [Abb_6b.pdf](V500_Photoeffekt/content/img/Abb_6b.pdf)
 
 
+- V601_Franck_Hertz_Versuch
+	- [Abb_1.pdf](V601_Franck_Hertz_Versuch/content/img/Abb_1.pdf)
+	- [Abb_2.pdf](V601_Franck_Hertz_Versuch/content/img/Abb_2.pdf)
+	- [Abb_3.pdf](V601_Franck_Hertz_Versuch/content/img/Abb_3.pdf)
+	- [Abb_4.pdf](V601_Franck_Hertz_Versuch/content/img/Abb_4.pdf)
+	- [Abb_5.pdf](V601_Franck_Hertz_Versuch/content/img/Abb_5.pdf)
+	- [Abb_6.pdf](V601_Franck_Hertz_Versuch/content/img/Abb_6.pdf)
+	- [Abb_7.pdf](V601_Franck_Hertz_Versuch/content/img/Abb_7.pdf)
+
+
 - D602_Roentgenemission_und_Absorption
 	- [Abb_1.pdf](D602_Roentgenemission_und_Absorption/content/img/Abb_1.pdf)
 	- [Abb_2.pdf](D602_Roentgenemission_und_Absorption/content/img/Abb_2.pdf)
@@ -95,6 +117,20 @@
 	- [Abb_2.pdf](V606_Suszeptibilitaet_paramagnetischer_Substanzen/content/img/Abb_2.pdf)
 	- [Abb_3.pdf](V606_Suszeptibilitaet_paramagnetischer_Substanzen/content/img/Abb_3.pdf)
 	- [Abb_4.pdf](V606_Suszeptibilitaet_paramagnetischer_Substanzen/content/img/Abb_4.pdf)
+
+
+- D702_Aktivierung_mit_Neutronen
+	- [Abb_1.pdf](D702_Aktivierung_mit_Neutronen/content/img/Abb_1.pdf)
+	- [Abb_2.pdf](D702_Aktivierung_mit_Neutronen/content/img/Abb_2.pdf)
+	- [Abb_3.pdf](D702_Aktivierung_mit_Neutronen/content/img/Abb_3.pdf)
+
+
+- D703_Geiger_Mueller_Zaehlrohr
+	- [Abb_1.pdf](D703_Geiger_Mueller_Zaehlrohr/content/img/Abb_1.pdf)
+	- [Abb_2.pdf](D703_Geiger_Mueller_Zaehlrohr/content/img/Abb_2.pdf)
+	- [Abb_3.pdf](D703_Geiger_Mueller_Zaehlrohr/content/img/Abb_3.pdf)
+	- [Abb_4.pdf](D703_Geiger_Mueller_Zaehlrohr/content/img/Abb_4.pdf)
+	- [Abb_5.pdf](D703_Geiger_Mueller_Zaehlrohr/content/img/Abb_5.pdf)
 
 
 - V901_Grundlagen_der_Ultraschalltechnik
