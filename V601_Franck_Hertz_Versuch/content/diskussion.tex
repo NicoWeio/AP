@@ -1,0 +1,98 @@
+\section{Diskussion}
+\label{sec:diskussion}
+
+\subsection{Abweichungen}
+
+Die Messung der integralen \hyperref[sec:auswertung:energieverteilung]{Energieverteilung der Elektronen}
+bei $\SI{148}{\celsius}$
+lieferte einen sehr \enquote{glatten} Verlauf,
+was das Bestimmen der Wendepunkte (der integralen Energieverteilung)
+beziehungsweise der Minima der differenziellen Energieverteilung sehr ungenau machte.
+Das zugehörige Kontaktpotential kann daher nur als eine grobe Schätzung angesehen werden.
+
+
+Die Franck-Hertz-Kurven zeigen im Wesentlichen das erwartete Bild.
+Das heißt auch, dass sich kein sich kein idealer Verlauf ergibt,
+wie er in \autoref{fig:idealer_verlauf} dargestellt war.
+Es soll kurz auf die Nebeneffekte aus \autoref{sec:einflüsse}
+und ihre Auswirkung auf den Verlauf eingegangen werden:
+
+\begin{description}
+  \item[{\hyperref[sec:einflüsse:kontaktpotential]{Kontaktpotential}}]
+  Da die effektive Potentialdifferenz geringer als die angelegte Spannung ist,
+  ist die reale Franck-Hertz-Kurve relativ zur idealen Kurve
+  in Richtung größerer Spannungen verschoben.
+
+  \item[{\hyperref[sec:einflüsse:energieverteilung]{Energieverteilung der Elektronen}}]
+  Die Maxima sind deutlich \enquote{stumpfer} als im idealen Verlauf.
+  Dieser Effekt lässt sich unter anderem damit begründen,
+  dass die aus der Glühkathode ausgelösten Elektronen nicht mit der gleichen Energie starten.
+  Das Resultat ist bildlich gesprochen die Summe vieler zufällig in der X-Achse verschobener (idealer) Verläufe.
+
+  \item[{\hyperref[sec:einflüsse:dampfdruck]{Temperaturabhängigkeit des Dampfdruckes}}]
+  Wie zuvor besprochen,
+  variiert die mittlere freie Weglänge der Elektronen
+  mit dem Dampfdruck und somit auch mit der Temperatur.
+  Daher nimmt die Anzahl der Stöße mit steigender Temperatur zu,
+  was wiederum ausgeprägtere Extrema zur Folge hat.
+\end{description}
+
+
+Die aus der \hyperref[fig:franck_hertz_kurve_2]{zweiten Franck-Hertz-Kurve} bestimmte Anregungsenergie
+lautete $\SI{5.24(12)}{\electronvolt}$.
+Das entspricht einer Abweichung um $\SI{6.92}{\percent}$
+vom Literaturwert $\SI{4.9}{\electronvolt}$ \cite{anregungsenergie}.
+
+Das anhand der \hyperref[fig:franck_hertz_kurve_1]{ersten Franck-Hertz-Kurve} bestimmte Kontaktpotential
+weicht merklich von dem zuvor in \autoref{sec:auswertung:energieverteilung} ermittelten ab.
+In ersterem Teil wurde bei einer Temperatur von $\SI{148}{\celsius}$
+ein Kontaktpotential von $\SI{8.149}{\volt}$ gemessen,
+während es in letzterem
+bei einer Temperatur von $\SI{166.6}{\celsius}$
+$\SI{10.57(32)}{\volt}$ waren.
+% 6.696 weicht ebenfalls von beiden anderen K ab…
+
+Da kein Referenzwert zum Kontaktpotential bekannt ist,
+kann über die tatäschliche Abweichung keine Aussage getroffen werden.
+
+
+\subsection{Mögliche Fehlerquellen}
+
+Eine offensichtliche Fehlerquelle ist der verwendete XY-Schreiber.
+Indem die Messwerte erst auf Papier geplottet
+und anschließend wieder abgelesen und digitalisiert wurden,
+% konnte an verschiedensten Stellen…
+konnten verschiedenste Abweichungen auftreten:
+
+\begin{description}
+  \item[Skala]
+  Die Werte wurden mithilfe der vorgedruckten Millimeter-Skala abgelesen
+  und anschließend umgerechnet.
+  Ungenauigkeiten treten zwangsläufig beim Erstellen der Volt-Skala sowie beim Ablesen von Werten auf.
+
+  \item[Messbereich]
+  Der Messbereich des Picoamperemeter wurde während einer Probemessung überschritten.
+  Dies äußert sich am XY-Schreiber dadurch,
+  dass die Werte \enquote{abgeschnitten} werden.
+  Wäre dieses Problem nicht erkannt worden,
+  hätten sich unbrauchbare Daten ergeben.
+
+  \item[Genauigkeit und Präzision des Schreibers]
+  Hierzu sind keine Angaben bekannt.
+  Es ist jedoch gut möglich,
+  dass hier ein kleinerer systematischer Fehler auftritt.
+  Abgesehen davon trat zwischenzeitlich ein Zittern auf,
+  welches aber auch vom Picoamperemeter ausgegangen sein könnte.
+\end{description}
+
+
+Die Brems-/Beschleunigungsspannungen wurden über eine Minute hinweg abgefahren,
+wenngleich die Apparatur langsamere Abtastungen zugelassen hätte.
+Dies muss sich jedoch nicht nachteilig auswirken, wie der folgende Absatz verdeutlicht.
+
+
+Der geregelte Heizgenerator erlaubte es nicht,
+eine gewünschte Temperatur gleichzeitig einigermaßen schnell zu erreichen
+und diese anschließend zu halten.
+Die somit entstandenen Temperaturschwankungen können zu Abweichungen geführt haben,
+welche für längere Messdauern größer zu vermuten sind.
