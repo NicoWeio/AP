@@ -72,7 +72,10 @@ def linspace(start, end, num=50):
 
 
 def ufloat_from_list(vals):
-    return ufloat(np.mean(vals), sp.stats.sem(vals))
+    if isinstance(vals, pint.Quantity):
+        return ufloat(np.mean(vals.m), sp.stats.sem(vals.m)) * vals.units
+    else:
+        return ufloat(np.mean(vals), sp.stats.sem(vals))
 
 
 def fmt_abs_err(o, r, precise=False, show_uncertainty=True):

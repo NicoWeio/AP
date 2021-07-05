@@ -1,3 +1,5 @@
+import numpy as np
+import pint
 from uncertainties import ufloat
 
 def wrapper_num(content):
@@ -6,38 +8,36 @@ def wrapper_num(content):
 def n_digits(num, n):
     return ('{0:.'+str(n)+'f}').format(num)
 
-def depint(num):
-    # Tupel für uncertainty?
-    try:
-        return num.m
-    except:
-        return num
-
 def stringify(value, scientific, fmt=[]):
     if value is None:
         return ""
     if isinstance(value, str):
         return value
-    elif isinstance(value, int):
+    if isinstance(value, int):
         return wrapper_num(str(value))
-    else:
-        try:
-            if 'd' in fmt:
-                d = fmt['d']
-                if isinstance(d, tuple):
-                    return wrapper_num(n_digits(value.n, d[0])) + " ± " + wrapper_num(n_digits(value.s, d[1]))
-                else:
-                    # return wrapper_num(n_digits(depint(value), d))
-                    # CHANGED: Wir benutzen SIUNITX zum alignen, da stört \num{…} nur…
-                    return n_digits(depint(value), d)
+    if isinstance(value, pint.Quantity):
+        value = value.m
+    try: # casting does not always work
+        if np.isnan(value):
+            return '{–}'
+    except TypeError:
+        pass
 
-            return "TODO"
+    try:
+        if 'd' in fmt:
+            d = fmt['d']
+            if isinstance(d, tuple):
+                return wrapper_num(n_digits(value.n, d[0])) + " ± " + wrapper_num(n_digits(value.s, d[1]))
+            else:
+                return n_digits(value, d)
 
-        except Exception as e:
-            print(e)
-            print("That didn't work:", value)
-            print("Got a", type(value))
-            return wrapper_num(f"{value}")
+        return "TODO"
+
+    except Exception as e:
+        print(e)
+        print("That didn't work:", value)
+        print("Got a", type(value))
+        return wrapper_num(f"{value}")
 
 def generate_table(name, rows, **kwargs):
     with open(f"build/{name}.tex", 'w') as f:
