@@ -1,20 +1,24 @@
 \section{Durchführung}
 \label{sec:durchführung}
 
-    Für die Messung der Compton-Wellenlänge $\lambda_\text{c}$ ist die folgende Apparatur gegeben.
+    Für die Messung der Compton-Wellenlänge ist eine Apparatur gegeben,
+    welche eine Röntgenröhre, ein LiF-Kristall und ein Geiger-Müller-Zählrohr enthält.
+    Der LiF-Kristall kann durch einen Plexiglasstreuer ausgetauscht werden;
+    außerdem können zwischen den einzelnen Bestandteilen Absorber eingebaut werden.\\
+    Die Apparatur ist in \autoref{fig:aufbau_röntgen} gezeigt.
     \begin{figure}[H]
         \centering
         \includegraphics[width=\textwidth]{content/img/Abb_2.pdf}
         \caption{Apparatur zur Erzeugung und Messung von Röntgenstrahlung. \cite{versuchsanleitung}}
         \label{fig:aufbau_röntgen}
     \end{figure}
-    Innerhalb der Apparatur befinden sich eine Röntgenröhre,
-    ein LiF-Kristall, beziehungsweise ein Plexiglasstreuer,
-    und ein Geiger-Müller-Zählrohr.\\
-    \\
+    Mithilfe der in der Abbildung benannten Bedienelemente können die Röntgenröhre
+    sowie die Winkeleinstellung von Kristall und Geiger-Müller-Zählrohr
+    manuell bedient werden.
+
     Die Messung setzt sich aus zwei Teilen zusammen.
-    Für alle Messungen wird eine Beschleunigungsspannung von $\SI{35}{\kilo\volt}$ eingestellt,
-    sowie ein Emissionsstrom von $\SI{1}{\milli\ampere}$.
+    Für alle Messungen werden eine Beschleunigungsspannung von $\SI{35}{\kilo\volt}$
+    sowie ein Emissionsstrom von $\SI{1}{\milli\ampere}$ eingestellt.
 
 
 \subsection{Das Emissionsspektrum der Röntgenröhre}
@@ -53,16 +57,17 @@
         \centering
         \begin{subfigure}{0.4\textwidth}
             \centering
-            \includegraphics[width=0.75\textwidth]{content/img/Abb_3a.pdf}
+            \includegraphics[width=0.65\textwidth]{content/img/Abb_3a.pdf}
             \caption{Messung 1. \cite{versuchsanleitung}}
             \label{fig:aufbau_transmission_a}
         \end{subfigure}
         \begin{subfigure}{0.4\textwidth}
             \centering
-            \includegraphics[width=0.75\textwidth]{content/img/Abb_3b.pdf}
+            \includegraphics[width=0.65\textwidth]{content/img/Abb_3b.pdf}
             \caption{Messung 2. \cite{versuchsanleitung}}
             \label{fig:aufbau_transmission_b}
         \end{subfigure}
+        \caption{Schematische Darstellung der unterschiedlichen Positionierungen des \ce{Al}-Absorbers.}
     \end{figure}
 
     Mithilfe der \autoref{fig:aufbau_transmission_a} wird nun die Transmission $T_1 = \sfrac{I_1}{I_0}$ der ungestreuten Wellenlänge $\lambda_1$ gemessen,
@@ -76,5 +81,5 @@
     indem der Aluminium-Absorber nach \autoref{fig:aufbau_transmission_b}
     zwischen Plexiglasstreuer und Geiger-Müller-Zählrohr angebracht wird.\\
     Aus der Verschiebung der Wellenlänge $\symup{\Delta}\lambda$ kann nun
-    nach den Gleichungen \ref{eqn:wellenlängendifferenz} und \ref{eqn:verschiebung_winkelabhängig}
+    nach \eqref{eqn:wellenlängendifferenz} und \eqref{eqn:verschiebung_winkelabhängig}
     aus \autoref{sec:compton_effekt} die Compton-Wellenlänge $\lambda_\text{c}$ bestimmt werden.

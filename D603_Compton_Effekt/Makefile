@@ -8,16 +8,16 @@ tables: \
 		build/tab/mess_emissionsspektrum_4col.tex \
 		build/tab/mess_transmission.tex \
 
-build/plt/emissionsspektrum.pdf &: 1_emissionsspektrum.py | build/plt
+build/plt/emissionsspektrum.pdf: 1_emissionsspektrum.py | build/plt
 		MATPLOTLIBRC=../matplotlibrc TEXINPUTS=$$(pwd)/..: python3 1_emissionsspektrum.py
 
-build/plt/transmission.pdf &: 2_transmission.py | build/plt
+build/plt/transmission.pdf: 2_transmission.py | build/plt
 		MATPLOTLIBRC=../matplotlibrc TEXINPUTS=$$(pwd)/..: python3 2_transmission.py
 
-build/tab/mess_transmission.tex &: 0_messwerte.py | build/plt
+build/tab/mess_transmission.tex: 0_messwerte.py | build/plt
 		MATPLOTLIBRC=../matplotlibrc TEXINPUTS=$$(pwd)/..: python3 0_messwerte.py
 
-build/main.pdf: plots tables | build
+build/main.pdf: main.tex lit.bib plots tables | build
 	  TEXINPUTS=build: \
 	  BIBINPUTS=build: \
 	  max_print_line=1048576 \
