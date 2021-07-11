@@ -42,8 +42,8 @@
 
 
 - D206_Waermepumpe
-	- [aufbau.pdf](D206_Waermepumpe/content/img/aufbau.pdf)
-	- [aufbau2.pdf](D206_Waermepumpe/content/img/aufbau2.pdf)
+	- [Abb_1.pdf](D206_Waermepumpe/content/img/Abb_1.pdf)
+	- [Abb_2.pdf](D206_Waermepumpe/content/img/Abb_2.pdf)
 
 
 - V303_Der_Lock_In_Verstaerker
