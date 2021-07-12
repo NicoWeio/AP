@@ -28,21 +28,19 @@ def fit_fn(t, N0, λ):
 t_end_fastdecay = ureg('240 s')
 t_bounds_slowdecay = (t_end_fastdecay, t[-1])
 
-t_linspace = np.linspace(0, t[-1])
-t_unitless = unp.nominal_values(t)
-
-slope, intercept = tools.linregress(t[15:], unp.nominal_values(ln_N)[15:])
+slope, intercept = tools.linregress(t[15:], unp.nominal_values(ln_N)[15:] * ureg.dimensionless)
 # keine Einheiten für y-Achse – ist ja logarithmisch!
 
-ln_N_lang_fit = slope*t_unitless+intercept
-N_lang_fit = np.exp(unp.nominal_values(ln_N_lang_fit)) * ureg('1/s')
+ln_N_lang_fit = slope*t+intercept
+N_lang_fit = np.exp(tools.nominal_values(ln_N_lang_fit)) * ureg('1/s')
 N_kurz = N - N_lang_fit
-ln_N_kurz = np.log(unp.nominal_values(N_kurz))
+ln_N_kurz = np.log(tools.nominal_values(N_kurz).m) # TODO: Hier sollte sich – wie oben – mit unp der Fehler mitnehmen lassen
 
-slope2, intercept2 = tools.linregress(t[:15], unp.nominal_values(ln_N_kurz)[:15])
 
-ln_N_kurz_fit = slope2*t_unitless+intercept2
-N_kurz_fit = np.exp(unp.nominal_values(ln_N_kurz_fit)) * ureg('1/s')
+slope2, intercept2 = tools.linregress(t[:15], unp.nominal_values(ln_N_kurz)[:15] * ureg.dimensionless)
+
+ln_N_kurz_fit = slope2*t+intercept2
+N_kurz_fit = np.exp(tools.nominal_values(ln_N_kurz_fit)) * ureg('1/s')
 
 λ1 = (-slope*ureg('1/s'))
 λ2 = (-slope2*ureg('1/s'))
@@ -58,13 +56,11 @@ plt.figure('log')
 plt.axvline(x=t_bounds_slowdecay[0], linewidth=0.5, linestyle="--", color='grey')
 # plt.errorbar(t.to('s'), unp.nominal_values(N.to('1/s')), fmt='x', yerr=unp.std_devs(N), label='Messwerte')
 plt.plot(t, unp.nominal_values(ln_N), 'x', label="Messwerte")
-plt.plot(t_unitless[15:], unp.nominal_values(ln_N_lang_fit[15:]), label="Fit-Funktion: langsamer Zerfall")
+plt.plot(t[15:], tools.nominal_values(ln_N_lang_fit[15:]), label="Fit-Funktion: langsamer Zerfall")
 plt.plot(t, unp.nominal_values(ln_N_kurz), 'x', label="Messwerte abzgl. langsamer Zerfall (Fit)")
-plt.plot(t_unitless[:15+1], unp.nominal_values(ln_N_kurz_fit[:15+1]), label="Fit-Funktion: schneller Zerfall")
-ln_N_sum_fit = np.log(unp.nominal_values(N_lang_fit + N_kurz_fit))
-plt.plot(t_unitless, unp.nominal_values(ln_N_sum_fit), label="Summe beider Fit-Funktionen")
+plt.plot(t[:15+1], tools.nominal_values(ln_N_kurz_fit[:15+1]), label="Fit-Funktion: schneller Zerfall")
+plt.plot(t, np.log((N_lang_fit + N_kurz_fit).m), label="Summe beider Fit-Funktionen")
 plt.ylim(-1, None)
-
 plt.xlabel(r"$t \;/\; s$")
 plt.ylabel(r"$ln(N)$")
 plt.legend()
@@ -74,11 +70,11 @@ plt.savefig('build/plot2_log.pdf')
 
 plt.figure('lin')
 plt.axvline(x=t_bounds_slowdecay[0], linewidth=0.5, linestyle="--", color='grey')
-plt.errorbar(t, unp.nominal_values(N), fmt='x', yerr=unp.std_devs(N), label="Messwerte")
-plt.plot(t_unitless, N_lang_fit, label="Fit-Funktion: langsamer Zerfall")
-plt.errorbar(t, unp.nominal_values(N_kurz), fmt='x', yerr=unp.std_devs(N_kurz), label="Messwerte abzgl. langsamer Zerfall (Fit)")
-plt.plot(t_unitless[:15+1], N_kurz_fit[:15+1], label="Fit-Funktion: schneller Zerfall")
-plt.plot(t_unitless, N_lang_fit + N_kurz_fit, label="Summe beider Fit-Funktionen")
+tools.errorbar(plt, t, N, fmt='x', label="Messwerte")
+plt.plot(t, N_lang_fit, label="Fit-Funktion: langsamer Zerfall")
+tools.errorbar(plt, t, N_kurz, fmt='x', label="Messwerte abzgl. langsamer Zerfall (Fit)")
+plt.plot(t[:15+1], N_kurz_fit[:15+1], label="Fit-Funktion: schneller Zerfall")
+plt.plot(t, N_lang_fit + N_kurz_fit, label="Summe beider Fit-Funktionen")
 plt.xlabel(r"$t \;/\; s$")
 plt.ylabel(r"$N \;/\; \frac{1}{s}$")
 plt.legend()
