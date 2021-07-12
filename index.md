@@ -41,6 +41,11 @@
 	- [Abb_3.pdf](V106_Gekoppelte_Pendel/content/img/Abb_3.pdf)
 
 
+- V204_Waermeleitung
+	- [Abb_1.pdf](V204_Waermeleitung/content/img/Abb_1.pdf)
+	- [Abb_2.pdf](V204_Waermeleitung/content/img/Abb_2.pdf)
+
+
 - D206_Waermepumpe
 	- [Abb_1.pdf](D206_Waermepumpe/content/img/Abb_1.pdf)
 	- [Abb_2.pdf](D206_Waermepumpe/content/img/Abb_2.pdf)
