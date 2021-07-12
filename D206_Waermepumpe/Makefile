@@ -1,11 +1,12 @@
 all: build/main.pdf
 
 build/wärmepumpe_plot.pdf: main.py | build
-	TEXINPUTS=$$(pwd): python3 main.py
+	MATPLOTLIBRC=../matplotlibrc TEXINPUTS=$$(pwd)/..: python3 main.py
 
-build/main.pdf: build/wärmepumpe_plot.pdf
+plots: \
+	build/wärmepumpe_plot.pdf \
 
-build/main.pdf: main.tex lit.bib | build
+build/main.pdf: main.tex lit.bib plots | build
 	  TEXINPUTS=build: \
 	  BIBINPUTS=build: \
 	  max_print_line=1048576 \
@@ -22,6 +23,6 @@ build:
 clean:
 	rm -rf build
 
-.PHONY: all clean
+.PHONY: all clean plots
 
 #NOTE: Vollständiges Rekompilieren lässt sich mit `make -B` erzwingen
