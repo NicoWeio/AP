@@ -4,11 +4,11 @@ plots: \
 		build/plot1.pdf \
 		build/plot2.pdf \
 
-build/plot1.pdf: | build
-		python3 1_kennlinie.py
+build/plot1.pdf: 1_kennlinie.py | build
+	MATPLOTLIBRC=../matplotlibrc TEXINPUTS=$$(pwd)/..: python3 1_kennlinie.py
 
-build/plot2.pdf: | build
-		python3 3_zaehlrohrstrom.py
+build/plot2.pdf: 3_zaehlrohrstrom.py | build
+	MATPLOTLIBRC=../matplotlibrc TEXINPUTS=$$(pwd)/..: python3 3_zaehlrohrstrom.py
 
 tables: \
 		build/table_messwerte.tex \

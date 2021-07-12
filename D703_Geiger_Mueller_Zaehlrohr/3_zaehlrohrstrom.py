@@ -38,7 +38,7 @@ slope *= ureg('1/V')
 
 plt.errorbar(U.to('V'), unp.nominal_values(Z), fmt='x', yerr=unp.std_devs(Z), label='freigesetzte Ladungen pro eingefallenem Teilchen')
 plt.plot(U, slope * U + intercept, label='Regressionsgerade')
-plt.xlabel(r"$U \;/\; V$")
+plt.xlabel(r"$U \mathbin{/} \si{\volt}$")
 plt.ylabel(r"$Z$")
 plt.legend()
 plt.tight_layout()
