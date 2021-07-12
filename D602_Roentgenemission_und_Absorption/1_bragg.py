@@ -12,7 +12,7 @@ plt.plot(θ, N, '-')
 plt.axvline(θ_peak, linestyle='-', color='red', label=r'$\theta_{B, exp}$')
 plt.axvline(θ_theorie, linestyle='--', color='gray', label=r'$\theta_{B, theo}$')
 
-plt.xlabel(r'$θ_{GM} \;/\; °$')
+plt.xlabel(r'$θ_{GM} \mathbin{/} \si{\degree}$')
 plt.ylabel(r'$N$')
 plt.legend()
 plt.tight_layout()

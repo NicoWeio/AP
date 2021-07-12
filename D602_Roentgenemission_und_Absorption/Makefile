@@ -26,9 +26,9 @@ build/table_%.tex &: | build
 		python3 0_messwerte.py
 
 build/plot_%.pdf &: | build
-		python3 1_bragg.py
-		python3 2_emissionsspektrum.py
-		python3 3_absorptionsspektren.py
+		MATPLOTLIBRC=../matplotlibrc TEXINPUTS=$$(pwd)/..: python3 1_bragg.py
+		MATPLOTLIBRC=../matplotlibrc TEXINPUTS=$$(pwd)/..: python3 2_emissionsspektrum.py
+		MATPLOTLIBRC=../matplotlibrc TEXINPUTS=$$(pwd)/..: python3 3_absorptionsspektren.py
 
 build/main.pdf: main.tex lit.bib plots tables | build
 	  TEXINPUTS=build: \
