@@ -73,15 +73,15 @@ def main(data):
 
     plt.figure(data['name'])
     # Wir plotten nach Sekunden, nicht Indizes!
-    plt.plot(indices.to('seconds'), T_nah, label=r'$T_\mathrm{nah}$')
-    plt.plot(indices.to('seconds'), T_fern, label=r'$T_\mathrm{fern}$')
+    plt.plot(indices.to('seconds'), T_nah, label=r'$T_\text{nah}$')
+    plt.plot(indices.to('seconds'), T_fern, label=r'$T_\text{fern}$')
     # plt.plot(*plt_extrema(extrema_nah[0]), '.r') # Maxima
     # plt.plot(*plt_extrema(extrema_nah[1]), '.r') # Minima
     # plt.plot(*plt_extrema(extrema_fern[0]), '.r') # Maxima
     # plt.plot(*plt_extrema(extrema_fern[1]), '.r') # Minima
     plt.xticks(xticks)
-    plt.xlabel('$t \;/\; s$')
-    plt.ylabel('$T \;/\; °C$')
+    plt.xlabel('$t \mathbin{/} \si{\second}$')
+    plt.ylabel('$T \mathbin{/} \si{\celsius}$')
     plt.grid()
     plt.legend()
     plt.tight_layout()

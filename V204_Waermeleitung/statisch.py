@@ -35,8 +35,8 @@ T8 *= ureg.celsius
 print("max_t", indices_statisch[-1])
 
 def plot_common(plt):
-    plt.xlabel("$t \;/\; s$")
-    plt.ylabel("$T \;/\; °C$")
+    plt.xlabel(r'$t \mathbin{/} \si{\second}$')
+    plt.ylabel(r'$T \mathbin{/} \si{\celsius}$')
     plt.grid()
     plt.legend()
     plt.tight_layout()
@@ -102,6 +102,6 @@ plt.figure("T2 - T1 & T7 - T8")
 plt.plot(indices_statisch, T2 - T1, label='T2 - T1 (Messing, breit)')
 plt.plot(indices_statisch, T7 - T8, label='T7 - T8 (Edelstahl)')
 plot_common(plt)
-plt.ylabel("$\Delta T \;/\; °C$")
+plt.ylabel("$\Delta T \mathbin{/} \si{\celsius}$")
 plt.savefig('build/plot_statisch_tdiff.pdf')
 # plt.show()

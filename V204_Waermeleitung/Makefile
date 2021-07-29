@@ -9,8 +9,8 @@ plots: \
 	build/plot_statisch_tdiff.pdf \
 
 build/plot_%.pdf: build
-	python3 statisch.py
-	python3 dynamisch.py
+	MATPLOTLIBRC=../matplotlibrc TEXINPUTS=$$(pwd)/..: python3 statisch.py
+	MATPLOTLIBRC=../matplotlibrc TEXINPUTS=$$(pwd)/..: python3 dynamisch.py
 
 build/main.pdf: main.tex lit.bib plots | build
 	  TEXINPUTS=build: \
