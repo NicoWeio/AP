@@ -33,8 +33,8 @@ plt.plot(t, d, '+', label='Messwerte')
 plt.plot(t_bounds, (achse.nominal_value * ureg('mm') + speed.nominal_value * ureg('mm/µs') * t_bounds).to('mm'), label='Fit')
 #TODO Theoriewert dazu plotten
 
-plt.xlabel(r'$t \;/\; µs$')
-plt.ylabel(r'$d \;/\; mm$')
+plt.xlabel(r'$t \mathbin{/} \si{\micro\second}$')
+plt.ylabel(r'$d \mathbin{/} \si{\milli\meter}$')
 plt.legend()
 plt.tight_layout()
 plt.savefig('build/plt/schallgeschwindigkeit.pdf')
