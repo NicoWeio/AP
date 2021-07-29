@@ -75,9 +75,9 @@ pofVals = fit_fn(linearized_x, pof)
 plt.plot(unp.nominal_values(linearized_x.to('millimeters**3')*1e-5), D.to('millimeters'), 'x', label='Messwerte')
 plt.plot(unp.nominal_values(linearized_x.to('millimeters**3')*1e-5), unp.nominal_values(pofVals.to('millimeters')), label='Regression')
 #TODO: Nur für eine Seite ↓
-plt.xlabel(r"$Lx²-\frac{x³}{3} \;/\; 10^5 \cdot mm^3$")
+plt.xlabel(r"$Lx²-\frac{x³}{3} \mathbin{/} \SI{e5}{\cubic\milli\meter}$")
 
-plt.ylabel(r"$D \;/\; mm$")
+plt.ylabel(r"$D \mathbin{/} \si{\milli\meter}$")
 plt.tight_layout()
 plt.legend()
 # plt.show()

@@ -107,13 +107,13 @@ pof_linksVals = fit_fn(linearized_x_links, pof_links)
 
 
 for (linearized_x_i, D_i, pofVals_i, xlabel, filename) in [
-        (linearized_x_rechts, D_rechts, pof_rechtsVals, r"$Lx²-\frac{x³}{3} \;/\; 10^5 \cdot mm^3$",      'build/plot_beidseitig_rund_rechts.pdf'),
-        (linearized_x_links,  D_links,  pof_linksVals,  r"$4x^3-12Lx^2+9L^2x-L^3 \;/\; 10^5 \cdot mm^3$", 'build/plot_beidseitig_rund_links.pdf')
+        (linearized_x_rechts, D_rechts, pof_rechtsVals, r"$Lx²-\frac{x³}{3} \mathbin{/} \SI{e5}{\cubic\milli\meter}$",      'build/plot_beidseitig_rund_rechts.pdf'),
+        (linearized_x_links,  D_links,  pof_linksVals,  r"$4x^3-12Lx^2+9L^2x-L^3 \mathbin{/} \SI{e5}{\cubic\milli\meter}$", 'build/plot_beidseitig_rund_links.pdf')
     ]:
     plt.plot(unp.nominal_values(linearized_x_i.to('millimeters**3')*1e-5), D_i.to('millimeters'), 'x', label='Messwerte')
     plt.plot(unp.nominal_values(linearized_x_i.to('millimeters**3')*1e-5), unp.nominal_values(pofVals_i.to('millimeters')), label='Regression')
     plt.xlabel(xlabel)
-    plt.ylabel(r"$D \;/\; mm$")
+    plt.ylabel(r"$D \mathbin{/} \si{\milli\meter}$")
     plt.tight_layout()
     plt.legend()
     # plt.show()
