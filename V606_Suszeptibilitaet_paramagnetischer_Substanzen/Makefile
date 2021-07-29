@@ -7,10 +7,10 @@ tables: \
 		build/table_Dy2O3_auswertung.tex \
 		build/table_Nd2O3_auswertung.tex \
 
-build/plot_filterkurve.pdf: | build
-		python3 1_filterkurve.py
+build/plot_filterkurve.pdf: 1_filterkurve.py | build
+		MATPLOTLIBRC=../matplotlibrc TEXINPUTS=$$(pwd)/..: python3 1_filterkurve.py
 
-build/table_%_auswertung.tex: | build
+build/table_%_auswertung.tex: 3_suszeptibilitaet_auswertung.py | build
 		python3 3_suszeptibilitaet_auswertung.py
 
 build/main.pdf: main.tex lit.bib plots tables | build
