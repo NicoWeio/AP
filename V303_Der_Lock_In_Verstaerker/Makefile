@@ -13,10 +13,10 @@ build/tab/led.tex: | build/tab
 		python3 0_messwerte.py
 
 build/plt/phasen.pdf build/plt/phasen_noise.pdf &: | build/plt
-		python3 1_phasenabhaengigkeit.py
+		MATPLOTLIBRC=../matplotlibrc TEXINPUTS=$$(pwd)/..: python3 1_phasenabhaengigkeit.py
 
 build/plt/led.pdf &: | build/plt
-		python3 2_led.py
+		MATPLOTLIBRC=../matplotlibrc TEXINPUTS=$$(pwd)/..: python3 2_led.py
 
 
 build/main.pdf: main.tex content lit.bib plots tables | build
