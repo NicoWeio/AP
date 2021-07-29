@@ -34,8 +34,8 @@ axin2.grid()
 
 plt.gca().indicate_inset_zoom(axin2, edgecolor="black")
 
-plt.xlabel(r'$U \;/\; \mathrm{V}$')
-plt.ylabel(r'$I \;/\; \mathrm{nA}$')
+plt.xlabel(r'$U \mathbin{/} \si{\volt}$')
+plt.ylabel(r'$I \mathbin{/} \si{\nano\ampere}$')
 plt.legend()
 plt.tight_layout()
 plt.savefig("build/plot_gelb_full.pdf")

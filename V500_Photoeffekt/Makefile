@@ -16,13 +16,13 @@ tables: \
 		build/table_violett.tex \
 
 build/plot_gelb_full.pdf: | build
-		python3 2_gelb_full.py
+		MATPLOTLIBRC=../matplotlibrc TEXINPUTS=$$(pwd)/..: python3 2_gelb_full.py
 
 build/plot_%.pdf &: | build
-		python3 1_auswertung.py
+		MATPLOTLIBRC=../matplotlibrc TEXINPUTS=$$(pwd)/..: python3 1_auswertung.py
 
 build/table_fitdata.tex: | build
-		python3 1_auswertung.py
+		MATPLOTLIBRC=../matplotlibrc TEXINPUTS=$$(pwd)/..: python3 1_auswertung.py
 
 build/table_%.tex &: | build
 		python3 0_messwerte.py

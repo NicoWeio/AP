@@ -81,8 +81,8 @@ for d in data:
     plt.axhline(0, color='grey')
     plt.plot(unp.nominal_values(U_fit_points.m), unp.nominal_values(I_fit_points.m), "-", label=f"Ausgleichsgerade {d['colorName']}", color=d['plotColor'])
     plt.plot(U_ranged.to('V').m, sqrt_I_ranged.to('nA**0.5').m, "x", label=f"Messwerte {d['colorName']}", color='black')
-    plt.xlabel("$U \;/\; \mathrm{V}$")
-    plt.ylabel("$\sqrt{I \;/\; \mathrm{nA}}$")
+    plt.xlabel(r"$U \mathbin{/} \si{\volt}$")
+    plt.ylabel(r"$\sqrt{I \mathbin{/} \si{\nano\ampere}}$")
     handles, labels = plt.gca().get_legend_handles_labels()
     labels, handles = zip(*sorted(zip(labels, handles), key=lambda t: t[0], reverse=True))
     plt.legend(handles, labels)
@@ -139,8 +139,8 @@ plt.plot(ν_linspace, unp.nominal_values((ν_linspace * α + β).to('V').m), col
 for ν, U_g, d in zip(ν, U_g, data):
     plt.plot(ν, U_g, "x", label=d['colorName'], color=d['plotColor'])
 
-plt.xlabel(r'$\nu \;/\; \mathrm{THz}$')
-plt.ylabel(r'$U_g \;/\; \mathrm{V}$')
+plt.xlabel(r'$\nu \mathbin{/} \si{\tera\hertz}$')
+plt.ylabel(r'$U_g \mathbin{/} \si{\volt}$')
 plt.legend()
 plt.tight_layout()
 plt.savefig("build/plot_nu_ug.pdf")
