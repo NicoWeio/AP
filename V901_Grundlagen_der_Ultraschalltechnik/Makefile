@@ -15,16 +15,16 @@ build/tab/mess_schieblehre.tex: | build/tab
 		python3 0_messwerte.py
 
 build/plt/visualization.pdf: | build/plt
-		python3 1_visualization.py
+		MATPLOTLIBRC=../matplotlibrc TEXINPUTS=$$(pwd)/..: python3 1_visualization.py
 
 build/plt/visualization_bars.pdf: | build/plt
-		python3 1b_visualization_bars.py
+		MATPLOTLIBRC=../matplotlibrc TEXINPUTS=$$(pwd)/..: python3 1b_visualization_bars.py
 
 build/plt/schallgeschwindigkeit.pdf: | build/plt
-		python3 2_schallgeschwindigkeit.py
+		MATPLOTLIBRC=../matplotlibrc TEXINPUTS=$$(pwd)/..: python3 2_schallgeschwindigkeit.py
 
 build/plt/absorptionskurve.pdf: | build/plt
-		python3 3_absorptionskoeffizient.py
+		MATPLOTLIBRC=../matplotlibrc TEXINPUTS=$$(pwd)/..: python3 3_absorptionskoeffizient.py
 
 build/main.pdf: main.tex lit.bib plots tables | build
 	  TEXINPUTS=build: \
