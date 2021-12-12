@@ -73,10 +73,10 @@ def analyse(data):
 
     generate_table.generate_table(f"table_{data['name']}_auswertung", [[*i] for i in zip(R_0.to('Ω'), R_m.to('Ω'), ΔR_list.to('Ω'), U_0, U_m, ΔU_list)], col_fmt=[{'d': 2}]*6)
 
-    ΔR = pint_ufloat(ΔR_list, 'mΩ', ureg)
-    ΔU = pint_ufloat(ΔU_list, 'mV', ureg)
+    ΔR = ufloat_from_list(ΔR_list)
+    ΔU = ufloat_from_list(ΔU_list)
 
-    R_0_mittel = pint_ufloat(R_0, 'mΩ', ureg)
+    R_0_mittel = ufloat_from_list(R_0)
     χR = (2*ΔR*F)/((R_0_mittel+R31)*Q_real)
     χR.ito('dimensionless')
 
