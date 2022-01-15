@@ -1,3 +1,4 @@
+import contextlib
 import numpy as np
 import pint
 import scipy as sp
@@ -147,3 +148,64 @@ def errorbar(plt, x, y, **kwargs):
     y_n, y_s = get_n_s(y)
 
     return plt.errorbar(x_n, y_n, xerr=x_s, yerr=y_s, **kwargs)
+
+
+@contextlib.contextmanager
+def plot_context(plt, xunits, yunits, xname=None, yname=None):
+    """Context-Manager zum einfacheren Plotten von einheitenbehafteten Daten."""
+
+    # Parse Einheiten. Das funktioniert auch, wenn sie bereits Instanzen von pint.Unit sind.
+    xunits = pint.Unit(xunits)
+    yunits = pint.Unit(yunits)
+
+    class MyPlotter:
+        """Hilfsklasse, die einen Teil von `matplotlib.pyplot` nachahmt und ergänzt."""
+
+        def plot(self, x, y, show_xerr=True, show_yerr=True, **kwargs):
+            # Bringe x und y in die vorgegebene Einheit und entferne sie anschließend.
+            if isinstance(x, pint.Quantity):
+                x = x.to(xunits).m
+            if isinstance(y, pint.Quantity):
+                y = y.to(yunits).m
+
+            # Trenne x und y in nominal_values und std_devs auf.
+            def get_n_s(vals):
+                n, s = unumpy.nominal_values(vals), unumpy.std_devs(vals)
+                # Falls alle Unsicherheiten 0 sind, wird s auf None gesetzt.
+                if not s.any():
+                    s = None
+                return n, s
+
+            x_n, x_s = get_n_s(x)
+            y_n, y_s = get_n_s(y)
+
+            # xerr und yerr können explizit deaktiviert werden.
+            if not show_xerr:
+                x_s = None
+            if not show_yerr:
+                y_s = None
+
+            #TODO Entwurf: Stelle Unsicherheit mit Farbfüllung statt Fehlerbalken dar.
+            if show_yerr == 'fill':
+                plt.fill_between(x_n, y_n - y_s, y_n + y_s, alpha=0.2)
+                y_s = None
+
+            # Plotte die Daten mit `errorbar`, falls Unsicherheiten angegeben wurden, sonst mit `plot`.
+            if (x_s is not None) or (y_s is not None):
+                return plt.errorbar(x_n, y_n, xerr=x_s, yerr=y_s, **kwargs)
+            else:
+                return plt.plot(x_n, y_n, **kwargs)
+
+    # automatische Labels
+    def fmt_label(name, units):
+        if units == pint.Unit('dimensionless'):
+            return f"${name}"
+        else:
+            return f"${name}" + r" \mathbin{/} " + f"{units:Lx}$"
+
+    if xname:
+        plt.xlabel(fmt_label(xname, xunits))
+    if yname:
+        plt.ylabel(fmt_label(yname, yunits))
+
+    yield MyPlotter()

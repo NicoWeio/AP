@@ -1,9 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from uncertainties import ufloat
 import uncertainties.unumpy as unp
-import scipy.optimize as sp_optimize
-import scipy.stats as sp_stats
 import pint
 ureg = pint.UnitRegistry()
 ureg.setup_matplotlib()
@@ -68,15 +65,13 @@ for param, i in zip(fit_params_T2, 'ABC'):
 generate_table('table_polyfit', [[T_index, A,B,C] for T_index, A,B,C in [list(["$T_1$"] + fit_params_T1), list(["$T_2$"] + fit_params_T2)]], scientific=True)
 
 plt.figure()
+with tools.plot_context(plt, 'minute', 'kelvin', 't', 'T') as plt2:
+    plt2.plot(t_linspace, fit_fn(t_linspace, fit_params_T1), show_yerr=False, label="Approximation $T_1$")
+    plt2.plot(t, T1, fmt='x', label="$T_1$")
 
-plt.plot(t_linspace.to('minute').m, tools.nominal_values(fit_fn(t_linspace, fit_params_T1).to('kelvin')).m, label="Approximation $T_1$")
-tools.errorbar(plt, t.to('minute'), T1.to('kelvin'), fmt='x', label="$T_1$")
+    plt2.plot(t_linspace, fit_fn(t_linspace, fit_params_T2), show_yerr=False, label="Approximation $T_2$")
+    plt2.plot(t, T2, fmt='x', label="$T_2$")
 
-plt.plot(t_linspace.to('minute').m, tools.nominal_values(fit_fn(t_linspace, fit_params_T2).to('kelvin')).m, label="Approximation $T_2$")
-tools.errorbar(plt, t.to('minute'), T2.to('kelvin'), fmt='x', label="$T_2$")
-
-plt.xlabel(r'$t \mathbin{/} \si{\minute}$')
-plt.ylabel(r'$T \mathbin{/} \si{\kelvin}$')
 plt.legend()
 plt.tight_layout()
 plt.savefig('build/wärmepumpe_plot.pdf')

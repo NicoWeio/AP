@@ -2,13 +2,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 from uncertainties import ufloat
 import uncertainties.unumpy as unp
-import scipy.optimize as sp_optimize
-import scipy.stats as sp_stats
 import generate_table
-
 import pint
 ureg = pint.UnitRegistry()
 ureg.setup_matplotlib()
+import tools
 
 U, I = np.genfromtxt('Zaehlrohrstrom.dat', unpack=True)
 U *= ureg('V')
@@ -29,17 +27,14 @@ Z = I/(e0*N)
 Z.ito('dimensionless')
 
 print(f"<Z>={np.mean(Z)}")
-# print(f"Z={Z.to('dimensionless')}")
 
 generate_table.generate_table('table_zaehlrohrstrom', [*zip(U,N,I,(Z/1e10))], col_fmt=[{'d': 0},{'d': 1},{'d': (1,2)},{'d': (2,2)}])
 
-slope, intercept, r_value, p_value, std_err = sp_stats.linregress(U.m, unp.nominal_values(Z))
-slope *= ureg('1/V')
+slope, intercept = tools.linregress(U, tools.nominal_values(Z))
 
-plt.errorbar(U.to('V'), unp.nominal_values(Z), fmt='x', yerr=unp.std_devs(Z), label='freigesetzte Ladungen pro eingefallenem Teilchen')
-plt.plot(U, slope * U + intercept, label='Regressionsgerade')
-plt.xlabel(r"$U \mathbin{/} \si{\volt}$")
-plt.ylabel(r"$Z$")
+with tools.plot_context(plt, 'V', 'dimensionless', 'U', 'Z') as plt2:
+    plt2.plot(U, Z, fmt='x', label='freigesetzte Ladungen pro eingefallenem Teilchen')
+    plt2.plot(U, slope * U + intercept, show_yerr=False, label='Regressionsgerade')
 plt.legend()
 plt.tight_layout()
 plt.savefig('build/plot2.pdf')
