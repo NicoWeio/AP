@@ -40,6 +40,11 @@ def pint_curve_fit(fit_fn, x, y, param_units, p0=None):
     return pint_params
 
 
+def pint_polyfit(x, y, deg):
+    params, covariance_matrix = np.polyfit(x.m, y.m, deg=deg, cov=True)
+    errors = np.sqrt(np.diag(covariance_matrix))
+    return [ufloat(param, error) * y.units / x.units**(deg-i) for i, (param, error) in enumerate(zip(params, errors))]
+
 def pintify(list):
     assert len(list) > 0
     units = list[0].units
@@ -129,20 +134,16 @@ def remove_nans(*inputs):
 def bounds(vals):
     return pintify([min(vals), max(vals)])
 
-def errorbar(plt, x, y, **kwargs):
-    try:
-        x_n = nominal_values(x)
-        x_s = std_devs(x)
-    except AttributeError: # scheinbar keine Unsicherheiten angegeben
-        x_n = x
-        x_s = None
-    try:
-        y_n = nominal_values(y)
-        y_s = std_devs(y)
-    except AttributeError: # scheinbar keine Unsicherheiten angegeben
-        y_n = y
-        y_s = None
 
-    # return plt.errorbar(nominal_values(x), nominal_values(y), xerr=std_devs(x), yerr=std_devs(y), **kwargs)
-    # return plt.errorbar(x, nominal_values(y), xerr=0, yerr=std_devs(y), **kwargs)
+def errorbar(plt, x, y, **kwargs):
+    def get_n_s(vals):
+        """trennt vals in nominal_values und std_devs und gibt sie ohne Einheit zurück"""
+        try:
+            return nominal_values(vals).m, std_devs(vals).m
+        except AttributeError:  # scheinbar keine Unsicherheiten angegeben
+            return vals.m, None
+
+    x_n, x_s = get_n_s(x)
+    y_n, y_s = get_n_s(y)
+
     return plt.errorbar(x_n, y_n, xerr=x_s, yerr=y_s, **kwargs)

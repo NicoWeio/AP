@@ -21,7 +21,7 @@ def stringify(value, scientific):
     # else:
         # return foo.__str__()
 
-def generateTable(name, rows, **kwargs):
+def generate_table(name, rows, **kwargs):
     with open(f"build/{name}.tex", 'w') as f:
         numCols = len(rows[0])
 
@@ -35,6 +35,3 @@ def generateTable(name, rows, **kwargs):
                 f.write(col_out)
                 f.write(" " * (maxColWidth[i] - thisColWidth))
                 f.write((r" \\" + '\n') if (i == numCols - 1) else " & ")
-
-table = [[1,2,3],[4,5,6]]
-generateTable('test', table)
