@@ -23,6 +23,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: docker://nicoweio/my-texlive
+      # ↓ Hierür wird sudo benötigt, da die mittels Docker erstellen PDFs root gehören.
+      - name: Clean PDFs (for reproducibility)
+        run: sudo find ./*/build/ -name '*.pdf' -print -exec ./clean_pdf.py {} \;
       - uses: actions/upload-artifact@v2
         with:
             name: pdfs
